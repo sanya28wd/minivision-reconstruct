@@ -1,0 +1,12 @@
+{
+  "callback_frames": 1199,
+  "elapsed_seconds": 39.931754,
+  "callback_fps": 30.001186524388586,
+  "maximum_source_frame_difference": 0,
+  "presented_frames": 1199,
+  "source_frame_count": 1000,
+  "road_users": 20,
+  "browser_errors": [],
+  "case_kind": "controlled synthetic fixture",
+  "real_footage_validation": "pending: existing real-case artifacts are iCloud dataless placeholders"
+}

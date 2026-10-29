@@ -1,0 +1,6 @@
+case_id,source_video,accident_frame,accident_time_seconds,scene_conditions,principal_vehicle_description,principal_track_id,pre_window_start_frame,post_window_end_frame,uninterrupted_visibility,identity_continuity,visible_id_switches,fragmentation_or_recovery_events,false_persistent_tracks,reviewer_notes,review_status
+accident-night-highway-001,1BIZOZtxRpY_00.mp4,106,9.625,"highway; normal weather; night; very poor quality",,,,,,,,,,,pending
+accident-day-highway-002,-jZ5Rlhzzi4_00.mp4,53,3.583,"highway; normal weather; day; poor quality",,,,,,,,,,,pending
+accident-rain-intersection-003,03HtRCJa8Yk_00.mp4,98,6.583,"signalized intersection; rain; day; poor quality",,,,,,,,,,,pending
+accident-day-intersection-004,0isplBZQftg_00.mp4,117,7.8,"signalized intersection; normal weather; day; very poor quality",,,,,,,,,,,pending
+accident-night-intersection-005,4jVVNw9AF2s_00.mp4,84,5.667,"signalized intersection; normal weather; night; poor quality",,,,,,,,,,,pending

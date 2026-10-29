@@ -1,0 +1,8 @@
+case_id,kind,event_type,event,detail
+week7-staged-noise-201,timing_outside_tolerance,start,gt-start-t7-15,peak error -0.84 s exceeds ±0.5 s
+week7-staged-noise-201,timing_outside_tolerance,start,gt-start-t8-19,peak error -0.64 s exceeds ±0.5 s
+week7-staged-noise-202,timing_outside_tolerance,stop,gt-stop-t1-1,peak error +0.75 s exceeds ±0.5 s
+week7-staged-noise-202,missed,stop,gt-stop-t8-18,no proposal within ±1.50 s of 30.31 s (comes to rest at progress 14.0 m)
+week7-staged-noise-202,false_alarm,stop,stop-t8-f796,no annotated event within ±1.50 s of 31.84 s
+week7-staged-noise-202,timing_outside_tolerance,start,gt-start-t8-19,peak error -1.17 s exceeds ±0.5 s
+week7-staged-noise-202,false_alarm,closest_approach,closest_approach-t6-8-f670,no annotated event within ±1.50 s of 26.80 s

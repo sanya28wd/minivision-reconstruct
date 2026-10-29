@@ -1,0 +1,22 @@
+case_id,scenario,truth_incident,truth_outcome,predicted_outcome,truth_contributors,predicted_contributors,truth_rules,predicted_rules,agreed
+week8-incident-heldout-101-01-rear-end,rear_end,gt-incident-1,ONE_CONTRIBUTOR,ONE_CONTRIBUTOR,2,2,2:did_not_stop_behind_stopped_road_user,2:did_not_stop_behind_stopped_road_user,True
+week8-incident-heldout-101-02-t-bone,t_bone,gt-incident-1,ONE_CONTRIBUTOR,ONE_CONTRIBUTOR,1,1,1:no_visible_stop_at_stop_line,1:no_visible_stop_at_stop_line,True
+week8-incident-heldout-101-03-lane-change-sideswipe,lane_change_sideswipe,gt-incident-1,ONE_CONTRIBUTOR,ONE_CONTRIBUTOR,2,2,2:lane_change_into_occupied_lane,2:lane_change_into_occupied_lane,True
+week8-incident-heldout-101-04-both-lane-change,both_lane_change,gt-incident-1,MULTIPLE_CONTRIBUTORS,MULTIPLE_CONTRIBUTORS,1-2,1-2,1:lane_change_into_occupied_lane 2:lane_change_into_occupied_lane,1:lane_change_into_occupied_lane 2:lane_change_into_occupied_lane,True
+week8-incident-heldout-101-05-near-miss-crossing,near_miss_crossing,gt-incident-1,NO_SUPPORTED_CONTRIBUTOR,NO_SUPPORTED_CONTRIBUTOR,,,,,True
+week8-incident-heldout-101-07-occluded-impact,occluded_impact,gt-incident-1,UNDETERMINED,UNDETERMINED,,,,,True
+week8-incident-heldout-101-10-pedestrian-near-miss,pedestrian_near_miss,gt-incident-1,ONE_CONTRIBUTOR,ONE_CONTRIBUTOR,2,2,2:no_visible_stop_at_stop_line,2:no_visible_stop_at_stop_line,True
+week8-incident-heldout-102-01-rear-end,rear_end,gt-incident-1,ONE_CONTRIBUTOR,ONE_CONTRIBUTOR,2,2,2:did_not_stop_behind_stopped_road_user,2:did_not_stop_behind_stopped_road_user,True
+week8-incident-heldout-102-02-t-bone,t_bone,gt-incident-1,ONE_CONTRIBUTOR,ONE_CONTRIBUTOR,1,1,1:no_visible_stop_at_stop_line,1:no_visible_stop_at_stop_line,True
+week8-incident-heldout-102-03-lane-change-sideswipe,lane_change_sideswipe,gt-incident-1,ONE_CONTRIBUTOR,ONE_CONTRIBUTOR,2,2,2:lane_change_into_occupied_lane,2:lane_change_into_occupied_lane,True
+week8-incident-heldout-102-04-both-lane-change,both_lane_change,gt-incident-1,MULTIPLE_CONTRIBUTORS,MULTIPLE_CONTRIBUTORS,1-2,1-2,1:lane_change_into_occupied_lane 2:lane_change_into_occupied_lane,1:lane_change_into_occupied_lane 2:lane_change_into_occupied_lane,True
+week8-incident-heldout-102-05-near-miss-crossing,near_miss_crossing,gt-incident-1,NO_SUPPORTED_CONTRIBUTOR,NO_SUPPORTED_CONTRIBUTOR,,,,,True
+week8-incident-heldout-102-07-occluded-impact,occluded_impact,gt-incident-1,UNDETERMINED,UNDETERMINED,,,,,True
+week8-incident-heldout-102-10-pedestrian-near-miss,pedestrian_near_miss,gt-incident-1,ONE_CONTRIBUTOR,ONE_CONTRIBUTOR,2,2,2:no_visible_stop_at_stop_line,2:no_visible_stop_at_stop_line,True
+week8-incident-heldout-103-01-rear-end,rear_end,gt-incident-1,ONE_CONTRIBUTOR,ONE_CONTRIBUTOR,2,2,2:did_not_stop_behind_stopped_road_user,2:did_not_stop_behind_stopped_road_user,True
+week8-incident-heldout-103-02-t-bone,t_bone,gt-incident-1,ONE_CONTRIBUTOR,ONE_CONTRIBUTOR,1,1,1:no_visible_stop_at_stop_line,1:no_visible_stop_at_stop_line,True
+week8-incident-heldout-103-03-lane-change-sideswipe,lane_change_sideswipe,gt-incident-1,ONE_CONTRIBUTOR,ONE_CONTRIBUTOR,2,2,2:lane_change_into_occupied_lane,2:lane_change_into_occupied_lane,True
+week8-incident-heldout-103-04-both-lane-change,both_lane_change,gt-incident-1,MULTIPLE_CONTRIBUTORS,MULTIPLE_CONTRIBUTORS,1-2,1-2,1:lane_change_into_occupied_lane 2:lane_change_into_occupied_lane,1:lane_change_into_occupied_lane 2:lane_change_into_occupied_lane,True
+week8-incident-heldout-103-05-near-miss-crossing,near_miss_crossing,gt-incident-1,NO_SUPPORTED_CONTRIBUTOR,NO_SUPPORTED_CONTRIBUTOR,,,,,True
+week8-incident-heldout-103-07-occluded-impact,occluded_impact,gt-incident-1,UNDETERMINED,NOT_DETECTED,,,,,False
+week8-incident-heldout-103-10-pedestrian-near-miss,pedestrian_near_miss,gt-incident-1,ONE_CONTRIBUTOR,ONE_CONTRIBUTOR,2,2,2:no_visible_stop_at_stop_line,2:no_visible_stop_at_stop_line,True

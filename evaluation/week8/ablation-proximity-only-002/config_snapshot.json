@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "config_id": "incident-week8-002-ablation-proximity-only",
+  "conflict": {
+    "conflict_radius_floor": 1.0,
+    "uncertainty_coverage_factor": 2.0,
+    "maximum_pet_seconds": 5.0
+  },
+  "collision": {
+    "contact_distance": 5.0,
+    "post_window_seconds": 2.0,
+    "heading_jump_degrees": 20.0,
+    "heading_jump_window_frames": 5,
+    "obstruction_seconds": 3.0,
+    "minimum_consequence_signals": 0
+  },
+  "near_miss": {
+    "near_miss_pet_seconds": 1.5,
+    "near_miss_distance": 5.25
+  },
+  "single_vehicle": {
+    "partner_exclusion_distance": 10.0
+  },
+  "collision_type": {
+    "same_direction_max_degrees": 35.0,
+    "rear_end_max_lateral_offset": 1.5,
+    "t_bone_min_degrees": 60.0,
+    "t_bone_max_degrees": 120.0,
+    "head_on_min_degrees": 150.0
+  },
+  "contribution": {
+    "lookback_seconds": 5.0,
+    "lane_change_window_seconds": 3.0,
+    "turn_window_seconds": 3.0,
+    "stop_line_window_seconds": 5.0
+  },
+  "validation": {
+    "impact_time_tolerance_seconds": 0.5,
+    "impact_location_tolerance": 3.0,
+    "pet_tolerance_seconds": 0.2,
+    "matching_gate_factor": 3.0
+  }
+}

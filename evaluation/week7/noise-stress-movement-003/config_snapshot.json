@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0",
+  "config_id": "movement-week7-002",
+  "smoothing": {
+    "window_frames": 9,
+    "polynomial_order": 2
+  },
+  "uncertainty": {
+    "footpoint_sigma_fraction_of_box_height": 0.05,
+    "minimum_footpoint_sigma_pixels": 1.0,
+    "low_confidence_threshold": 0.5,
+    "low_confidence_multiplier": 1.5,
+    "interpolated_multiplier": 2.0,
+    "reviewer_multiplier": 1.5,
+    "coverage_factor": 2.0
+  },
+  "motion": {
+    "stationary_window_seconds": 1.0,
+    "stationary_extent_factor": 1.0,
+    "minimum_stationary_extent_pixels": 0.5,
+    "minimum_stop_seconds": 1.0,
+    "rest_boundary_fraction": 0.25,
+    "heading_half_window_frames": 5,
+    "heading_displacement_factor": 2.0,
+    "turn_half_window_frames": 6,
+    "turn_change_threshold_degrees": 12.0,
+    "turn_minimum_degrees": 45.0,
+    "turn_boundary_fraction": 0.1,
+    "turn_reference_frames": 8
+  },
+  "road_use": {
+    "lane_persistence_frames": 5,
+    "parallel_lane_tolerance_degrees": 20.0
+  },
+  "separation": {
+    "sample_every_frames": 5,
+    "minimum_overlap_frames": 10
+  },
+  "validation": {
+    "timing_tolerance_seconds": {
+      "stop": 0.5,
+      "start": 0.5,
+      "turn_left": 1.0,
+      "turn_right": 1.0,
+      "lane_change": 0.75,
+      "stop_line_crossing": 0.25,
+      "zone_entry": 0.5,
+      "zone_exit": 0.5,
+      "closest_approach": 0.5
+    },
+    "matching_gate_factor": 3.0
+  }
+}

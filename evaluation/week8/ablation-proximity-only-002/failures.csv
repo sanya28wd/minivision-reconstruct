@@ -1,0 +1,17 @@
+case_id,scenario,kind,item,detail
+week8-incident-heldout-101-05-near-miss-crossing,near_miss_crossing,wrong_event_type,gt-incident-1,collision_candidate proposed for near_miss_candidate
+week8-incident-heldout-101-07-occluded-impact,occluded_impact,timing_outside_tolerance,gt-incident-1,peak error +0.71 s
+week8-incident-heldout-101-08-single-vehicle,single_vehicle,missed,gt-incident-1,"no proposal for tracks (1,) within ±1.50 s of 4.53 s"
+week8-incident-heldout-101-09-box-overlap-only,box_overlap_only,false_alarm,collision_candidate-t1-2-f275,collision_candidate at 11.00 s matches no scripted incident
+week8-incident-heldout-101-10-pedestrian-near-miss,pedestrian_near_miss,wrong_event_type,gt-incident-1,collision_candidate proposed for near_miss_candidate
+week8-incident-heldout-102-05-near-miss-crossing,near_miss_crossing,wrong_event_type,gt-incident-1,collision_candidate proposed for near_miss_candidate
+week8-incident-heldout-102-07-occluded-impact,occluded_impact,timing_outside_tolerance,gt-incident-1,peak error +0.68 s
+week8-incident-heldout-102-08-single-vehicle,single_vehicle,missed,gt-incident-1,"no proposal for tracks (1,) within ±1.50 s of 4.48 s"
+week8-incident-heldout-102-09-box-overlap-only,box_overlap_only,false_alarm,collision_candidate-t1-2-f246,collision_candidate at 9.84 s matches no scripted incident
+week8-incident-heldout-102-10-pedestrian-near-miss,pedestrian_near_miss,wrong_event_type,gt-incident-1,collision_candidate proposed for near_miss_candidate
+week8-incident-heldout-103-04-both-lane-change,both_lane_change,wrong_collision_type,gt-incident-1,unknown proposed for sideswipe
+week8-incident-heldout-103-05-near-miss-crossing,near_miss_crossing,wrong_event_type,gt-incident-1,collision_candidate proposed for near_miss_candidate
+week8-incident-heldout-103-07-occluded-impact,occluded_impact,timing_outside_tolerance,gt-incident-1,peak error +0.72 s
+week8-incident-heldout-103-09-box-overlap-only,box_overlap_only,false_alarm,collision_candidate-t1-2-f232,collision_candidate at 9.28 s matches no scripted incident
+week8-incident-heldout-103-09-box-overlap-only,box_overlap_only,false_alarm,collision_candidate-t1-2-f287,collision_candidate at 11.48 s matches no scripted incident
+week8-incident-heldout-103-10-pedestrian-near-miss,pedestrian_near_miss,wrong_event_type,gt-incident-1,collision_candidate proposed for near_miss_candidate

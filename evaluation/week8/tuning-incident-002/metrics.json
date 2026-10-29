@@ -1,0 +1,255 @@
+{
+  "cases": [
+    "week8-incident-001-01-rear-end",
+    "week8-incident-001-02-t-bone",
+    "week8-incident-001-03-lane-change-sideswipe",
+    "week8-incident-001-04-both-lane-change",
+    "week8-incident-001-05-near-miss-crossing",
+    "week8-incident-001-06-normal-crossing",
+    "week8-incident-001-07-occluded-impact",
+    "week8-incident-001-08-single-vehicle",
+    "week8-incident-001-09-box-overlap-only",
+    "week8-incident-001-10-pedestrian-near-miss",
+    "week8-incident-002-01-rear-end",
+    "week8-incident-002-02-t-bone",
+    "week8-incident-002-03-lane-change-sideswipe",
+    "week8-incident-002-04-both-lane-change",
+    "week8-incident-002-05-near-miss-crossing",
+    "week8-incident-002-06-normal-crossing",
+    "week8-incident-002-07-occluded-impact",
+    "week8-incident-002-08-single-vehicle",
+    "week8-incident-002-09-box-overlap-only",
+    "week8-incident-002-10-pedestrian-near-miss"
+  ],
+  "collision_type_accuracy": 1.0,
+  "config_id": "incident-week8-002",
+  "config_sha256": "1e4787f91e187594e668a1d6264717165ba773e4b8ebd437e147aa183b1fcf52",
+  "contribution": {
+    "agreement": 1.0,
+    "agreement_given_detection": 1.0,
+    "evidence_link_accuracy": 1.0,
+    "per_rule": {
+      "did_not_stop_behind_stopped_road_user": {
+        "false_negative": 0,
+        "false_positive": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "true_positive": 2
+      },
+      "entered_occupied_conflict_area": {
+        "false_negative": 0,
+        "false_positive": 0,
+        "precision": null,
+        "recall": null,
+        "true_positive": 0
+      },
+      "lane_change_into_occupied_lane": {
+        "false_negative": 0,
+        "false_positive": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "true_positive": 6
+      },
+      "no_visible_stop_at_stop_line": {
+        "false_negative": 0,
+        "false_positive": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "true_positive": 4
+      },
+      "turned_across_path": {
+        "false_negative": 0,
+        "false_positive": 0,
+        "precision": null,
+        "recall": null,
+        "true_positive": 0
+      }
+    },
+    "truth_assessments": 14,
+    "undetermined_rate_predicted": 0.14285714285714285,
+    "undetermined_rate_truth": 0.14285714285714285
+  },
+  "created_at": "2026-10-26T15:39:16.464437+00:00",
+  "detection": {
+    "event_type_accuracy": 1.0,
+    "f1": 0.9333333333333333,
+    "false_alarms_per_clip": 0.0,
+    "ground_truth": 16,
+    "matched": 14,
+    "per_event_type": {
+      "collision_candidate": {
+        "f1": 1.0,
+        "ground_truth": 10,
+        "matched_same_type": 10,
+        "precision": 1.0,
+        "predicted": 10,
+        "recall": 1.0
+      },
+      "near_miss_candidate": {
+        "f1": 1.0,
+        "ground_truth": 4,
+        "matched_same_type": 4,
+        "precision": 1.0,
+        "predicted": 4,
+        "recall": 1.0
+      },
+      "single_vehicle_candidate": {
+        "f1": null,
+        "ground_truth": 2,
+        "matched_same_type": 0,
+        "precision": null,
+        "predicted": 0,
+        "recall": 0.0
+      }
+    },
+    "precision": 1.0,
+    "predicted": 14,
+    "recall": 0.875
+  },
+  "evaluation_id": "tuning-incident-002",
+  "gate": {
+    "event_timing_error_measured": true,
+    "every_matched_contributor_links_to_timed_action": true,
+    "occluded_scenarios_undetermined": true
+  },
+  "ground_truth_kind": "controlled synthetic incident scenarios; not real CCTV",
+  "ground_truth_sha256": {
+    "week8-incident-001-01-rear-end": "e77c5263dcd59002c6c531310a401703991db76daf7a4d31ab21ff997f7aa778",
+    "week8-incident-001-02-t-bone": "d5aaa3cb6e92ebe448e30cad60e1fac7dc2b529551fd68c83518c4923845c407",
+    "week8-incident-001-03-lane-change-sideswipe": "b4f9dbe565b712cee5428a2ecaed206c9a913d222732068df05acd15b7a8e533",
+    "week8-incident-001-04-both-lane-change": "73099cc8923a21a2d05b55de1132eb14cb5079cf50ba83439ceb3420ef04f20b",
+    "week8-incident-001-05-near-miss-crossing": "450de916bc38acfd814f6895c27dc0d8b073bcb107264226e907b493f9711caf",
+    "week8-incident-001-06-normal-crossing": "bec70b560072b0c305ad6df254ed5215c1648c10fbffe1df97552b4e885a1dae",
+    "week8-incident-001-07-occluded-impact": "a9d9a776589e35ca77c92047c5e4e5124488174f5dc7b650f33d3b8b5f1cf018",
+    "week8-incident-001-08-single-vehicle": "f1aa7463ec735b4c74f82f30af37a95d8b6b9d9838644fc4329e6ca07b329da5",
+    "week8-incident-001-09-box-overlap-only": "c8d7c8e82344747038200cab0c38f0f4b77eb13f015317063fe5e81089da331f",
+    "week8-incident-001-10-pedestrian-near-miss": "85fe14f85198ebd1258c01fd1df220501fd7691a46d817ef21ffa620a0d213bf",
+    "week8-incident-002-01-rear-end": "23e343063889ebabe27b4b6dcfd0b19f12b89fa8acc61596357f4a7732aad491",
+    "week8-incident-002-02-t-bone": "6c0a2ccaf30f916f63d8c6d460545457a12960cb1c64deda709215740f9ce6f5",
+    "week8-incident-002-03-lane-change-sideswipe": "0257eb6bc0d35115ca498573500796efb4d1cc60a83efceac5201d0bb8f2abf0",
+    "week8-incident-002-04-both-lane-change": "f47eb2f42935c0deaf79f01d93a8ab21930c53176a0d5828cfb4272818701976",
+    "week8-incident-002-05-near-miss-crossing": "67aac52124dca729722783fcdff4ac519eede881a7158eb05e6f5fc4dbeae93d",
+    "week8-incident-002-06-normal-crossing": "9fa9302ae4113ff11061f71e27a34a213dca0a60e7c6c858fa3a4211ef4fe08a",
+    "week8-incident-002-07-occluded-impact": "6d867003eb3eea990b950423bf43631e4a700e6e384fb55ded223d0d17801c3a",
+    "week8-incident-002-08-single-vehicle": "7bbed68062ffb6c939907fddda4b96700a2707985eb38f78a115c6021989718f",
+    "week8-incident-002-09-box-overlap-only": "e281c3346aeec7f070075a339723eafac2a0ffaabdce16796bc628c5f358abbd",
+    "week8-incident-002-10-pedestrian-near-miss": "3b9beb747dc6f9d497b31ac10c53683f0d5b0a8f6dc3808ff457df0dc2e3ebe7"
+  },
+  "impact_location_error": {
+    "count": 14,
+    "max": 1.5934240023294806,
+    "mean": 0.5338443074353686,
+    "median": 0.23563914508004358,
+    "p90": 1.1947866118559347
+  },
+  "impact_location_within_tolerance": 1.0,
+  "impact_time_error_s": {
+    "count": 14,
+    "max": 0.5699116635529773,
+    "mean": 0.153801383575296,
+    "median": 0.061774306754167174,
+    "p90": 0.4781872079271521
+  },
+  "impact_time_within_tolerance": 0.8571428571428571,
+  "incident_run": "incident-002",
+  "per_scenario": {
+    "both_lane_change": {
+      "contribution_agreed": [
+        true,
+        true
+      ],
+      "matched": 2,
+      "peak_error_s": [
+        -0.088,
+        -0.171
+      ]
+    },
+    "lane_change_sideswipe": {
+      "contribution_agreed": [
+        true,
+        true
+      ],
+      "matched": 2,
+      "peak_error_s": [
+        -0.309,
+        -0.15
+      ]
+    },
+    "near_miss_crossing": {
+      "contribution_agreed": [
+        true,
+        true
+      ],
+      "matched": 2,
+      "peak_error_s": [
+        -0.044,
+        0.0
+      ]
+    },
+    "occluded_impact": {
+      "contribution_agreed": [
+        true,
+        true
+      ],
+      "matched": 2,
+      "peak_error_s": [
+        0.57,
+        0.551
+      ]
+    },
+    "pedestrian_near_miss": {
+      "contribution_agreed": [
+        true,
+        true
+      ],
+      "matched": 2,
+      "peak_error_s": [
+        0.064,
+        -0.048
+      ]
+    },
+    "rear_end": {
+      "contribution_agreed": [
+        true,
+        true
+      ],
+      "matched": 2,
+      "peak_error_s": [
+        0.045,
+        0.06
+      ]
+    },
+    "t_bone": {
+      "contribution_agreed": [
+        true,
+        true
+      ],
+      "matched": 2,
+      "peak_error_s": [
+        0.008,
+        0.045
+      ]
+    }
+  },
+  "pet": {
+    "error_at_matched_radius_s": {
+      "count": 6,
+      "max": 0.040000000000000785,
+      "mean": 0.006666666666667297,
+      "median": 6.661338147750939e-16,
+      "p90": 0.020000000000000837
+    },
+    "estimated_minus_point_pet_s": {
+      "count": 6,
+      "max": 0.9520000000000017,
+      "mean": 0.5466666666666669,
+      "median": 0.38399999999999945,
+      "p90": 0.9180000000000019
+    },
+    "matched_true_crossings": 6,
+    "truth_inside_reported_window": 1.0,
+    "unannotated_estimated_conflicts": 10,
+    "within_tolerance": 1.0
+  },
+  "truth_time_inside_reported_window": 1.0
+}

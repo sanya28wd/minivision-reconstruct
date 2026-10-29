@@ -1,0 +1,181 @@
+{
+  "split": "week8_heldout",
+  "config_id": "incident-week8-002",
+  "incident_run": "incident-002",
+  "overall": {
+    "clips": 25,
+    "proposed": 1,
+    "detected_within_tolerance": 0,
+    "detection_rate": 0.0,
+    "impact_time_error_s": {
+      "count": 1,
+      "mean": 9.25,
+      "median": 9.25,
+      "p90": 9.25,
+      "max": 9.25
+    },
+    "spatial_error_normalised": {
+      "count": 0,
+      "mean": null,
+      "median": null,
+      "p90": null,
+      "max": null
+    },
+    "inside_label_box": "\u2013",
+    "type_correct": "\u2013",
+    "pair_correct": "\u2013",
+    "false_alarms_per_clip": 0.04,
+    "near_miss_at_impact_without_detection": 5,
+    "right_pair_near_miss_without_detection": 4,
+    "pipeline_failures": 0,
+    "both_actors_tracked_at_impact": 3,
+    "both_actors_same_id_after_window": 0
+  },
+  "by_type": {
+    "head_on": {
+      "clips": 5,
+      "proposed": 0,
+      "detected_within_tolerance": 0,
+      "detection_rate": 0.0,
+      "impact_time_error_s": {
+        "count": 0,
+        "mean": null,
+        "median": null,
+        "p90": null,
+        "max": null
+      },
+      "spatial_error_normalised": {
+        "count": 0,
+        "mean": null,
+        "median": null,
+        "p90": null,
+        "max": null
+      },
+      "inside_label_box": "\u2013",
+      "type_correct": "\u2013",
+      "pair_correct": "\u2013",
+      "false_alarms_per_clip": 0.0,
+      "near_miss_at_impact_without_detection": 0,
+      "right_pair_near_miss_without_detection": 0,
+      "pipeline_failures": 0,
+      "both_actors_tracked_at_impact": 0,
+      "both_actors_same_id_after_window": 0
+    },
+    "rear_end": {
+      "clips": 5,
+      "proposed": 1,
+      "detected_within_tolerance": 0,
+      "detection_rate": 0.0,
+      "impact_time_error_s": {
+        "count": 1,
+        "mean": 9.25,
+        "median": 9.25,
+        "p90": 9.25,
+        "max": 9.25
+      },
+      "spatial_error_normalised": {
+        "count": 0,
+        "mean": null,
+        "median": null,
+        "p90": null,
+        "max": null
+      },
+      "inside_label_box": "\u2013",
+      "type_correct": "\u2013",
+      "pair_correct": "\u2013",
+      "false_alarms_per_clip": 0.2,
+      "near_miss_at_impact_without_detection": 2,
+      "right_pair_near_miss_without_detection": 1,
+      "pipeline_failures": 0,
+      "both_actors_tracked_at_impact": 2,
+      "both_actors_same_id_after_window": 0
+    },
+    "sideswipe": {
+      "clips": 5,
+      "proposed": 0,
+      "detected_within_tolerance": 0,
+      "detection_rate": 0.0,
+      "impact_time_error_s": {
+        "count": 0,
+        "mean": null,
+        "median": null,
+        "p90": null,
+        "max": null
+      },
+      "spatial_error_normalised": {
+        "count": 0,
+        "mean": null,
+        "median": null,
+        "p90": null,
+        "max": null
+      },
+      "inside_label_box": "\u2013",
+      "type_correct": "\u2013",
+      "pair_correct": "\u2013",
+      "false_alarms_per_clip": 0.0,
+      "near_miss_at_impact_without_detection": 2,
+      "right_pair_near_miss_without_detection": 2,
+      "pipeline_failures": 0,
+      "both_actors_tracked_at_impact": 1,
+      "both_actors_same_id_after_window": 0
+    },
+    "single": {
+      "clips": 5,
+      "proposed": 0,
+      "detected_within_tolerance": 0,
+      "detection_rate": 0.0,
+      "impact_time_error_s": {
+        "count": 0,
+        "mean": null,
+        "median": null,
+        "p90": null,
+        "max": null
+      },
+      "spatial_error_normalised": {
+        "count": 0,
+        "mean": null,
+        "median": null,
+        "p90": null,
+        "max": null
+      },
+      "inside_label_box": "\u2013",
+      "type_correct": "\u2013",
+      "pair_correct": "\u2013",
+      "false_alarms_per_clip": 0.0,
+      "near_miss_at_impact_without_detection": 0,
+      "right_pair_near_miss_without_detection": 0,
+      "pipeline_failures": 0,
+      "both_actors_tracked_at_impact": 0,
+      "both_actors_same_id_after_window": 0
+    },
+    "t_bone": {
+      "clips": 5,
+      "proposed": 0,
+      "detected_within_tolerance": 0,
+      "detection_rate": 0.0,
+      "impact_time_error_s": {
+        "count": 0,
+        "mean": null,
+        "median": null,
+        "p90": null,
+        "max": null
+      },
+      "spatial_error_normalised": {
+        "count": 0,
+        "mean": null,
+        "median": null,
+        "p90": null,
+        "max": null
+      },
+      "inside_label_box": "\u2013",
+      "type_correct": "\u2013",
+      "pair_correct": "\u2013",
+      "false_alarms_per_clip": 0.0,
+      "near_miss_at_impact_without_detection": 1,
+      "right_pair_near_miss_without_detection": 1,
+      "pipeline_failures": 0,
+      "both_actors_tracked_at_impact": 0,
+      "both_actors_same_id_after_window": 0
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "detector": {
+    "device": "cpu",
+    "library_version": "8.4.149",
+    "model_family": "Ultralytics YOLOv8",
+    "model_license": "AGPL-3.0; commercial deployment requires an appropriate Ultralytics licence",
+    "model_name": "YOLOv8n",
+    "model_size_bytes": 6549796,
+    "model_version": "YOLOv8n",
+    "weight_sha256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+    "weight_source": "https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8n.pt"
+  },
+  "false_negatives": 168,
+  "false_positives": 394,
+  "ground_truth_boxes": 1105,
+  "images_evaluated": 184,
+  "iou_threshold": 0.5,
+  "precision": 0.7039819684447783,
+  "predicted_boxes": 1331,
+  "recall": 0.8479638009049774,
+  "true_positives": 937
+}

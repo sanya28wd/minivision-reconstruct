@@ -1,0 +1,19 @@
+.venv/
+.pytest_cache/
+__pycache__/
+*.egg-info/
+cases/
+data/*
+!data/registry.csv
+models/
+.week6-venv/
+node_modules/
+.venv311/
+.trackeval-venv/
+build/
+.DS_Store
+tools/TrackEval/
+# Regenerable Week 3 tracker intermediates (kept on disk, not versioned)
+evaluation/week3/tuning_grid/
+evaluation/week3/tracks/
+evaluation/week3/detection_cache/

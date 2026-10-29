@@ -1,0 +1,7 @@
+case_id,scenario,conflict_id,radius,estimated_pet_s,truth_pet_at_radius_s,truth_point_pet_s,error_s,within_tolerance,truth_in_reported_window,location_error,confidence
+week8-incident-001-05-near-miss-crossing,near_miss_crossing,conflict-t2-1-f275,1.088,0.64,0.64,0.956,0.0,True,True,0.055,high
+week8-incident-001-06-normal-crossing,normal_crossing,conflict-t2-1-f264,1.088,3.52,3.52,3.884,0.0,True,True,0.069,high
+week8-incident-001-10-pedestrian-near-miss,pedestrian_near_miss,conflict-t1-2-f296,1.04,0.12,0.16,1.072,-0.04,True,True,0.043,high
+week8-incident-002-05-near-miss-crossing,near_miss_crossing,conflict-t2-1-f279,1.084,0.6,0.6,1.004,-0.0,True,True,0.19,high
+week8-incident-002-06-normal-crossing,normal_crossing,conflict-t2-1-f287,1.085,3.96,3.96,4.32,0.0,True,True,0.07,high
+week8-incident-002-10-pedestrian-near-miss,pedestrian_near_miss,conflict-t1-2-f302,1.041,0.12,0.12,1.004,-0.0,True,True,0.062,high

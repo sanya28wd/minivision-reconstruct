@@ -1,0 +1,16 @@
+local_video_id,split,label_type,weather,map,label_time,label_frame,proposed,event_id,event_type,confidence,predicted_time,impact_time_error_s,within_time_tolerance,predicted_center_x,predicted_center_y,spatial_error_normalised,inside_label_box,predicted_type,type_correct,pair_correct,collision_candidates,false_alarms,near_misses,near_miss_at_impact,right_pair_near_miss_at_impact,actors_tracked_at_impact,actors_same_id_after_window,pipeline_failure,config_id,pipeline_version
+Town06_head-on_clear_34,week8_dev,head_on,clear,Town06,10.95,219,False,,,,,,,,,,,,,,0,0,8,False,False,2,1,,incident-week8-002,0.1.0+incident-2
+Town03_head-on_night_20,week8_dev,head_on,night,Town03,3.5,70,False,,,,,,,,,,,,,,0,0,2,False,False,0,0,,incident-week8-002,0.1.0+incident-2
+Town03_head-on_rain_30,week8_dev,head_on,rain,Town03,3.5,70,False,,,,,,,,,,,,,,0,0,23,True,False,0,0,,incident-week8-002,0.1.0+incident-2
+Town07_rear-end_night_45,week8_dev,rear_end,night,Town07,6.2,124,False,,,,,,,,,,,,,,0,0,4,False,False,0,0,,incident-week8-002,0.1.0+incident-2
+Town05_rear-end_rain_100,week8_dev,rear_end,rain,Town05,8.3,166,False,,,,,,,,,,,,,,0,0,1,True,False,0,0,,incident-week8-002,0.1.0+incident-2
+Town05_rear-end_sunset_240,week8_dev,rear_end,sunset,Town05,9.1,182,False,,,,,,,,,,,,,,0,0,17,False,False,1,0,,incident-week8-002,0.1.0+incident-2
+Town06_sideswipe_rain_21,week8_dev,sideswipe,rain,Town06,13.35,267,False,,,,,,,,,,,,,,0,0,0,False,False,,,ReconstructionError: Selected track input '/Users/sanyawadhawan/projects/minivision/minivision-reconstruct/cases/accident-syn-Town06_sideswipe_rain_21/analysis/tracks/bytetrack-baseline/tracks.jsonl' has no observations.,incident-week8-002,
+Town06_sideswipe_sunset_46,week8_dev,sideswipe,sunset,Town06,8.7,174,False,,,,,,,,,,,,,,0,0,0,False,False,0,0,,incident-week8-002,0.1.0+incident-2
+Town06_sideswipe_wet_08,week8_dev,sideswipe,wet,Town06,11.25,225,False,,,,,,,,,,,,,,0,0,1,True,False,1,1,,incident-week8-002,0.1.0+incident-2
+Town10HD_single_sunset_10,week8_dev,single,sunset,Town10HD,5.8,116,False,,,,,,,,,,,,,,0,0,1,False,False,0,0,,incident-week8-002,0.1.0+incident-2
+Town07_single_wet_00,week8_dev,single,wet,Town07,12.55,251,False,,,,,,,,,,,,,,0,0,0,False,False,0,0,,incident-week8-002,0.1.0+incident-2
+Town10HD_single_clear_08,week8_dev,single,clear,Town10HD,4.85,97,False,,,,,,,,,,,,,,0,0,2,False,False,0,0,,incident-week8-002,0.1.0+incident-2
+Town10HD_t-bone_wet_15,week8_dev,t_bone,wet,Town10HD,6.05,121,True,single_vehicle_candidate-t23-f114,single_vehicle_candidate,low,5.7,-0.35,True,0.293,0.379,0.055,True,single,False,True,1,0,5,False,False,1,1,,incident-week8-002,0.1.0+incident-2
+Town03_t-bone_clear_18,week8_dev,t_bone,clear,Town03,5.05,101,False,,,,,,,,,,,,,,0,0,0,False,False,0,0,,incident-week8-002,0.1.0+incident-2
+Town03_t-bone_night_24,week8_dev,t_bone,night,Town03,5.4,108,False,,,,,,,,,,,,,,0,0,0,False,False,0,0,,incident-week8-002,0.1.0+incident-2

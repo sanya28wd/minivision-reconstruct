@@ -1,0 +1,14 @@
+{
+  "excluded_states": [
+    "lost",
+    "interpolated"
+  ],
+  "iou_threshold": 0.5,
+  "next_step": "Run TrackEval against this MOT-format tracker output and prepared gt/gt.txt files.",
+  "scored_states": [
+    "observed",
+    "recovered"
+  ],
+  "sequence": "MVI_39851",
+  "tracker_result": "evaluation/week3/mot/bytetrack-baseline-004/MVI_39851/data/MVI_39851.txt"
+}

@@ -1,0 +1,5 @@
+case_id,scenario,kind,item,detail
+week8-incident-001-07-occluded-impact,occluded_impact,timing_outside_tolerance,gt-incident-1,peak error +0.57 s
+week8-incident-001-08-single-vehicle,single_vehicle,missed,gt-incident-1,"no proposal for tracks (1,) within ±1.50 s of 4.36 s"
+week8-incident-002-07-occluded-impact,occluded_impact,timing_outside_tolerance,gt-incident-1,peak error +0.55 s
+week8-incident-002-08-single-vehicle,single_vehicle,missed,gt-incident-1,"no proposal for tracks (1,) within ±1.50 s of 4.12 s"

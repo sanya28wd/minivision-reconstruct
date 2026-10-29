@@ -1,0 +1,9 @@
+case_id,scenario,kind,item,detail
+week8-incident-heldout-101-07-occluded-impact,occluded_impact,timing_outside_tolerance,gt-incident-1,peak error +0.71 s
+week8-incident-heldout-101-08-single-vehicle,single_vehicle,missed,gt-incident-1,"no proposal for tracks (1,) within ±1.50 s of 4.53 s"
+week8-incident-heldout-102-07-occluded-impact,occluded_impact,timing_outside_tolerance,gt-incident-1,peak error +0.68 s
+week8-incident-heldout-102-08-single-vehicle,single_vehicle,missed,gt-incident-1,"no proposal for tracks (1,) within ±1.50 s of 4.48 s"
+week8-incident-heldout-103-04-both-lane-change,both_lane_change,wrong_collision_type,gt-incident-1,unknown proposed for sideswipe
+week8-incident-heldout-103-07-occluded-impact,occluded_impact,missed,gt-incident-1,"no proposal for tracks (1, 2) within ±1.50 s of 9.72 s"
+week8-incident-heldout-103-07-occluded-impact,occluded_impact,contribution_mismatch,gt-incident-1,"expected UNDETERMINED (), received NOT_DETECTED "
+week8-incident-heldout-103-07-occluded-impact,occluded_impact,false_alarm,near_miss_candidate-t1-2-f348,near_miss_candidate at 13.92 s matches no scripted incident

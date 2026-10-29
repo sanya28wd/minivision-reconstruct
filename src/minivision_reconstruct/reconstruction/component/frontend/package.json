@@ -1,0 +1,16 @@
+{
+  "name": "minivision-replay",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "npm run typecheck && vite build",
+    "dev": "vite build --watch"
+  },
+  "devDependencies": {
+    "@streamlit/component-v2-lib": "^0.2.0",
+    "typescript": "~5.8.3",
+    "vite": "^6.4.0"
+  }
+}
