@@ -1,0 +1,23 @@
+{
+  "case_id": "mig02-001-07-occluded-impact",
+  "codec": "mjpeg",
+  "decoded_frame_count": 350,
+  "duration_seconds": 14.0,
+  "file_size_bytes": 4678780,
+  "first_decoded_timestamp_seconds": 0.0,
+  "frame_count_source": "reported",
+  "frame_rate_decimal": 25.0,
+  "frame_rate_denominator": 1,
+  "frame_rate_numerator": 25,
+  "height": 480,
+  "ingested_at": "2026-10-30T05:47:24.736346Z",
+  "last_decoded_timestamp_seconds": 13.96,
+  "metadata_extraction_tool": "ffprobe",
+  "original_source_filename": "mig02-001-07-occluded-impact-staged-synthetic.avi",
+  "preserved_relative_path": "mig02-001-07-occluded-impact/original/mig02-001-07-occluded-impact-staged-synthetic.avi",
+  "preserved_sha256": "ae95e9dfa704405619b7ebacfd6133a563414a5f85d7c0c5d66c94baa8e7f9ae",
+  "reported_frame_count": 350,
+  "schema_version": "1.0",
+  "source_sha256": "ae95e9dfa704405619b7ebacfd6133a563414a5f85d7c0c5d66c94baa8e7f9ae",
+  "width": 640
+}

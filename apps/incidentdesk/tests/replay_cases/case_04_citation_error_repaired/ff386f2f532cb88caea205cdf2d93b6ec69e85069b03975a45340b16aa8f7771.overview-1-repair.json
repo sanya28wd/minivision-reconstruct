@@ -1,0 +1,31 @@
+{
+  "provenance": "synthetic-fixture",
+  "note": "Repaired recording with valid citation timestamp within 2.0s duration.",
+  "input_hash": "ff386f2f532cb88caea205cdf2d93b6ec69e85069b03975a45340b16aa8f7771",
+  "prompt_version": "overview-1-repair",
+  "response": {
+    "summary": "Repaired summary with valid citation timestamp.",
+    "facts": {
+      "parties": [
+        {
+          "description": "white Nissan Sunny sedan",
+          "timestamp_seconds": 0.5,
+          "confidence": 0.9,
+          "color": "white",
+          "make_model": "Nissan Sunny",
+          "body_type": "sedan"
+        }
+      ],
+      "events": [
+        {
+          "description": "sedan turns right",
+          "timestamp_seconds": 1.0,
+          "confidence": 0.9
+        }
+      ],
+      "candidate_collisions": [],
+      "behaviour_observations": [],
+      "location_conditions": []
+    }
+  }
+}

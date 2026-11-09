@@ -1,0 +1,23 @@
+{
+  "revision_id": "revision-001",
+  "reviewer": "synthetic-fixture-reviewer",
+  "created_at": "2026-10-30T05:50:30.448537+00:00",
+  "previous_sha256": "efd052da19ae4e84033027b6b38c101d83239a3c1d0e3f40a6bd0e0ba599a198",
+  "document": {
+    "schema_version": "1.0",
+    "decisions": [
+      {
+        "target_kind": "event",
+        "target_id": "near_miss_candidate-t1-2-f348",
+        "action": "confirm",
+        "note": "Synthetic MIG-02 review confirm",
+        "modified_peak_time": null,
+        "modified_location": null,
+        "modified_outcome": null,
+        "modified_contributing_track_ids": null,
+        "reviewer": "synthetic-fixture-reviewer",
+        "decided_at": "2026-10-30T00:00:00Z"
+      }
+    ]
+  }
+}

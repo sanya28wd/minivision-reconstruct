@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0",
+  "case_id": "mig02-001-05-near-miss-crossing",
+  "run_id": "mig02-incident",
+  "review_revision": "revision-001",
+  "source_incident_manifest_sha256": "5014d4ea23467dd3c881a38ca74f7a6d43108a006e9c834032b55531c6dd457f",
+  "review_revision_sha256": "512b5ec7445e00a75f04d5d35e5a9e7b9df9157504f6ec6a05cae40a2a36c84c",
+  "created_at": "2026-10-30T05:50:24.405791+00:00",
+  "artifacts": [
+    {
+      "filename": "reviewed_assessments.jsonl",
+      "sha256": "aee0b578509765153f48efb36dc0afd0ef7281d2bd8d3603cc9e8ae9ee712548"
+    },
+    {
+      "filename": "reviewed_events.jsonl",
+      "sha256": "022be9db018bd0c91beed202cab589ce99b5881d9d2e21a370473d338e64a557"
+    }
+  ]
+}

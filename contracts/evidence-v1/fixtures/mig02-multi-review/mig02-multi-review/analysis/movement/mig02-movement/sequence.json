@@ -1,0 +1,286 @@
+{
+  "schema_version": "1.0",
+  "case_id": "mig02-multi-review",
+  "entries": [
+    {
+      "rank": 1,
+      "event_id": "first_observed-t1-f0",
+      "event_type": "first_observed",
+      "track_ids": [
+        1
+      ],
+      "peak_time": 0.0,
+      "time_window": [
+        0.0,
+        0.02
+      ],
+      "order_unresolved_with": [
+        "first_observed-t3-f0"
+      ]
+    },
+    {
+      "rank": 2,
+      "event_id": "first_observed-t3-f0",
+      "event_type": "first_observed",
+      "track_ids": [
+        3
+      ],
+      "peak_time": 0.0,
+      "time_window": [
+        0.0,
+        0.02
+      ],
+      "order_unresolved_with": [
+        "first_observed-t1-f0"
+      ]
+    },
+    {
+      "rank": 3,
+      "event_id": "stop-t1-f71",
+      "event_type": "stop",
+      "track_ids": [
+        1
+      ],
+      "peak_time": 2.84,
+      "time_window": [
+        2.6,
+        3.32
+      ],
+      "order_unresolved_with": [
+        "stop-t3-f71"
+      ]
+    },
+    {
+      "rank": 4,
+      "event_id": "stop-t3-f71",
+      "event_type": "stop",
+      "track_ids": [
+        3
+      ],
+      "peak_time": 2.84,
+      "time_window": [
+        2.6,
+        3.32
+      ],
+      "order_unresolved_with": [
+        "stop-t1-f71"
+      ]
+    },
+    {
+      "rank": 5,
+      "event_id": "first_observed-t2-f114",
+      "event_type": "first_observed",
+      "track_ids": [
+        2
+      ],
+      "peak_time": 4.56,
+      "time_window": [
+        4.54,
+        4.579999999999999
+      ],
+      "order_unresolved_with": [
+        "first_observed-t4-f114"
+      ]
+    },
+    {
+      "rank": 6,
+      "event_id": "first_observed-t4-f114",
+      "event_type": "first_observed",
+      "track_ids": [
+        4
+      ],
+      "peak_time": 4.56,
+      "time_window": [
+        4.54,
+        4.579999999999999
+      ],
+      "order_unresolved_with": [
+        "first_observed-t2-f114"
+      ]
+    },
+    {
+      "rank": 7,
+      "event_id": "start-t1-f153",
+      "event_type": "start",
+      "track_ids": [
+        1
+      ],
+      "peak_time": 6.12,
+      "time_window": [
+        5.64,
+        6.24
+      ],
+      "order_unresolved_with": [
+        "start-t3-f153",
+        "stop-t2-f158",
+        "stop-t4-f158"
+      ]
+    },
+    {
+      "rank": 8,
+      "event_id": "start-t3-f153",
+      "event_type": "start",
+      "track_ids": [
+        3
+      ],
+      "peak_time": 6.12,
+      "time_window": [
+        5.64,
+        6.24
+      ],
+      "order_unresolved_with": [
+        "start-t1-f153",
+        "stop-t2-f158",
+        "stop-t4-f158"
+      ]
+    },
+    {
+      "rank": 9,
+      "event_id": "stop-t2-f158",
+      "event_type": "stop",
+      "track_ids": [
+        2
+      ],
+      "peak_time": 6.32,
+      "time_window": [
+        6.24,
+        6.8
+      ],
+      "order_unresolved_with": [
+        "start-t1-f153",
+        "start-t3-f153",
+        "stop-t4-f158",
+        "stop-t1-f161",
+        "stop-t3-f161"
+      ]
+    },
+    {
+      "rank": 10,
+      "event_id": "stop-t4-f158",
+      "event_type": "stop",
+      "track_ids": [
+        4
+      ],
+      "peak_time": 6.32,
+      "time_window": [
+        6.24,
+        6.8
+      ],
+      "order_unresolved_with": [
+        "start-t1-f153",
+        "start-t3-f153",
+        "stop-t2-f158",
+        "stop-t1-f161",
+        "stop-t3-f161"
+      ]
+    },
+    {
+      "rank": 11,
+      "event_id": "stop-t1-f161",
+      "event_type": "stop",
+      "track_ids": [
+        1
+      ],
+      "peak_time": 6.44,
+      "time_window": [
+        6.32,
+        6.92
+      ],
+      "order_unresolved_with": [
+        "stop-t2-f158",
+        "stop-t4-f158",
+        "stop-t3-f161"
+      ]
+    },
+    {
+      "rank": 12,
+      "event_id": "stop-t3-f161",
+      "event_type": "stop",
+      "track_ids": [
+        3
+      ],
+      "peak_time": 6.44,
+      "time_window": [
+        6.32,
+        6.92
+      ],
+      "order_unresolved_with": [
+        "stop-t2-f158",
+        "stop-t4-f158",
+        "stop-t1-f161"
+      ]
+    },
+    {
+      "rank": 13,
+      "event_id": "last_observed-t1-f349",
+      "event_type": "last_observed",
+      "track_ids": [
+        1
+      ],
+      "peak_time": 13.96,
+      "time_window": [
+        13.940000000000001,
+        13.98
+      ],
+      "order_unresolved_with": [
+        "last_observed-t2-f349",
+        "last_observed-t3-f349",
+        "last_observed-t4-f349"
+      ]
+    },
+    {
+      "rank": 14,
+      "event_id": "last_observed-t2-f349",
+      "event_type": "last_observed",
+      "track_ids": [
+        2
+      ],
+      "peak_time": 13.96,
+      "time_window": [
+        13.940000000000001,
+        13.98
+      ],
+      "order_unresolved_with": [
+        "last_observed-t1-f349",
+        "last_observed-t3-f349",
+        "last_observed-t4-f349"
+      ]
+    },
+    {
+      "rank": 15,
+      "event_id": "last_observed-t3-f349",
+      "event_type": "last_observed",
+      "track_ids": [
+        3
+      ],
+      "peak_time": 13.96,
+      "time_window": [
+        13.940000000000001,
+        13.98
+      ],
+      "order_unresolved_with": [
+        "last_observed-t1-f349",
+        "last_observed-t2-f349",
+        "last_observed-t4-f349"
+      ]
+    },
+    {
+      "rank": 16,
+      "event_id": "last_observed-t4-f349",
+      "event_type": "last_observed",
+      "track_ids": [
+        4
+      ],
+      "peak_time": 13.96,
+      "time_window": [
+        13.940000000000001,
+        13.98
+      ],
+      "order_unresolved_with": [
+        "last_observed-t1-f349",
+        "last_observed-t2-f349",
+        "last_observed-t3-f349"
+      ]
+    }
+  ]
+}

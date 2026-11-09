@@ -1,0 +1,73 @@
+{
+  "provenance": "synthetic-fixture",
+  "note": "Hand-written overview-2 fixture, never an API recording; synthetic footage only.",
+  "input_hash": "7795a6cbc87871b731a4cabf5bb3f026520b55079c9dda41d86435279de261e7",
+  "prompt_version": "overview-2",
+  "response": {
+    "summary": "Collision observed between red Toyota sedan and blue Nissan Patrol SUV.",
+    "facts": {
+      "parties": [
+        {
+          "description": "red Toyota sedan",
+          "timestamp_seconds": 0.5,
+          "confidence": 0.95,
+          "color": "red",
+          "make_model": "Toyota",
+          "body_type": "sedan"
+        },
+        {
+          "description": "blue Nissan Patrol SUV",
+          "timestamp_seconds": 0.5,
+          "confidence": 0.95,
+          "color": "blue",
+          "make_model": "Nissan Patrol",
+          "body_type": "SUV"
+        }
+      ],
+      "events": [
+        {
+          "description": "red Toyota sedan proceeds toward center",
+          "timestamp_seconds": 0.6,
+          "confidence": 0.9
+        },
+        {
+          "description": "blue Nissan Patrol SUV enters center",
+          "timestamp_seconds": 0.8,
+          "confidence": 0.9
+        },
+        {
+          "description": "contact between red Toyota sedan and blue Nissan Patrol SUV",
+          "timestamp_seconds": 1.0,
+          "confidence": 0.92
+        }
+      ],
+      "candidate_collisions": [
+        {
+          "description": "contact between red Toyota sedan and blue Nissan Patrol SUV",
+          "timestamp_seconds": 1.0,
+          "confidence": 0.92
+        }
+      ],
+      "behaviour_observations": [],
+      "location_conditions": [],
+      "structured_facts": [
+        {
+          "subject": "red Toyota sedan",
+          "field": "movement",
+          "value": "straight",
+          "other_party": "",
+          "timestamp_seconds": 0.6,
+          "confidence": 0.9
+        },
+        {
+          "subject": "scene",
+          "field": "posted_speed_limit_kmh",
+          "value": "not_visible",
+          "other_party": "",
+          "timestamp_seconds": 0.6,
+          "confidence": 0.9
+        }
+      ]
+    }
+  }
+}

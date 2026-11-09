@@ -1,0 +1,34 @@
+<aside class="review-player" aria-label="Video evidence">
+  <h2>Video evidence</h2>
+  <label for="review-primary">Primary view</label>
+  <select id="review-primary">
+    {% for view in report.views %}
+    <option value="{{ view.sha256 }}">{{ loop.index }} · {{ view.label or view.filename }}</option>
+    {% endfor %}
+  </select>
+  <label><input type="checkbox" id="review-compare" {% if report.views|length < 2 %}disabled{% endif %}> Two views side by side</label>
+  <div id="review-secondary-controls" hidden>
+    <label for="review-secondary">Second view</label>
+    <select id="review-secondary">
+      {% for view in report.views %}
+      <option value="{{ view.sha256 }}" {% if loop.index == 2 %}selected{% endif %}>{{ loop.index }} · {{ view.label or view.filename }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="review-videos">
+    {% for view in report.views %}
+    <figure data-video-view="{{ view.sha256 }}" {% if not loop.first %}hidden{% endif %}>
+      <figcaption><bdi dir="auto">{{ view.label or view.filename }}</bdi></figcaption>
+      <video controls preload="metadata" playsinline data-view-id="{{ view.sha256 }}" aria-label="{{ view.label or view.filename }}">
+        <source src="/reports/{{ report.run_id }}/views/{{ view.sha256 }}">
+        Your browser cannot play this video.
+      </video>
+      <div class="review-scrubber" aria-label="Cited markers for {{ view.label or view.filename }}" data-marker-view="{{ view.sha256 }}"></div>
+    </figure>
+    {% endfor %}
+  </div>
+  <button type="button" id="review-play">Play / pause visible views</button>
+  <p id="review-help" class="meta">Focus this player panel: Space plays or pauses; Left / Right moves one second. Views have independent clocks. Compare the same cited moment only when the footage supports it.</p>
+  <p id="review-status" role="status" aria-live="polite"></p>
+  <noscript><p>Enable JavaScript for view switching and click-to-seek. Native video controls remain available.</p></noscript>
+</aside>

@@ -1,0 +1,119 @@
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Secrets and environment configurations
+.env
+.env.local
+.env.*
+!.env.example
+
+# SQLite databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Python caches and compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+
+# Temporary directories and file uploads
+uploads/
+temp/
+
+# Media formats
+*.mp4
+!tests/replay_cases/**/*.mp4
+*.mov
+*.jpg
+*.jpeg
+*.png
+
+# Local-stack experiment: YOLO weights + result dumps (keep code, not artifacts)
+*.pt
+experiments/local_stack/results/
+
+# IDE configuration folders
+.vscode/
+.idea/
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Test configurations
+testsprite_tests/tmp/
+config.json
+testsprite_tests/tmp/config.json
+server_log_*.txt
+test_results_*.json
+claudeskills/
+
+# Scratch / debug artifacts (not source)
+scratch/
+.playwright-mcp/
+server_clean.log
+server_restart.log
+temp_check.log
+project_structure.txt
+
+# Stray Obsidian vault scaffold (accidental, not project content)
+incident/
+
+# Generated report archive (large, regenerated locally — see CLAUDE.md)
+outputs/
+
+# Generated session context
+CURRENT_STATE.md
+
+# Retired tooling must not be re-vendored. Matt skills have one canonical source.
+gstack/
+.claude/skills/*
+.agents/*
+!.agents/skills/
+
+# Commercial reconstruction software (kept outside the repo; never commit)
+SOFTWARES/
+
+# RPT-02: temporary export that pip-audit reads (docs/CI_GUARDRAILS.md)
+requirements-audit.txt
+
+# RPT-03: backups and local evidence are data, never source (docs/STORAGE_AND_BACKUPS.md)
+backups/
+evidence/
+*.dump
+*.dump.manifest.json
+
+# Local test settings for scripts/check_all (copy .env.test.example)
+.env.test
+!.env.test.example
+
+# lane_watch.sh memory of reported status lines
+.agent_bridge/lanes/.seen
+.agent_bridge/lanes/.seen.tmp
+
+# RPT-45: local feedback triage inbox (downloaded from hosted app)
+feedback_inbox/
+
+# RPT-42: browser screenshots, server logs and print output.
+results/e2e/
+
+# RPT-24: private per-run benchmark reports and score artifacts.
+results/benchmark/
+results/one_pass/
+results/baselines/
+
+# RPT-46: generated metamorphic media and private Reports.
+results/distortions/
+
+# RPT-47: local probe evidence and per-run artifacts; review-safe JSON is copied explicitly.
+results/probes/
+
+# LOCAL-CRASH-FINDER: local measurement and candidate crops.
+results/crash_finder/

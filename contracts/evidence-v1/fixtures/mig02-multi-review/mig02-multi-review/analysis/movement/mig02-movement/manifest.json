@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0",
+  "case_id": "mig02-multi-review",
+  "run_id": "mig02-movement",
+  "reconstruction_run": "week8-incident",
+  "source_reconstruction_manifest_sha256": "0678bae749ba7584e26d4f5b676b34500839cd53860f80e85bb3ab83073de808",
+  "source_calibration_path": "mig02-multi-review/analysis/calibration/revision-001/calibration.json",
+  "source_calibration_sha256": "40843a041f35f911ab561c28eb5832906aa5c55b1d143467904a37a19fcf1d78",
+  "config_id": "movement-week7-002",
+  "config_sha256": "0778bce605b803d2ed68784010df8c5cffcc3b82f35dba04d84065fc73039b92",
+  "pipeline_version": "0.1.0+movement-1",
+  "calibration_mode": "metric",
+  "unit": "m",
+  "world_is_right_handed": true,
+  "track_count": 4,
+  "event_count": 16,
+  "created_at": "2026-10-30T06:13:52.642425+00:00",
+  "limitations": [
+    "Positions are bottom-centre box contact approximations, not vehicle footprints.",
+    "Separation is measured between contact points, not between vehicle bodies.",
+    "No speed, velocity, or acceleration is calculated; 'stopped' means no displacement beyond position uncertainty.",
+    "Movement during unavailable (lost) frames is not inferred, and transitions across gaps are not proposed.",
+    "Every event is a system proposal for reviewer confirmation, not a determination.",
+    "Lane membership is not assigned to pedestrians."
+  ],
+  "artifacts": [
+    {
+      "filename": "config.json",
+      "sha256": "0778bce605b803d2ed68784010df8c5cffcc3b82f35dba04d84065fc73039b92"
+    },
+    {
+      "filename": "events.jsonl",
+      "sha256": "771ab0ca7c6d0b58e1e7ebe8a9545a0ae49faa54d87ef5076d0d209144908dfc"
+    },
+    {
+      "filename": "lane_sequences.json",
+      "sha256": "c1fa0a67791bdabcc70afc17fbf2f62ff61e0c15f9c1f89eb29a985de7017f97"
+    },
+    {
+      "filename": "movement_observations.jsonl",
+      "sha256": "da23174a7e814d899278a90db46f8317b5b0967f373da9b8a606eea856efcc84"
+    },
+    {
+      "filename": "separation.jsonl",
+      "sha256": "09aaae9793b372b4b99d099e14b59373345558587d8d0a4352a7de4b587bb50c"
+    },
+    {
+      "filename": "sequence.json",
+      "sha256": "d1468e6d01edbbf16092407d130e9b8e1391e2f0567fce6e21bef1c59df183c1"
+    },
+    {
+      "filename": "smoothed.jsonl",
+      "sha256": "9e66a369c2eb9e91082bee75e0268d94aac0180d6ec129541d7a96a71aab7c51"
+    },
+    {
+      "filename": "trajectories.csv",
+      "sha256": "ae9aad0491dd9cf35f3b39470b8c1a528f48126ad2ab3061aebeb92b1d739258"
+    }
+  ]
+}

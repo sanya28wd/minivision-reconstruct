@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0",
+  "case_id": "mig02-001-07-occluded-impact",
+  "run_id": "mig02-incident",
+  "review_revision": "revision-001",
+  "source_incident_manifest_sha256": "efd052da19ae4e84033027b6b38c101d83239a3c1d0e3f40a6bd0e0ba599a198",
+  "review_revision_sha256": "fe4405a4f8e46bf02f8b4a9a372d1b8a7d4a946c55e47352f053a62a01291599",
+  "created_at": "2026-10-30T05:50:31.293480+00:00",
+  "artifacts": [
+    {
+      "filename": "reviewed_assessments.jsonl",
+      "sha256": "1c269cd35b21538051f34e167485642c90ff0c61ddceb959d8febc384cec0b87"
+    },
+    {
+      "filename": "reviewed_events.jsonl",
+      "sha256": "f5bd1d1fed35ee61a9f73552c1c6866e62f1a58379cf2c411998d7e8a0377a0c"
+    }
+  ]
+}

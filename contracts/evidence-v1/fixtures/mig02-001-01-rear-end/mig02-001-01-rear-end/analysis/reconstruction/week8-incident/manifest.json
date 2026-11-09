@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0",
+  "case_id": "mig02-001-01-rear-end",
+  "run_id": "week8-incident",
+  "tracking_run": "staged-tracks",
+  "track_revision": "automatic",
+  "calibration_revision": "revision-001",
+  "source_video_path": "mig02-001-01-rear-end/original/mig02-001-01-rear-end-staged-synthetic.avi",
+  "source_video_sha256": "4c011023d403773d0b056ed275dbe59bec7d4e14b0356f3e54eef092c651753d",
+  "source_tracks_path": "mig02-001-01-rear-end/analysis/tracks/staged-tracks/tracks.jsonl",
+  "source_tracks_sha256": "bde7feb598b83d2e83d53a451e4738e9389badb5c61b62c65877b078d47dcbc7",
+  "source_calibration_path": "mig02-001-01-rear-end/analysis/calibration/revision-001/calibration.json",
+  "source_calibration_sha256": "ae940b20c5be2825511a39d5715036ba67fd170c7605b2b50f1c8eeb7a5fabe2",
+  "replay_fps": 30,
+  "proxy_width": 640,
+  "proxy_height": 480,
+  "source_width": 640,
+  "source_height": 480,
+  "source_frame_count": 350,
+  "replay_frame_count": 420,
+  "repeated_frames": 70,
+  "omitted_frames": 0,
+  "duration_seconds": 14.0,
+  "observation_count": 586,
+  "unavailable_observations": 0,
+  "created_at": "2026-10-30T05:47:22.192915+00:00",
+  "artifacts": [
+    {
+      "filename": "markers.json",
+      "sha256": "b49f764a7e6858802fc265a881b2ebc60c7b1ff1d25a291ff276540d1ca44b4c"
+    },
+    {
+      "filename": "observations.jsonl",
+      "sha256": "47e464f130c81fede8b3fe1d455abcdd2ffb73f3b726cb668e6977dbbd75c8e8"
+    },
+    {
+      "filename": "replay.mp4",
+      "sha256": "2bd705f95119a8db8aca263cf666370d1865b242b70aea9b1e33eaa1b7d96a45"
+    },
+    {
+      "filename": "replay_frames.jsonl",
+      "sha256": "f18b02d74fb52e3da3ff0d952f853e932df6123b848a7b0cf48bd66f6049c06e"
+    },
+    {
+      "filename": "scene.json",
+      "sha256": "a0df2a70f7c1a91690c629f738c03138822ca04a1bf12f116ee8fa5e15db48ef"
+    },
+    {
+      "filename": "source_frames.jsonl",
+      "sha256": "93481680839f4561dc451e73d885abde1e80b698f91d19b48aa0125bb3191cbf"
+    }
+  ]
+}

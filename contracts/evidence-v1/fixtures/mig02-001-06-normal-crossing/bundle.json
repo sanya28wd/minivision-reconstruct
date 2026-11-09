@@ -1,0 +1,83 @@
+{
+  "artifacts": {
+    "mig02-001-06-normal-crossing/analysis/calibration/revision-001/calibration.json": "3bfb47d1d036af58643c2b34355e04cfef551b1e71867ffda8682768ccff9de8",
+    "mig02-001-06-normal-crossing/analysis/incident/mig02-incident/assessments.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mig02-001-06-normal-crossing/analysis/incident/mig02-incident/config.json": "10cffda55285a45eaf2f81cf758a5a1d5cb08f79a793c72d56bb2d54327abe81",
+    "mig02-001-06-normal-crossing/analysis/incident/mig02-incident/conflicts.jsonl": "9c5c0eb2d17002c05722d127b20336df5e9b69e8c38ddb41057543cac35ae34d",
+    "mig02-001-06-normal-crossing/analysis/incident/mig02-incident/events.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mig02-001-06-normal-crossing/analysis/incident/mig02-incident/manifest.json": "65495b68969944a2e70aa74a5a2c5654ce15e0441841392c9c67dfac5f2fe0e5",
+    "mig02-001-06-normal-crossing/analysis/incident/mig02-incident/reviewed/initial/manifest.json": "a88a9b5ae9e9793cf5da8329bbdc1263baa370068931bdfd33f92f1ebc1935cb",
+    "mig02-001-06-normal-crossing/analysis/incident/mig02-incident/reviewed/initial/reviewed_assessments.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mig02-001-06-normal-crossing/analysis/incident/mig02-incident/reviewed/initial/reviewed_events.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mig02-001-06-normal-crossing/analysis/movement/mig02-movement/config.json": "0778bce605b803d2ed68784010df8c5cffcc3b82f35dba04d84065fc73039b92",
+    "mig02-001-06-normal-crossing/analysis/movement/mig02-movement/events.jsonl": "184d0c5b26dc426f59072c56ca6aad3a0c7843358e81fbd15470c3a0819c61ce",
+    "mig02-001-06-normal-crossing/analysis/movement/mig02-movement/lane_sequences.json": "27862c5cdabb15e52fb79300e235636669916a0e94d335b213dea821b5c80247",
+    "mig02-001-06-normal-crossing/analysis/movement/mig02-movement/manifest.json": "588d4a360dd48e1c9d6c873a1de2a96f84b5e8fdf7b712054c57bbc42b6f1475",
+    "mig02-001-06-normal-crossing/analysis/movement/mig02-movement/movement_observations.jsonl": "96fa164953891ad6689da7b27a11c709a595c1694b28d97db285fa64dfe3a37b",
+    "mig02-001-06-normal-crossing/analysis/movement/mig02-movement/separation.jsonl": "1756288d319fdf7fa52227a05cdaa2113ee65831642ce3bf2e4994aca136927d",
+    "mig02-001-06-normal-crossing/analysis/movement/mig02-movement/sequence.json": "18df67377dfba0611b5c2e23862f85303ab6fb9e32f9216f925755c1c43c7439",
+    "mig02-001-06-normal-crossing/analysis/movement/mig02-movement/smoothed.jsonl": "9ca2e7ba4f1a46fe10f46d9fa8197a244111a4b09c4d42703362773a15fe61c1",
+    "mig02-001-06-normal-crossing/analysis/reconstruction/week8-incident/manifest.json": "cde1a9e6e4aa41d73503ba0ed073d5b306215971f024c3dc5b460fd6b4ba2ee3",
+    "mig02-001-06-normal-crossing/analysis/reconstruction/week8-incident/markers.json": "b49f764a7e6858802fc265a881b2ebc60c7b1ff1d25a291ff276540d1ca44b4c",
+    "mig02-001-06-normal-crossing/analysis/reconstruction/week8-incident/observations.jsonl": "e39e0fab3ca9a6a360770cda8b9884c672c9838cad8716fa0148fc189fdfd4c0",
+    "mig02-001-06-normal-crossing/analysis/reconstruction/week8-incident/replay_frames.jsonl": "03ee42ad69af196af1c083a2ab956b248ea96bb2500249b24c78919e5d7dabbc",
+    "mig02-001-06-normal-crossing/analysis/reconstruction/week8-incident/scene.json": "a0df2a70f7c1a91690c629f738c03138822ca04a1bf12f116ee8fa5e15db48ef",
+    "mig02-001-06-normal-crossing/analysis/reconstruction/week8-incident/source_frames.jsonl": "1281a62298f588766b2bcf32e249a4c4d2a05c842377a469d1639d7bb5785591",
+    "mig02-001-06-normal-crossing/analysis/tracks/staged-tracks/run_manifest.json": "76c15d516fbbdede886b73f4dd40b3f66b47b591b4a8804ffa060059c7dbc664",
+    "mig02-001-06-normal-crossing/analysis/tracks/staged-tracks/tracks.jsonl": "a7acc7975937c91af9231aba37b4c87e59cc6ecf11e04e74769f8539507a305b",
+    "mig02-001-06-normal-crossing/metadata/evidence_manifest.json": "2317d1965bb42a74a5a93007a67f9ef09f99f7d78aa17c7d7892269bf6b40a7d",
+    "mig02-001-06-normal-crossing/metadata/video_metadata.json": "cd0e061f3ef59349f1087e07ab031da46f9227bc9f143d973efd48774a22dcc8"
+  },
+  "case_id": "mig02-001-06-normal-crossing",
+  "config_identifiers": [
+    "movement-week7-002",
+    "incident-week8-002"
+  ],
+  "contract_version": "1.0",
+  "created_at": "2026-10-30T00:00:00Z",
+  "model_identifiers": [
+    "scripted-tracks-no-detector"
+  ],
+  "processing_policy": "local_only",
+  "producer": "minivision-reconstruct",
+  "producer_revision": "c66000af37099e39920ff0e8ac621ce5be09090d",
+  "sources": [
+    {
+      "calibration_revision": "revision-001",
+      "frame_origin": 0,
+      "incident_manifest": "mig02-001-06-normal-crossing/analysis/incident/mig02-incident/manifest.json",
+      "incident_run": "mig02-incident",
+      "movement_manifest": "mig02-001-06-normal-crossing/analysis/movement/mig02-movement/manifest.json",
+      "movement_run": "mig02-movement",
+      "original_video_sha256": "e0cd565ca340e8fc7430b845ead8143e53ee8228268ff8abddb4aba4afdf5b10",
+      "reconstruction_manifest": "mig02-001-06-normal-crossing/analysis/reconstruction/week8-incident/manifest.json",
+      "reconstruction_run": "week8-incident",
+      "review_revision": "initial",
+      "reviewed_manifest": "mig02-001-06-normal-crossing/analysis/incident/mig02-incident/reviewed/initial/manifest.json",
+      "track_revision": "automatic",
+      "tracking_run": "staged-tracks",
+      "transformations": [
+        {
+          "mapping": "mig02-001-06-normal-crossing/analysis/reconstruction/week8-incident/replay_frames.jsonl",
+          "operation": "producer reconstruction replay"
+        }
+      ],
+      "video_metadata": {
+        "codec": "mjpeg",
+        "creation_time": null,
+        "duration_seconds": 16.0,
+        "extraction_tool": "ffprobe",
+        "frame_count_source": "reported",
+        "frame_rate": {
+          "denominator": 1,
+          "numerator": 25
+        },
+        "height": 480,
+        "original_filename": "mig02-001-06-normal-crossing-staged-synthetic.avi",
+        "reported_frame_count": 400,
+        "width": 640
+      },
+      "view_id": "fixed-camera-1"
+    }
+  ]
+}

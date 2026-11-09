@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0",
+  "case_id": "mig02-relative",
+  "run_id": "week8-incident",
+  "tracking_run": "staged-tracks",
+  "track_revision": "automatic",
+  "calibration_revision": "revision-001",
+  "source_video_path": "mig02-relative/original/mig02-relative-staged-synthetic.avi",
+  "source_video_sha256": "ae95e9dfa704405619b7ebacfd6133a563414a5f85d7c0c5d66c94baa8e7f9ae",
+  "source_tracks_path": "mig02-relative/analysis/tracks/staged-tracks/tracks.jsonl",
+  "source_tracks_sha256": "154b782c4a5d7f85057a1a32f51482149ce160788e4bdc076c975b0f5bfe133f",
+  "source_calibration_path": "mig02-relative/analysis/calibration/revision-001/calibration.json",
+  "source_calibration_sha256": "fa07b9b666e4d600501efc9e5b68569588132ff0b3b048c034a8e28677f89a6e",
+  "replay_fps": 30,
+  "proxy_width": 640,
+  "proxy_height": 480,
+  "source_width": 640,
+  "source_height": 480,
+  "source_frame_count": 350,
+  "replay_frame_count": 420,
+  "repeated_frames": 70,
+  "omitted_frames": 0,
+  "duration_seconds": 14.0,
+  "observation_count": 483,
+  "unavailable_observations": 35,
+  "created_at": "2026-10-30T06:03:17.670775+00:00",
+  "artifacts": [
+    {
+      "filename": "markers.json",
+      "sha256": "b49f764a7e6858802fc265a881b2ebc60c7b1ff1d25a291ff276540d1ca44b4c"
+    },
+    {
+      "filename": "observations.jsonl",
+      "sha256": "c6577fdfb030e5d638ce296b2a797e08ccf133e84a8b61254d658a0a049ce446"
+    },
+    {
+      "filename": "replay.mp4",
+      "sha256": "cd05337d55b2886efc7f39c2f91345a0f9ed472741e86f180e764b46f4592fa2"
+    },
+    {
+      "filename": "replay_frames.jsonl",
+      "sha256": "f18b02d74fb52e3da3ff0d952f853e932df6123b848a7b0cf48bd66f6049c06e"
+    },
+    {
+      "filename": "scene.json",
+      "sha256": "a0df2a70f7c1a91690c629f738c03138822ca04a1bf12f116ee8fa5e15db48ef"
+    },
+    {
+      "filename": "source_frames.jsonl",
+      "sha256": "93481680839f4561dc451e73d885abde1e80b698f91d19b48aa0125bb3191cbf"
+    }
+  ]
+}

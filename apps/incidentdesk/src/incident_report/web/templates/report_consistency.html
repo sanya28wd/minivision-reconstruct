@@ -1,0 +1,21 @@
+{% macro issues_list(issues) %}
+<ul>{% for issue in issues %}
+<li data-consistency-check="{{ issue.code }}" data-consistency-party="{{ issue.party_key | join('|') if issue.party_key else '' }}"><strong><bdi dir="auto">{{ issue.subject }}</bdi></strong>:
+<bdi dir="auto">{{ issue.reason }}</bdi>
+({{ issue.fields | join(', ') | replace('_', ' ') }})
+{% for fact in issue.cited_facts %}{{ citation(fact, show_description=true) }}{% endfor %}</li>
+{% endfor %}</ul>
+{% endmacro %}
+{% if report.consistency_issues or report.overview_consistency_issues | select | list %}
+<div class="alert" data-consistency-issues>
+<h3>Consistency checks</h3>
+<p>These answers conflict. Dependent findings and fines are withheld from that analysis; fault for its affected parties is Cannot Determine.</p>
+{% if report.consistency_issues %}
+<h4>Final combined evidence</h4>
+{{ issues_list(report.consistency_issues) }}
+{% endif %}
+{% for issues in report.overview_consistency_issues %}
+{% if issues %}<h4>Overview analysis {{ loop.index }}</h4>{{ issues_list(issues) }}{% endif %}
+{% endfor %}
+</div>
+{% endif %}

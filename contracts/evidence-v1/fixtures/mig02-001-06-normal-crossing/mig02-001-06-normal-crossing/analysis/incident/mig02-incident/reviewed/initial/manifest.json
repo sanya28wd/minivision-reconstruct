@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0",
+  "case_id": "mig02-001-06-normal-crossing",
+  "run_id": "mig02-incident",
+  "review_revision": "initial",
+  "source_incident_manifest_sha256": "65495b68969944a2e70aa74a5a2c5654ce15e0441841392c9c67dfac5f2fe0e5",
+  "review_revision_sha256": null,
+  "created_at": "2026-10-30T05:50:27.865731+00:00",
+  "artifacts": [
+    {
+      "filename": "reviewed_assessments.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "filename": "reviewed_events.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "case_id": "case_03_citation_error_repair_fails",
+  "provenance": "synthetic-fixture",
+  "is_valid": false,
+  "repair_outcome": "failed",
+  "validation_error_patterns": [
+    "exceeds view duration"
+  ],
+  "parties": [
+    {
+      "description": "silver Toyota Camry sedan",
+      "timestamp_seconds": 0.5,
+      "confidence": 0.9,
+      "color": "silver",
+      "make_model": "Toyota Camry",
+      "body_type": "sedan",
+      "_comment_rpt15_fault": "RESERVED FOR RPT-15: pink | green | white fault status per party",
+      "fault_status": null
+    }
+  ],
+  "events": [
+    {
+      "description": "sedan enters roundabout",
+      "timestamp_seconds": 25.0,
+      "confidence": 0.85
+    }
+  ],
+  "candidate_collisions": [],
+  "_comment_rpt15_overall_fault": "RESERVED FOR RPT-15: overall fault determinations",
+  "overall_fault": null
+}

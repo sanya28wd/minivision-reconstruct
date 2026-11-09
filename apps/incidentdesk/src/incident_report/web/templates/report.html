@@ -1,0 +1,486 @@
+{% extends "base.html" %}
+{% block title %}{% if sample %}{{ banner_text }}{% else %}Report{% endif %}{% endblock %}
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" href="{{ embedded_css.print if embedded_css else '/static/css/print.css' }}" media="print">
+{% endblock %}
+{% from "review_citation.html" import citation with context %}
+{% from "report_facts.html" import fact_list with context %}
+{% from "_components.html" import bilingual %}
+{% from "report_decisions.html" import version_banner, decision_panel with context %}
+{% block content %}
+{% set recorded_agreement = report.agreement and report.agreement.n_runs > 1 %}
+{% if review_workspace %}
+<link rel="stylesheet" href="/static/css/review.css">
+<script src="/static/js/review.js" defer></script>
+<div class="review-workspace" data-review-workspace>
+{% include "review_player.html" %}
+<div class="review-report">
+{% elif sample %}
+<div class="alert" role="note" data-sample-banner>
+  <p class="alert__title"><strong>{{ banner_text }}</strong></p>
+  <p>{{ sample.title }}. Source clip: <bdi dir="auto">{{ sample.source_clip }}</bdi>. Licence: {{ sample.licence }}. Video not included.</p>
+  <p><a href="/samples">All sample reports</a></p>
+</div>
+{% elif not print_view %}
+<p><a href="/reports/{{ report.run_id }}/review{% if decision %}?version={{ decision.version_number }}{% endif %}">Open video review workspace</a> · <a href="/reports/{{ report.run_id }}/print{% if decision %}?version={{ decision.version_number }}{% endif %}" target="_blank" rel="noopener noreferrer">Print report (A4 / PDF)</a></p>
+{% endif %}
+{% if decision %}{{ version_banner(decision) }}{% endif %}
+{% if not report.is_valid %}
+<div class="alert alert--invalid" role="alert" data-report-validity="invalid">
+  <p class="alert__title"><strong>INVALID REPORT — DO NOT RELY ON THIS ANALYSIS</strong></p>
+  <p>This report failed citation or fact validation checks. It is marked invalid and must not be used as an official finding.</p>
+  {% if report.validation_errors %}
+  <ul class="alert__errors">
+    {% for err in report.validation_errors %}
+    <li>{{ err }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+</div>
+{% endif %}
+<h1>Report{% if not report.is_valid %} <span class="badge badge--invalid">INVALID</span>{% endif %}</h1>
+<section aria-labelledby="report-checks-title">
+<h2 id="report-checks-title">Report checks</h2>
+{% if report.guardrail_results %}
+{% set check_labels = {
+  'raw_ids': 'Party names',
+  'citations': 'Evidence citations',
+  'injury_citations': 'Injury evidence',
+  'fine_requires_violation': 'Violations',
+  'referral_without_fine': 'Court referrals',
+  'legal_sources': 'Legal sources'
+} %}
+<ul>
+{% for name, errors in report.guardrail_results.items() %}
+<li><strong>{{ check_labels.get(name, name | replace('_', ' ') | capitalize) }}:</strong>
+{% if errors %}Failed<ul>{% for error in errors %}<li>{{ error }}</li>{% endfor %}</ul>{% else %}Passed{% endif %}
+</li>
+{% endfor %}
+</ul>
+{% else %}
+<p>Checks were not recorded for this report.</p>
+{% endif %}
+</section>
+<div class="report-evidence" role="group" aria-label="Evidence">
+<h2>Views</h2>
+<div class="table-scroll" role="region" aria-label="Views" tabindex="0">
+<table>
+  <thead><tr><th>Role</th><th>File</th><th>Label</th><th>How obtained</th><th>SHA-256</th></tr></thead>
+  <tbody>
+  {% for view in report.views %}
+    <tr>
+      <td>{{ view.role.value | capitalize }}</td>
+      <td><bdi dir="auto">{{ view.filename }}</bdi></td>
+      <td><bdi dir="auto">{{ view.label or "" }}</bdi></td>
+      <td><bdi dir="auto">{{ view.acquisition_method or "" }}</bdi></td>
+      <td class="hash">{{ view.sha256 }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+</div>
+
+<section data-report-section="summary" aria-label="Summary">
+<h2>Summary</h2>
+<p><bdi dir="auto">{{ report.summary }}</bdi>{% if report.summary_citation %} {{ citation(report.summary_citation) }}{% endif %}</p>
+<p data-incident-status="{{ report.incident_status }}"><strong>{{ report.incident_status }}{% if report.incident_status == "No Incident" %} (checked: collision, red-signal crossing){% endif %}</strong></p>
+
+<p class="meta">Source of this summary: <span class="label">{{ report.provenance }}</span> (prompt version {{ report.prompt_version }}).{% if recorded_agreement %} · Agreement: <span class="label" data-agreement-status="{{ report.agreement.status.value }}">{{ report.agreement.status.value | replace('_', ' ') | capitalize }}</span> ({{ report.agreement.n_runs }} runs) · recorded under the older multi-analysis method{% endif %}</p>
+
+</section>
+<section data-report-section="storyline" aria-label="What happened">
+<h2>What happened</h2>
+{% set story = report.storyline %}
+{% if story %}
+<p class="meta">Built by code from the cited events and collision observations below; each line carries its view and time. It states what is visible, not fault.</p>
+<ol class="review-timeline storyline">
+{% for item in story %}
+<li data-storyline-item{% if item.kind != 'after' %} data-timeline-event{% endif %} data-kind="{{ {'event': 'event', 'note': 'event', 'contact': 'collision'}.get(item.kind, item.kind) }}" data-view-id="{{ item.view_id }}" data-seconds="{{ item.timestamp_seconds }}">{{ citation(item) }} <bdi dir="auto">{{ item.text }}</bdi></li>
+{% endfor %}
+</ol>
+{% else %}
+<p>No timeline events recorded.</p>
+{% endif %}
+</section>
+<section data-report-section="collisions" aria-label="Collisions">
+<h2>Collisions</h2>
+{% set collision_summary = report.collision_summary %}
+<p>Every collision is listed, including minor and secondary ones, each on its own view's clock. Accident Outcome, Injury Grade and Accident Type are derived by code only from the cited observations below, never from impact force. Where nothing is cited the answer is Cannot Determine. Agreement between repeated runs is not measured for these fields. Candidate collisions are observations, not a determination of fault.</p>
+{% if report.facts %}{% for a in report.facts.incident_assessments if a.contact_state == 'contact_possible_obscured' %}
+<p data-obscured-contact class="alert">Contact possible but not clearly visible, {{ '%g' | format(a.contact_interval_start_seconds) }}&ndash;{{ '%g' | format(a.contact_interval_end_seconds) }} s. {{ citation({'view_id': a.view_id, 'timestamp_seconds': a.contact_interval_start_seconds}) }} It is shown as a possible contact, not a confirmed one.</p>
+{% endfor %}{% endif %}
+{% for c in collision_summary.records %}
+<article class="collision" data-collision="{{ c.number }}" data-accident-type="{{ c.accident_type }}" data-accident-outcome="{{ c.accident_outcome }}">
+<h3>Collision {{ c.number }}</h3>
+<p><bdi dir="auto">{{ c.collision.description }}</bdi> {{ citation(c.collision) }}</p>
+{% set flagged_note = report.flagged_collision_note(c.collision) %}{% if flagged_note %}<p><span class="badge badge--check" data-close-up="confirmed">Check</span> <bdi dir="auto">{{ flagged_note if recorded_agreement else "Confirmed by the close-up check." }}</bdi></p>{% endif %}
+<dl>
+<dt>Accident Outcome</dt>
+<dd>{% if c.accident_outcome == 'cannot_determine' %}Cannot Determine{% else %}{{ bilingual('accident_outcome.' ~ c.accident_outcome) }}{% endif %}
+  <span class="meta">{{ c.outcome_reason }}</span>
+  {% for fact in c.outcome_cited %}<span class="collision__cite">{{ citation(fact, show_description=true) }}</span> {% endfor %}</dd>
+<dt>Injury Grade</dt>
+<dd>{% if c.injuries %}<ul>{% for injury in c.injuries %}<li><bdi dir="auto">{{ injury.subject }}</bdi>: {% if injury.grade == 'cannot_determine' %}Cannot Determine (grade not visible){% else %}{{ bilingual('injury_grade.' ~ injury.grade) }}{% endif %} {{ citation(injury.cited) }}</li>{% endfor %}</ul>{% else %}Cannot Determine: no visible injury is cited.{% endif %}</dd>
+<dt>Accident Type</dt>
+<dd>{% if c.accident_type == 'cannot_determine' %}Cannot Determine{% else %}{{ bilingual('accident_type.' ~ c.accident_type) }}{% endif %}
+  <span class="meta">{{ c.type_reason }}</span>
+  {% for fact in c.type_cited %}<span class="collision__cite">{{ citation(fact, show_description=true) }}</span> {% endfor %}</dd>
+<dt>Cause (MOI)</dt>
+<dd>Cannot Determine <span class="meta">{{ c.cause_reason }}</span></dd>
+</dl>
+</article>
+{% else %}
+<p>Cannot Determine: no collision candidate was reported for this incident.</p>
+{% endfor %}
+{% if collision_summary.unattached %}
+<div class="collision-unattached" data-collision-unattached>
+<h3>Collision observations without a listed collision</h3>
+<p class="meta">These cited observations sit on a view that lists no collision. They are shown for review and are not classified.</p>
+<ul>{% for fact in collision_summary.unattached %}<li>{{ citation(fact, show_description=true) }}</li>{% endfor %}</ul>
+</div>
+{% endif %}
+{% if report.facts and report.facts.collision_observations %}
+<h3>Collision observations</h3>
+<ul>
+{% for observation in report.facts.collision_observations %}
+  <li><bdi dir="auto">{{ observation.description }}</bdi>{% if observation.visibility %} <span class="meta">(touch {{ 'seen' if observation.visibility == 'visible' else 'possible, not clearly visible' }})</span>{% endif %} {{ citation(observation.citation()) }}</li>
+{% endfor %}
+</ul>
+{% endif %}
+</section>
+
+{% if reconstruction_disagreements and not print_view %}<div class="reconstruction-only">
+{% for view in report.views %}{% set items = reconstruction_disagreements.get(view.sha256) %}{% if items %}
+<p role="note" class="alert">{{ view.label or view.filename }}: Reconstruction disagrees with the video analysis on {{ items | join(', ') }}. Review before approving.</p>
+{% endif %}{% endfor %}</div>{% endif %}<section data-report-section="parties" aria-label="Party findings">
+<h2>Parties</h2>
+<aside aria-label="Fault status legend">
+<p>Police form meanings (Light Motor Vehicle Handbook F1, collision responsibilities, Step 3):
+<span class="chip chip--pink" aria-hidden="true"></span>At Fault;
+<span class="chip chip--green" aria-hidden="true"></span>Not at Fault;
+<span class="chip chip--white" aria-hidden="true"></span>White: neither party is accused, or the other party is unknown.</p>
+<p><span class="chip chip--grey" aria-hidden="true"></span>Not determined by this report.
+Grey is this report's evidence abstention; it is not a police form colour.</p>
+</aside>
+{% if report.parties %}
+<section aria-label="Parties">
+<div class="table-scroll" role="region" aria-label="Parties" tabindex="0">
+<table>
+  <thead>
+    <tr>
+      <th>Party</th>
+      <th>Fault Status</th>
+      <th>Rule</th>
+      <th>Reason</th>
+      <th>Citations</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for party in report.parties %}
+    <tr>
+      <td><strong><bdi dir="auto">{{ party.party_description }}</bdi></strong></td>
+      <td>
+        <span class="chip chip--{{ party.color }}" aria-hidden="true"></span>
+        <span class="fault-status-text">{{ party.display_label }}</span>
+        {% if decision and decision.overrides.get('party:' ~ loop.index0) %}<span class="badge badge--override">Officer override: {{ decision.overrides['party:' ~ loop.index0].new_value | fault_status_label }}</span>{% endif %}
+        {% if recorded_agreement and party.agreement_status == "flagged" %}
+          <span class="badge badge--check" data-agreement="flagged" title="{{ party.agreement_detail or 'Runs disagreed (majority)' }}">Check</span>
+        {% endif %}
+      </td>
+      <td>
+        {% if party.article and party.legal_source %}
+        {{ party.article }} ({{ party.legal_source }})
+        {% else %}
+        —
+        {% endif %}
+      </td>
+      <td><bdi dir="auto">{{ party.reason }}</bdi></td>
+      <td>
+        {% if party.cited_facts %}
+          {% for fact in party.cited_facts %}
+            {{ citation(fact, show_description=true) }}{% if not loop.last %}, {% endif %}
+          {% endfor %}
+        {% else %}
+          —
+        {% endif %}
+      </td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+</section>
+{% endif %}
+
+{% if report.facts %}
+<h3>Observed parties</h3>
+{{ fact_list(report.facts.parties) }}
+{% if report.facts.unmatched_dense_parties %}
+<h3>Party descriptions needing review</h3>
+<p>These additional descriptions are retained for identity review.</p>
+{{ fact_list(report.facts.unmatched_dense_parties) }}
+{% endif %}
+{% endif %}
+{% if not report.parties %}<p>Not determined by this report: no party fault findings available.</p>{% endif %}
+</section>
+<section data-report-section="violations" aria-label="Violation findings">
+<h2>Violations and fines</h2>
+<section data-referrals="criminal" aria-label="Criminal referrals">
+<h3>Criminal referrals</h3>
+{% for referral in report.referrals %}
+<article>
+  <h4>Referral to police / prosecution: <bdi dir="auto">{{ referral.party_description }}</bdi></h4>
+  <p>Federal Decree-Law No. 14 of 2024, {{ referral.article }} · <a href="{{ referral.source_url }}" target="_blank" rel="noopener noreferrer">Official source</a></p>
+  <p>{{ referral.reason }} No fixed administrative fine is assigned for this Referral.</p>
+  {% for fact in referral.cited_facts %}{{ citation(fact, show_description=true) }}{% endfor %}
+</article>
+{% else %}
+<p>Cannot Determine: the available cited facts do not establish the elements of a Referral under Articles 38–40.</p>
+{% endfor %}
+</section>
+
+{% if report.violations %}
+<section aria-label="Violations and fines">
+{% for party_summary in report.violations_summary.parties %}
+<div class="party-violations" data-party="{{ party_summary.party_description }}">
+  <h3><bdi dir="auto">{{ party_summary.party_description }}</bdi>{% if recorded_agreement and party_summary.totals.flagged_count > 0 %} <span class="badge badge--check" data-agreement="flagged" title="{{ party_summary.violations[0].agreement_detail or 'Runs disagreed (majority)' }}">Check</span>{% endif %}</h3>
+  <div class="table-scroll" role="region" aria-label="Violations for {{ party_summary.party_description }}" tabindex="0">
+  <table>
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Violation</th>
+        <th>Fine (AED)</th>
+        <th>Black Points</th>
+        <th>Impound</th>
+        <th>Status</th>
+        <th>Citations</th>
+        <th>Legal Source</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for v in party_summary.violations %}
+      <tr>
+        <td><strong>{{ v.item_number }}</strong></td>
+        <td>
+          <span class="violation-name-en"><bdi dir="auto">{{ v.name_en }}</bdi></span>
+          {% if decision and decision.overrides.get('violation:' ~ report.violations.index(v)) %}<span class="badge badge--override">Officer override: {{ decision.overrides['violation:' ~ report.violations.index(v)].new_value }}</span>{% endif %}
+          {% if v.name_ar %}
+          <br><span class="violation-name-ar" dir="rtl" lang="ar"><bdi dir="auto">{{ v.name_ar }}</bdi></span>
+          {% endif %}
+        </td>
+        <td>
+          {% if v.aed is not none %}
+          {{ "{:,}".format(v.aed) }} AED
+          {% else %}
+          <span class="court-decided">Decided by court</span>
+          {% endif %}
+        </td>
+        <td>{{ v.black_points if v.black_points is not none else "—" }}</td>
+        <td>{{ v.impound_days ~ " days" if v.impound_days is not none else "—" }}</td>
+        <td>
+          {% if v.is_provisional %}
+          <span class="badge badge--provisional">Provisional</span>
+          {% else %}
+          <span class="badge badge--verified">{{ v.status | capitalize }}</span>
+          {% endif %}
+        </td>
+        <td>
+          {% for fact in v.cited_facts %}
+          {{ citation(fact, show_description=true) }}{% if not loop.last %}, {% endif %}
+          {% endfor %}
+        </td>
+        <td>
+          MR 178/2017 as amended, item {{ v.item_number }} · <a href="{{ v.source_url }}" target="_blank" rel="noopener noreferrer">Source</a>
+          {% if v.notes %}<p><bdi dir="auto">{{ v.notes }}</bdi></p>{% endif %}
+          {% if recorded_agreement and v.agreement_status == 'flagged' %}<span class="badge badge--check">Check</span>{% endif %}
+          {% if recorded_agreement and v.agreement_detail %}<p><bdi dir="auto">{{ v.agreement_detail }}</bdi></p>{% endif %}
+        </td>
+      </tr>
+    {% endfor %}
+    </tbody>
+    <tfoot>
+      <tr>
+        <th colspan="2">Party Total (<bdi dir="auto">{{ party_summary.party_description }}</bdi>)</th>
+        <th>
+          {{ "{:,}".format(party_summary.total_aed) }} AED
+          {% if recorded_agreement and party_summary.totals.flagged_count > 0 %}
+          <br><span class="meta">(includes {{ party_summary.totals.flagged_count }} flagged)</span>
+          {% endif %}
+          {% if party_summary.totals.provisional_count > 0 %}
+          <br><span class="meta">(includes {{ party_summary.totals.provisional_count }} provisional)</span>
+          {% endif %}
+          {% if party_summary.totals.court_decided_count > 0 %}
+          <br><span class="meta">({{ party_summary.totals.court_decided_count }} decided by court)</span>
+          {% endif %}
+        </th>
+        <th>{{ party_summary.total_black_points }}</th>
+        <th colspan="4"></th>
+      </tr>
+    </tfoot>
+  </table>
+  </div>
+</div>
+{% endfor %}
+
+<div class="incident-totals" aria-label="Incident Totals">
+  <p>
+    <strong>Incident Total:</strong> {{ "{:,}".format(report.total_fines_aed) }} AED · {{ report.total_black_points }} black points
+    {% if recorded_agreement and report.violations_summary.totals.flagged_count > 0 %}
+    <span class="meta">(includes {{ report.violations_summary.totals.flagged_count }} flagged)</span>
+    {% endif %}
+    {% if report.violations_summary.totals.provisional_count > 0 %}
+    <span class="meta">(includes {{ report.violations_summary.totals.provisional_count }} provisional)</span>
+    {% endif %}
+    {% if report.violations_summary.totals.court_decided_count > 0 %}
+    <span class="meta">({{ report.violations_summary.totals.court_decided_count }} decided by court)</span>
+    {% endif %}
+  </p>
+  {% if violation_override_count %}<p class="meta" data-totals-note>Fines and totals above are the AI's. {{ violation_override_count }} violation(s) overridden by the officer are still counted in them.</p>{% endif %}
+</div>
+</section>
+{% endif %}
+
+{% if not report.violations %}<p>No violations established by the available rules and evidence.</p>{% endif %}
+</section>
+<section data-report-section="timeline" aria-label="Timeline">
+{% include "review_timeline.html" %}
+</section>
+<section data-report-section="behaviour" aria-label="Behaviour">
+<h2>Behaviour</h2>
+{% if report.driver_assessments %}
+<section aria-label="Driver observations">
+<h3>Driver observations</h3>
+<ul>
+{% for assessment in report.driver_assessments %}
+  <li><strong><bdi dir="auto">{{ assessment.party_description }}</bdi></strong>: phone use {{ assessment.phone_use }}. <span class="meta">{{ assessment.reason }}</span>
+    <ul>{% for fact in assessment.cited_facts %}<li>{{ citation(fact, show_description=true) }}</li>{% endfor %}</ul>
+  </li>
+{% endfor %}
+</ul>
+</section>
+{% endif %}
+{% if report.facts and report.facts.driver_observations %}
+<section aria-label="Raw driver observations">
+<h3>Driver observation timeline</h3>
+<ul>
+{% for observation in report.facts.driver_observations %}
+  <li><bdi dir="auto">{{ observation.description }}</bdi> {{ citation(observation.citation()) }}</li>
+{% endfor %}
+</ul>
+</section>
+{% endif %}
+{% if report.facts and report.facts.drowsiness_observations %}
+<section aria-label="Drowsiness observations">
+<h3>Drowsiness observation timeline</h3>
+<ul>
+{% for observation in report.facts.drowsiness_observations %}
+  <li><bdi dir="auto">{{ observation.subject }}</bdi>: {{ observation.kind | replace('_', ' ') }}.
+    Start: {% if observation.start_seconds is not none %}{{ observation.start_seconds }}s{% else %}Cannot Determine{% endif %};
+    End: {% if observation.end_seconds is not none %}{{ observation.end_seconds }}s{% else %}Cannot Determine{% endif %}.
+    {% for fact in observation.citations() %}{{ citation(fact) }}{% if not loop.last %}, {% endif %}{% endfor %}
+  </li>
+{% endfor %}
+</ul>
+</section>
+{% endif %}
+{% if report.contributing_factors %}
+<section aria-label="Contributing Factors">
+<h2>Contributing Factors</h2>
+<ul>
+{% for factor in report.contributing_factors %}
+  <li data-factor-agreement="{{ factor.agreement_status or 'not_measured' }}"><strong><bdi dir="auto">{{ factor.party_description }}</bdi></strong>: <bdi dir="auto">{{ factor.reason }}</bdi>
+    {% if recorded_agreement and factor.agreement_status in ['flagged', 'cannot_determine'] %}<span class="badge badge--check" title="{{ factor.agreement_detail }}">Check</span>{% endif %}
+    {% if recorded_agreement and factor.agreement_detail %}<p class="meta">{{ factor.agreement_detail }}</p>{% endif %}
+    <p>{{ factor.article }} ({{ factor.legal_source }}) &middot; <a href="{{ factor.source_url }}" target="_blank" rel="noopener noreferrer">Source</a></p>
+    {% for fact in factor.cited_facts %}
+      {{ citation(fact, show_description=true) }}{% if not loop.last %}, {% endif %}
+    {% endfor %}
+  </li>
+{% endfor %}
+</ul>
+</section>
+{% endif %}
+
+{% if report.facts and report.facts.behaviour_observations %}
+<section aria-label="Behaviour observations">
+<h2>Behaviour observations</h2>
+<ul>
+{% for observation in report.facts.behaviour_observations %}
+  <li><bdi dir="auto">{{ observation.description }}</bdi> {{ citation(observation) }}</li>
+{% endfor %}
+</ul>
+</section>
+{% endif %}
+
+
+{% if not report.facts or not report.facts.behaviour_observations %}<p>Cannot Determine: no cited behaviour observations available.</p>{% endif %}
+</section>
+<section data-report-section="location" aria-label="Location and conditions">
+<h2>Location and conditions</h2>
+{{ fact_list(report.facts.location_conditions if report.facts else []) }}
+{% if report.facts %}
+<h3>Visible text readings</h3>
+<ul>{% for reading in report.facts.text_readings %}
+<li><strong>{{ reading.kind | replace('_', ' ') }}{% if reading.kind.startswith('overlay_') %} (camera overlay, unverified){% endif %}</strong>:
+<bdi dir="auto">{{ reading.text }}</bdi> (language: {{ reading.language }}) {{ citation(reading) }}</li>
+{% else %}<li>Cannot Determine: no legible text readings available.</li>{% endfor %}</ul>
+<h3>Structured observations</h3>
+{{ fact_list(report.facts.structured_facts) }}
+{% include "report_observations.html" %}
+{% endif %}
+</section>
+<section data-report-section="uncertainty" aria-label="Contradictions and Cannot Determine">
+<h2>Contradictions and Cannot Determine</h2>
+{% include "report_consistency.html" %}
+{% if report.contradictions %}
+<div class="alert" data-contradictions-box>
+<section aria-label="Contradictions">
+<h2>Contradictions</h2>
+<p>These views disagree. The affected facts remain unknown for the rules (Cannot Determine).</p>
+<ul>
+{% for contradiction in report.contradictions %}
+  <li><strong><bdi dir="auto">{{ contradiction.subject }}</bdi></strong>: {{ contradiction.field | replace('_', ' ') }}{% if contradiction.other_party %} (<bdi dir="auto">{{ contradiction.other_party }}</bdi>){% endif %}
+    <ul>
+    {% for reading in contradiction.readings %}
+      <li>{{ reading.value | replace('_', ' ') }} — {{ citation(reading) }}</li>
+    {% endfor %}
+    </ul>
+  </li>
+{% endfor %}
+</ul>
+</section>
+</div>
+{% endif %}
+
+
+{% include "report_changed_readings.html" %}
+{% for party in report.parties if party.status.value == 'Cannot Determine' %}
+<p><strong><bdi dir="auto">{{ party.party_description }}</bdi>: {{ party.display_label }}</strong> — <bdi dir="auto">{{ party.reason }}</bdi>
+{% for fact in party.cited_facts %}{{ citation(fact, show_description=true) }}{% endfor %}</p>
+{% endfor %}
+{% if not report.facts %}<p>Cannot Determine: cited facts are unavailable.</p>{% endif %}
+<p>Missing evidence is not proof that a behaviour or violation did not occur. Review all cited views.</p>
+</section>
+<section data-report-section="review" aria-label="Review">
+<h2>Review</h2>
+<p>Advisory report. The officer decides.</p>
+{% if decision %}{{ decision_panel(decision, findings, report, override_reasons, reason_max_chars, csrf_token) }}{% endif %}
+{% include "report_details.html" %}
+{% if not sample and not print_view %}
+<div class="report-actions">
+  <p><a class="button button--secondary" href="/feedback?run_id={{ report.run_id }}&incident_id={{ report.input_hash }}&report_version={{ report.prompt_version }}&screen=/reports/{{ report.run_id }}">Feedback on this report</a></p>
+</div>
+{% endif %}
+
+<p class="meta">Run {{ report.run_id }} · input {{ report.input_hash }}</p>
+{% if sample %}<p><a href="/samples">All sample reports</a></p>{% elif not print_view %}<p><a href="/">New incident</a></p>{% endif %}
+</section>
+{% include "report_questions.html" %}
+{% if review_workspace %}
+</div>
+</div>
+{% endif %}
+{% endblock %}

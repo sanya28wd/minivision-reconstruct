@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}{{ banner_text }}{% endblock %}
+{% block content %}
+<div class="incidents-page">
+  <div class="alert" role="note" data-sample-banner>
+    <p class="alert__title"><strong>{{ banner_text }}</strong></p>
+    <p>Each sample is rebuilt from a recorded model answer, so opening one never calls the AI. The videos are not included.</p>
+  </div>
+  <header class="section-header">
+    <div>
+      <h1>Sample reports</h1>
+      <p class="meta">Ready-made reports from research clips.</p>
+    </div>
+  </header>
+
+  {% if not samples %}
+  <p class="empty-state">No sample reports are available.</p>
+  {% else %}
+  <div class="table-container">
+    <table class="admin-table">
+      <thead>
+        <tr>
+          <th scope="col">Sample</th>
+          <th scope="col">Source clip</th>
+          <th scope="col">Incident status</th>
+          <th scope="col">Licence</th>
+          <th scope="col">Report</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for sample in samples %}
+        <tr>
+          <td><bdi dir="auto">{{ sample.title }}</bdi></td>
+          <td><bdi dir="auto">{{ sample.source_clip }}</bdi></td>
+          <td>{{ sample.report.incident_status }}</td>
+          <td class="meta">{{ sample.licence }}</td>
+          <td><a href="/samples/{{ sample.sample_id }}">View sample report</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% endif %}
+</div>
+{% endblock %}

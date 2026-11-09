@@ -1,0 +1,23 @@
+{
+  "case_id": "mig02-001-05-near-miss-crossing",
+  "codec": "mjpeg",
+  "decoded_frame_count": 400,
+  "duration_seconds": 16.0,
+  "file_size_bytes": 5352640,
+  "first_decoded_timestamp_seconds": 0.0,
+  "frame_count_source": "reported",
+  "frame_rate_decimal": 25.0,
+  "frame_rate_denominator": 1,
+  "frame_rate_numerator": 25,
+  "height": 480,
+  "ingested_at": "2026-10-30T05:47:28.697505Z",
+  "last_decoded_timestamp_seconds": 15.96,
+  "metadata_extraction_tool": "ffprobe",
+  "original_source_filename": "mig02-001-05-near-miss-crossing-staged-synthetic.avi",
+  "preserved_relative_path": "mig02-001-05-near-miss-crossing/original/mig02-001-05-near-miss-crossing-staged-synthetic.avi",
+  "preserved_sha256": "b5399a6aa6282f03cba8cc31d1960f1366be03e165e6267dd05a9d803e93f0e0",
+  "reported_frame_count": 400,
+  "schema_version": "1.0",
+  "source_sha256": "b5399a6aa6282f03cba8cc31d1960f1366be03e165e6267dd05a9d803e93f0e0",
+  "width": 640
+}

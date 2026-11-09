@@ -1,0 +1,15 @@
+{
+  "codec": "mjpeg",
+  "creation_time": null,
+  "duration_seconds": 16.0,
+  "extraction_tool": "ffprobe",
+  "frame_count_source": "reported",
+  "frame_rate": {
+    "denominator": 1,
+    "numerator": 25
+  },
+  "height": 480,
+  "original_filename": "mig02-001-05-near-miss-crossing-staged-synthetic.avi",
+  "reported_frame_count": 400,
+  "width": 640
+}

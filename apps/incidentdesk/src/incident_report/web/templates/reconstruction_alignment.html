@@ -1,0 +1,25 @@
+{% macro alignment_view_name(sha) -%}
+{%- set camera = report.views | selectattr('sha256', 'equalto', sha) | first -%}
+{{ (camera.label or camera.filename) if camera else 'Unknown view' }}
+{%- endmacro %}
+<details><summary>Camera time alignment (reviewer-set)</summary>
+<p>Without alignment, views stay on separate clocks. Record both views against the same reference, including the reference view itself. Aligned time = native time + offset. Source citations remain native.</p>
+<form method="post" action="/reports/{{ report.run_id }}/reconstruction/alignment">
+<input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+<label>View <select name="view">{% for view in report.views %}<option value="{{ view.sha256 }}">{{ view.label or view.filename }}</option>{% endfor %}</select></label>
+<label>Reference view <select name="reference">{% for view in report.views %}<option value="{{ view.sha256 }}">{{ view.label or view.filename }}</option>{% endfor %}</select></label>
+<label>Offset in seconds <input type="number" step="any" name="offset" required></label>
+<label>Uncertainty ± seconds <input type="number" step="any" name="uncertainty" min="0" required></label>
+<label>Clock reliability <select name="clock_reliability">{% for clock in reconstruction_clocks %}<option value="{{ clock }}">{{ clock|replace('_',' ') }}</option>{% endfor %}</select></label>
+<label>Reviewer <input name="reviewer" maxlength="200" required></label>
+<label>Reason <input name="reason" maxlength="4000" required></label>
+<button type="submit">Record alignment</button>
+</form>
+<ul>{% for alignment in reconstruction_alignments %}<li>View {{ alignment_view_name(alignment.view) }} <span class="meta">({{ alignment.view[:12] }})</span> to reference {{ alignment_view_name(alignment.reference) }} <span class="meta">({{ alignment.reference[:12] }})</span>: {{ alignment.offset }} s ± {{ alignment.uncertainty }} s ({{ alignment.clock_reliability|replace('_',' ') }}). {{ alignment.reviewer }}: {{ alignment.reason }}</li>{% else %}<li>No camera alignments recorded. Order across cameras not determined.</li>{% endfor %}</ul>
+</details>
+{% if reconstruction_combined %}<details open><summary>Combined display on reviewer-aligned clocks</summary>
+<p>Unresolved producer-order groups and rejected proposals remain in their native-view lists above. Overlapping uncertainty intervals have no determined order.</p>
+<ul>{% for group in reconstruction_combined %}<li>Reference {{ group.reference[:12] }}{% if group.order_unresolved %} · <strong>Order across cameras not determined</strong>{% endif %}
+<ul>{% for aligned in group.rows %}<li>{{ aligned.row.origin }} · {{ aligned.row.review_status }} · {{ aligned.row.text }} · aligned {{ aligned.aligned_time }} s ± {{ aligned.uncertainty }} s.
+{% if review_workspace %}<button type="button" data-view-id="{{ aligned.row.view_id }}" data-seconds="{{ aligned.row.source_time }}">Native view {{ aligned.row.view_id[:12] }} at {{ aligned.row.source_time }} s{% if aligned.row.source_frame is not none %}, frame {{ aligned.row.source_frame }}{% endif %}</button>{% else %}<span>Native view {{ aligned.row.view_id[:12] }} at {{ aligned.row.source_time }} s{% if aligned.row.source_frame is not none %}, frame {{ aligned.row.source_frame }}{% endif %}</span>{% endif %}
+</li>{% endfor %}</ul></li>{% endfor %}</ul></details>{% endif %}

@@ -1,0 +1,7 @@
+{% extends "report.html" %}
+{% set print_view = True %}
+{% block title %}Report{% endblock %}
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" href="{{ embedded_css.print if embedded_css else '/static/css/print.css' }}">
+{% endblock %}

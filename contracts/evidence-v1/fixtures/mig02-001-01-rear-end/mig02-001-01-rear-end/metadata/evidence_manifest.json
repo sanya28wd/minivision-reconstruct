@@ -1,0 +1,23 @@
+{
+  "case_id": "mig02-001-01-rear-end",
+  "codec": "mjpeg",
+  "decoded_frame_count": 350,
+  "duration_seconds": 14.0,
+  "file_size_bytes": 4704926,
+  "first_decoded_timestamp_seconds": 0.0,
+  "frame_count_source": "reported",
+  "frame_rate_decimal": 25.0,
+  "frame_rate_denominator": 1,
+  "frame_rate_numerator": 25,
+  "height": 480,
+  "ingested_at": "2026-10-30T05:47:20.262314Z",
+  "last_decoded_timestamp_seconds": 13.96,
+  "metadata_extraction_tool": "ffprobe",
+  "original_source_filename": "mig02-001-01-rear-end-staged-synthetic.avi",
+  "preserved_relative_path": "mig02-001-01-rear-end/original/mig02-001-01-rear-end-staged-synthetic.avi",
+  "preserved_sha256": "4c011023d403773d0b056ed275dbe59bec7d4e14b0356f3e54eef092c651753d",
+  "reported_frame_count": 350,
+  "schema_version": "1.0",
+  "source_sha256": "4c011023d403773d0b056ed275dbe59bec7d4e14b0356f3e54eef092c651753d",
+  "width": 640
+}

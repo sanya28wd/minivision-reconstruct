@@ -1,0 +1,205 @@
+{% extends "base.html" %}
+{% block title %}Admin{% endblock %}
+{% block content %}
+<div class="admin-page">
+  <header class="admin-header">
+    <h1>Admin Dashboard</h1>
+    <p class="meta">Manage share links, active visitor sessions, and review submitted feedback.</p>
+  </header>
+
+  {% if new_link_url %}
+  <div class="alert alert--success" role="status">
+    <p><strong>Share link generated:</strong> <code class="share-url">{{ new_link_url }}</code></p>
+    <p class="field-hint">Copy this link now; the secret is only shown when created or rotated.</p>
+  </div>
+  {% endif %}
+
+  <div class="admin-stats" role="region" aria-label="Summary statistics">
+    <div class="admin-stat">
+      <span class="admin-stat__number">{{ new_feedback_count }}</span>
+      <span class="admin-stat__label">New Feedback</span>
+    </div>
+    <div class="admin-stat">
+      <span class="admin-stat__number">{{ active_links_count }}</span>
+      <span class="admin-stat__label">Active Links</span>
+    </div>
+    <div class="admin-stat">
+      <span class="admin-stat__number">{{ active_sessions_count }}</span>
+      <span class="admin-stat__label">Active Sessions</span>
+    </div>
+  </div>
+
+  <section class="admin-section" id="feedback-inbox" aria-labelledby="heading-feedback">
+    <div class="section-header">
+      <h2 id="heading-feedback">Feedback Inbox</h2>
+    </div>
+
+    <nav class="feedback-filters" aria-label="Filter feedback by category">
+      <span class="filter-label">Category:</span>
+      <a href="/admin" class="filter-chip {% if not selected_category %}filter-chip--active{% endif %}">All</a>
+      {% for cat in categories %}
+      <a href="/admin?category={{ cat.value }}" class="filter-chip {% if selected_category == cat.value %}filter-chip--active{% endif %}">{{ cat.value | capitalize }}</a>
+      {% endfor %}
+    </nav>
+
+    {% if not feedback_list %}
+    <p class="empty-state">No feedback submissions found.</p>
+    {% else %}
+    <div class="feedback-list">
+      {% for fb in feedback_list %}
+      <article class="feedback-card" aria-label="Feedback submission">
+        <div class="feedback-card__header">
+          <div class="feedback-card__meta">
+            {% if fb.category %}
+            <span class="badge badge--category">{{ fb.category.value | capitalize }}</span>
+            {% endif %}
+            <span class="badge badge--status {% if fb.status.value == 'new' %}badge--new{% elif fb.status.value == 'fixed' %}badge--active{% endif %}">{{ fb.status.value | capitalize }}</span>
+            <time datetime="{{ fb.created_at.isoformat() }}">{{ fb.created_at.strftime('%Y-%m-%d %H:%M UTC') }}</time>
+            {% if fb.name %}
+            <span>by <strong>{{ fb.name }}</strong></span>
+            {% else %}
+            <span>by <em>Anonymous</em></span>
+            {% endif %}
+          </div>
+          <form method="post" action="/admin/feedback/{{ fb.feedback_id }}/status" class="status-change-form">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+            <label for="status-{{ fb.feedback_id }}" class="visually-hidden">Status</label>
+            <select id="status-{{ fb.feedback_id }}" name="status" class="status-select">
+              {% for s in statuses %}
+              <option value="{{ s.value }}" {% if fb.status.value == s.value %}selected{% endif %}>{{ s.value | capitalize }}</option>
+              {% endfor %}
+            </select>
+            <button type="submit" class="button button--small">Update</button>
+          </form>
+        </div>
+        <div class="feedback-card__body">
+          <p class="feedback-card__text">{{ fb.text }}</p>
+        </div>
+        {% if fb.run_id or fb.screen or fb.screenshot_sha256 %}
+        <div class="feedback-card__footer">
+          {% if fb.run_id %}
+          <span class="feedback-context">Attached report: <a href="/reports/{{ fb.run_id }}">Run <code>{{ fb.run_id }}</code></a></span>
+          {% endif %}
+          {% if fb.screen %}
+          <span class="feedback-context">Screen: <a href="{{ fb.screen }}"><code>{{ fb.screen }}</code></a></span>
+          {% endif %}
+          {% if fb.screenshot_sha256 %}
+          <span class="feedback-context">Screenshot: <a href="/feedback/screenshots/{{ fb.screenshot_sha256 }}" target="_blank" rel="noopener">View attached screenshot</a> <span class="hash">({{ fb.screenshot_sha256[:12] }}...)</span></span>
+          {% endif %}
+        </div>
+        {% endif %}
+      </article>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </section>
+
+  <section class="admin-section" id="share-links" aria-labelledby="heading-links">
+    <div class="section-header">
+      <h2 id="heading-links">Share Links</h2>
+      <form method="post" action="/admin/links">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+        <button type="submit" class="button button--small">Create share link</button>
+      </form>
+    </div>
+
+    {% if not links %}
+    <p class="empty-state">No share links created yet.</p>
+    {% else %}
+    <div class="table-container">
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th scope="col">Link ID</th>
+            <th scope="col">Status</th>
+            <th scope="col">Generation</th>
+            <th scope="col">Created</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for link in links %}
+          <tr>
+            <td><code>{{ link.link_id }}</code></td>
+            <td>
+              {% if link.enabled %}
+              <span class="badge badge--active">Active</span>
+              {% else %}
+              <span class="badge badge--disabled">Disabled</span>
+              {% endif %}
+            </td>
+            <td>{{ link.generation }}</td>
+            <td><time>{{ link.created_at.strftime('%Y-%m-%d %H:%M') if link.created_at else '—' }}</time></td>
+            <td class="table-actions">
+              <form method="post" action="/admin/links/{{ link.link_id }}/rotate" class="inline-form">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+                <button type="submit" class="button button--secondary button--small">Rotate</button>
+              </form>
+              {% if link.enabled %}
+              <form method="post" action="/admin/links/{{ link.link_id }}/disable" class="inline-form">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+                <button type="submit" class="button button--secondary button--small">Switch off</button>
+              </form>
+              {% endif %}
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% endif %}
+  </section>
+
+  <section class="admin-section" id="sessions" aria-labelledby="heading-sessions">
+    <div class="section-header">
+      <h2 id="heading-sessions">Visitor Sessions</h2>
+    </div>
+
+    {% if not sessions %}
+    <p class="empty-state">No visitor sessions recorded yet.</p>
+    {% else %}
+    <div class="table-container">
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th scope="col">Session ID</th>
+            <th scope="col">Link ID</th>
+            <th scope="col">Status</th>
+            <th scope="col">Created</th>
+            <th scope="col">Expires</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for s in sessions %}
+          <tr>
+            <td><code>{{ s.session_id }}</code></td>
+            <td><code>{{ s.link_id }}</code></td>
+            <td>
+              {% if s.blocked %}
+              <span class="badge badge--blocked">Blocked</span>
+              {% else %}
+              <span class="badge badge--active">Active</span>
+              {% endif %}
+            </td>
+            <td><time>{{ s.created_at.strftime('%Y-%m-%d %H:%M') if s.created_at else '—' }}</time></td>
+            <td><time>{{ s.expires_at.strftime('%Y-%m-%d %H:%M') if s.expires_at else '—' }}</time></td>
+            <td>
+              {% if not s.blocked %}
+              <form method="post" action="/admin/sessions/{{ s.session_id }}/block" class="inline-form">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+                <button type="submit" class="button button--secondary button--small">Block</button>
+              </form>
+              {% else %}
+              <span class="badge badge--blocked">Blocked</span>
+              {% endif %}
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% endif %}
+  </section>
+</div>
+{% endblock %}

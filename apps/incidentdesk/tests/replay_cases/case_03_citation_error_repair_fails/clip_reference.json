@@ -1,0 +1,14 @@
+{
+  "case_id": "case_03_citation_error_repair_fails",
+  "description": "Footage where AI output has citation errors and repair fails (out of range timestamps)",
+  "prompt_version": "overview-1",
+  "origin": "replay",
+  "views": [
+    {
+      "filename": "contact_two_boxes.mp4",
+      "role": "exterior",
+      "sha256": "88f7cc85765ef110715ccfb73e125ade4c9175d94d06e5d6f6274e140729b3b1",
+      "label": "front dashcam"
+    }
+  ]
+}

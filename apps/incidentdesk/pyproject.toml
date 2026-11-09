@@ -1,0 +1,72 @@
+[project]
+name = "incident-report"
+version = "0.1.0"
+description = "Incident Video Analysis Report: officer-facing report from uploaded traffic-incident videos (BITS Pilani Dubai prototype)."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.143.0",
+    "google-genai>=2.31.0",
+    "jinja2>=3.1.6",
+    "psycopg[binary]>=3.3.6",
+    "pydantic>=2.14.1",
+    "python-multipart>=0.0.32",
+    "starlette>=1.7.0,<1.8",
+    "uvicorn>=0.54.0",
+]
+
+[dependency-groups]
+dev = [
+    "detect-secrets>=1.5.0",
+    "httpx>=0.28.1",
+    "mypy>=2.4.0",
+    "pip-audit>=2.10.1",
+    "playwright>=1.64.0",
+    "pre-commit>=4.7.0",
+    "pytest>=9.1.1",
+    "ruff>=0.17.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/incident_report"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# RPT-02: the guard scripts under scripts/ are imported directly by tests/test_guard_*.py.
+pythonpath = ["scripts"]
+addopts = "-ra --strict-markers"
+
+# --- RPT-02: format, lint, type check (run by CI; see docs/CI_GUARDRAILS.md) ---
+# Only our own code is checked. Vendored skills under .agents/ and protected data are never touched.
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+src = ["src", "tests", "scripts"]
+extend-exclude = [".agents", ".claude", ".Codex", "dataset", "docs"]
+
+[tool.ruff.lint]
+# E/F/W: pycodestyle + pyflakes; I: import order; B: bugbear; UP: modern syntax; S: bandit-style security checks.
+select = ["E", "F", "W", "I", "B", "UP", "S"]
+# E501: line length is the formatter's job; long string literals (test sources, messages) are allowed.
+ignore = ["E501"]
+
+[tool.ruff.lint.per-file-ignores]
+# S101: pytest tests use bare assert. S108: "/tmp/r" is a literal path string in a config test, never opened.
+# S603/S607: the guard tests run git and the guard scripts as subprocesses on purpose, with fixed arguments.
+"tests/**" = ["S101", "S108", "S603", "S607"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+mypy_path = "scripts"
+files = ["src", "tests", "scripts"]
+
+[[tool.mypy.overrides]]
+# tests/test_web.py has one helper without a return annotation; adding it would touch a RPT-01 test for no gain.
+module = ["test_web", "tests.test_web"]
+disallow_untyped_defs = false
+disallow_incomplete_defs = false

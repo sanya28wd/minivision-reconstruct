@@ -1,0 +1,2 @@
+ALTER TABLE runs DROP COLUMN retry_count;
+ALTER TABLE runs DROP COLUMN calls;

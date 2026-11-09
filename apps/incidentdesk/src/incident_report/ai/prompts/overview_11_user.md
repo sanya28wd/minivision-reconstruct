@@ -1,0 +1,1 @@
+Fill the checklist for this one view, following the system instruction. Watch whole_clip from start to end first; use detail_window, when it is shown, to see a touch clearly. Write the observation notes first, then the incident assessment, then the party checklist, then the contacts and the remaining items.

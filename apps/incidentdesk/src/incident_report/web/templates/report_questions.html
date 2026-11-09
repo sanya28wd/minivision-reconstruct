@@ -1,0 +1,31 @@
+{% if questions is defined and not sample and not print_view %}
+<section id="officer-question" class="no-print" aria-labelledby="officer-question-heading">
+  <h2 id="officer-question-heading">Officer question (not part of the Report findings)</h2>
+  <p>Answers use this finished Report and its videos. Questions and answers do not change the findings.</p>
+  <p>Questions and answers are excluded from print and PDF because they are outside the Report findings. Consult the Report for sourced legal figures and penalties.</p>
+  <form method="post" action="/reports/{{ report.run_id }}/questions">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+    <label for="question">Ask about this incident</label>
+    <textarea id="question" name="question" maxlength="2000" required aria-describedby="question-help"></textarea>
+    <p id="question-help">Up to 2000 characters. Project assumption: at most 5 questions per minute per Report.</p>
+    <button class="button" type="submit">Ask question</button>
+  </form>
+  {% for item in questions %}
+  <article aria-label="Officer question and answer">
+    <p><strong>Question:</strong> <bdi dir="auto">{{ item.question }}</bdi></p>
+    {% if item.state == 'answered' %}
+    {% for sentence in item.answer %}
+    <p data-qa-status="{{ sentence.status }}">
+      {% if sentence.status == 'uncited' %}<strong>Uncited — not verified fact:</strong>{% endif %}
+      <bdi dir="auto">{{ sentence.text }}</bdi>
+      {% if sentence.status == 'cited' %}
+      {{ citation(sentence) }}
+      {% endif %}
+    </p>
+    {% endfor %}
+    {% elif item.state == 'failed' %}<p>Q&amp;A unavailable. The Report is unchanged. Try again later.</p>
+    {% else %}<p role="status">Answer pending. Reload to check its status.</p>{% endif %}
+  </article>
+  {% endfor %}
+</section>
+{% endif %}

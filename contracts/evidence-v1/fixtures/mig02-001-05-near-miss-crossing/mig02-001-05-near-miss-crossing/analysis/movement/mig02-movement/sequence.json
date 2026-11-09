@@ -1,0 +1,147 @@
+{
+  "schema_version": "1.0",
+  "case_id": "mig02-001-05-near-miss-crossing",
+  "entries": [
+    {
+      "rank": 1,
+      "event_id": "first_observed-t1-f56",
+      "event_type": "first_observed",
+      "track_ids": [
+        1
+      ],
+      "peak_time": 2.24,
+      "time_window": [
+        2.22,
+        2.2600000000000002
+      ],
+      "order_unresolved_with": []
+    },
+    {
+      "rank": 2,
+      "event_id": "stop-t1-f131",
+      "event_type": "stop",
+      "track_ids": [
+        1
+      ],
+      "peak_time": 5.24,
+      "time_window": [
+        5.04,
+        5.72
+      ],
+      "order_unresolved_with": []
+    },
+    {
+      "rank": 3,
+      "event_id": "first_observed-t2-f152",
+      "event_type": "first_observed",
+      "track_ids": [
+        2
+      ],
+      "peak_time": 6.08,
+      "time_window": [
+        6.0600000000000005,
+        6.1
+      ],
+      "order_unresolved_with": []
+    },
+    {
+      "rank": 4,
+      "event_id": "start-t1-f212",
+      "event_type": "start",
+      "track_ids": [
+        1
+      ],
+      "peak_time": 8.48,
+      "time_window": [
+        8.0,
+        8.72
+      ],
+      "order_unresolved_with": []
+    },
+    {
+      "rank": 5,
+      "event_id": "stop_line_crossing-t1-f226",
+      "event_type": "stop_line_crossing",
+      "track_ids": [
+        1
+      ],
+      "peak_time": 9.04,
+      "time_window": [
+        8.96,
+        9.16
+      ],
+      "order_unresolved_with": []
+    },
+    {
+      "rank": 6,
+      "event_id": "zone_entry-t1-f235",
+      "event_type": "zone_entry",
+      "track_ids": [
+        1
+      ],
+      "peak_time": 9.4,
+      "time_window": [
+        9.32,
+        9.44
+      ],
+      "order_unresolved_with": []
+    },
+    {
+      "rank": 7,
+      "event_id": "zone_exit-t1-f255",
+      "event_type": "zone_exit",
+      "track_ids": [
+        1
+      ],
+      "peak_time": 10.2,
+      "time_window": [
+        10.16,
+        10.219999999999999
+      ],
+      "order_unresolved_with": []
+    },
+    {
+      "rank": 8,
+      "event_id": "closest_approach-t1-2-f266",
+      "event_type": "closest_approach",
+      "track_ids": [
+        1,
+        2
+      ],
+      "peak_time": 10.64,
+      "time_window": [
+        10.4,
+        10.88
+      ],
+      "order_unresolved_with": []
+    },
+    {
+      "rank": 9,
+      "event_id": "last_observed-t2-f380",
+      "event_type": "last_observed",
+      "track_ids": [
+        2
+      ],
+      "peak_time": 15.2,
+      "time_window": [
+        15.18,
+        15.219999999999999
+      ],
+      "order_unresolved_with": []
+    },
+    {
+      "rank": 10,
+      "event_id": "last_observed-t1-f399",
+      "event_type": "last_observed",
+      "track_ids": [
+        1
+      ],
+      "peak_time": 15.96,
+      "time_window": [
+        15.940000000000001,
+        15.98
+      ],
+      "order_unresolved_with": []
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{% macro citation(fact, show_description=false) -%}
+{% if show_description %}<bdi dir="auto">{{ fact.description }}</bdi>{% endif %}
+{% if review_workspace %}
+<button type="button" class="citation" data-view-id="{{ fact.view_id }}" data-seconds="{{ fact.timestamp_seconds }}"><bdi dir="ltr">{{ fact.view_id }} @ {{ "%.1f"|format(fact.timestamp_seconds) }}s</bdi></button>
+{% else %}
+<span class="citation"><bdi dir="ltr">{{ fact.view_id }} @ {{ "%.1f"|format(fact.timestamp_seconds) }}s</bdi></span>
+{% endif %}
+{%- endmacro %}

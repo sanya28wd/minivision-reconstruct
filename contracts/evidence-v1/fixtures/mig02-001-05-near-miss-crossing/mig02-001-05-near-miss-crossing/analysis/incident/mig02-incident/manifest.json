@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0",
+  "case_id": "mig02-001-05-near-miss-crossing",
+  "run_id": "mig02-incident",
+  "movement_run": "mig02-movement",
+  "source_movement_manifest_sha256": "5827992f219a329c4726f3a5b92d89bf9205ca07c3b332f081bf64c22273bef1",
+  "config_id": "incident-week8-002",
+  "config_sha256": "10cffda55285a45eaf2f81cf758a5a1d5cb08f79a793c72d56bb2d54327abe81",
+  "pipeline_version": "0.1.0+incident-2",
+  "unit": "m",
+  "conflict_count": 1,
+  "event_count": 1,
+  "assessment_count": 1,
+  "created_at": "2026-10-30T05:50:23.751468+00:00",
+  "limitations": [
+    "Proximity is measured between box bottom-centre contact points, not vehicle bodies or footprints.",
+    "No speed, velocity, acceleration, or time-to-collision is calculated; PET uses source-frame times and positions only.",
+    "Image box overlap is supporting evidence only; it never creates or confirms a candidate.",
+    "Heading jumps come from smoothed Week 7 headings, which are unavailable once a road user is at rest.",
+    "Every candidate is a system proposal for reviewer confirmation, not a determination that a collision occurred.",
+    "Contribution assessments are analytical proposals from observed actions, not official determinations; no road-rule source is applied."
+  ],
+  "artifacts": [
+    {
+      "filename": "assessments.jsonl",
+      "sha256": "c7003af41da0fd9829166f1fd98646eae1c995030a4130aa84259768f2fffcd3"
+    },
+    {
+      "filename": "config.json",
+      "sha256": "10cffda55285a45eaf2f81cf758a5a1d5cb08f79a793c72d56bb2d54327abe81"
+    },
+    {
+      "filename": "conflicts.jsonl",
+      "sha256": "3fd9124b9f1a8dec87c31dce14096df10e42f5df07d1d067491618112e018853"
+    },
+    {
+      "filename": "events.jsonl",
+      "sha256": "29ea9d9c7fcfbaf98a3fd398d772b703af51b6f3f67afbdc4013e11f4a63b1e6"
+    }
+  ]
+}

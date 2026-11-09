@@ -1,0 +1,133 @@
+/*
+  Print and PDF styles (RPT-39).
+  A4 page setup, high contrast, readable typography, and paper-friendly layout.
+  Only logical properties (margin-inline, padding-block, etc.) to support both LTR and RTL.
+*/
+
+@page {
+  size: A4;
+  margin: 15mm 12mm;
+}
+
+/* Reconstruction remains an on-screen proposal workspace in MIG-03. */
+.reconstruction-only {
+  display: none !important;
+}
+
+/* Keep the app's original cited moments when printing a merged on-screen timeline. */
+.reconstruction-print-fallback[hidden] {
+  display: block !important;
+}
+
+/* Ensure background colours and borders render when printing */
+* {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+body {
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: var(--text-base);
+  line-height: var(--text-base-line-height);
+}
+
+.container {
+  max-inline-size: 100%;
+  padding-inline: 0;
+}
+
+/* Hide interactive controls and screen-only elements */
+button,
+.no-print,
+.btn-feedback,
+.site-nav,
+.skip-link,
+.report-actions,
+[data-review-workspace],
+.review-player,
+a[href="/feedback"],
+a[href^="/reports/"][href$="/review"],
+a[href^="/reports/"][href$="/print"] {
+  display: none !important;
+}
+
+/* Page break and layout controls */
+h1,
+h2,
+h3 {
+  break-after: avoid;
+  page-break-after: avoid;
+}
+
+table {
+  inline-size: 100%;
+  border-collapse: collapse;
+  break-inside: auto;
+}
+
+tr {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+thead {
+  display: table-header-group;
+}
+
+tfoot {
+  display: table-footer-group;
+}
+
+.table-scroll {
+  overflow: visible !important;
+}
+
+/* Expand details permanently for print */
+details {
+  display: block !important;
+}
+
+details[open] > summary,
+details > summary {
+  margin-block-end: var(--space-2);
+}
+
+/* Section spacing and box bounds */
+section[data-report-section] {
+  margin-block-end: var(--space-6);
+  break-inside: auto;
+}
+
+.alert,
+.collision,
+.party-violations,
+.incident-totals {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+/* Badges and chips: clear borders and high contrast */
+.chip {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+  border: var(--border-width) solid var(--color-text);
+}
+
+.badge {
+  border: var(--border-width) solid var(--color-border);
+}
+
+@media print {
+  body {
+    background: #ffffff;
+    color: #000000;
+  }
+
+  .site-header,
+  .site-footer,
+  .prototype-banner,
+  .ai-notice {
+    background: transparent;
+  }
+}

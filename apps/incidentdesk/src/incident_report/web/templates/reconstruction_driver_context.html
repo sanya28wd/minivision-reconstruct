@@ -1,0 +1,26 @@
+<section class="reconstruction-only" aria-label="Interior driver timeline">
+<h4>Interior driver timeline</h4>
+<p>Own view clock — {{ view.label or view.filename }} <span class="meta">(SHA-256 {{ view.sha256 }})</span></p>
+{% for assessment in driver_panel.assessments %}
+<p><bdi dir="auto">{{ assessment.party_description }}</bdi>: phone use {{ assessment.phone_use }}. <span class="meta">{{ assessment.reason }}</span></p>
+{% endfor %}
+<ul>{% for observation in driver_panel.observations %}
+<li><span class="meta">Video analysis driver observation</span> · {{ observation.kind | replace('_', ' ') }} · <bdi dir="auto">{{ observation.subject }}</bdi> · {{ '%.3f'|format(observation.start_seconds) }}–{{ '%.3f'|format(observation.end_seconds) }} s.</li>
+{% else %}<li>No driver observations available for this view.</li>{% endfor %}</ul>
+{% for road in driver_panel.roads %}
+<details><summary>Timing context — {{ road.label }}</summary>
+<p>{{ road.label }} <span class="meta">(SHA-256 {{ road.view_id }})</span></p>
+{% if not road.alignment %}<p>Clocks not aligned; no timing relation shown</p>
+{% else %}
+<p>Aligned to {{ road.label }}'s clock; offset {{ '%+.3f'|format(road.alignment.offset) }} s, uncertainty ±{{ '%g'|format(road.alignment.uncertainty) }} s. Reviewer: {{ road.alignment.reviewers | join('; ') }}.</p>
+<p>Timing context is a display aid. It does not establish a cause or change the driver assessment or Fault Status.</p>
+<ul>{% for timing in road.timings %}<li>
+Video analysis driver observation — {{ timing.observation.kind | replace('_', ' ') }} · {{ timing.observation.subject }};
+native {{ '%.3f'|format(timing.observation.start_seconds) }}–{{ '%.3f'|format(timing.observation.end_seconds) }} s;
+aligned {{ '%.3f'|format(timing.start) }}–{{ '%.3f'|format(timing.end) }} s on {{ road.label }}'s clock.
+{{ timing.contact.label }}: {{ '%.3f'|format(timing.contact.time) }} s{% if timing.contact.source_frame is not none %}, source frame {{ timing.contact.source_frame }}{% endif %}{% if timing.contact.review_status %}, {{ timing.contact.review_status }}{% endif %}.
+Signed difference (observation start / end minus contact time): {{ '%+.3f'|format(timing.start_difference) }} s / {{ '%+.3f'|format(timing.end_difference) }} s.
+{% if timing.relation %}{{ timing.relation }}.{% endif %}
+</li>{% else %}<li>No cited contact times available for this view.</li>{% endfor %}</ul>
+{% endif %}</details>{% endfor %}
+</section>

@@ -1,0 +1,95 @@
+{
+  "artifacts": {
+    "mig02-001-01-rear-end/analysis/calibration/revision-001/calibration.json": "ae940b20c5be2825511a39d5715036ba67fd170c7605b2b50f1c8eeb7a5fabe2",
+    "mig02-001-01-rear-end/analysis/incident/mig02-incident/assessments.jsonl": "79708c51a2ad9f31546068dc1c021de7897758dadad10ba4557e22f705d53633",
+    "mig02-001-01-rear-end/analysis/incident/mig02-incident/config.json": "10cffda55285a45eaf2f81cf758a5a1d5cb08f79a793c72d56bb2d54327abe81",
+    "mig02-001-01-rear-end/analysis/incident/mig02-incident/conflicts.jsonl": "8f52048ae989ba68928240ba1ccfc8d7e05b59d905c26b4980fd1832996dc2ab",
+    "mig02-001-01-rear-end/analysis/incident/mig02-incident/events.jsonl": "e8d9d591b6d4bb5f67c006161943568c0efbb53d7e23b3ee475e4dddfae47a92",
+    "mig02-001-01-rear-end/analysis/incident/mig02-incident/manifest.json": "1568c3a7e7de51b2cb859e02b0e891a84d4dfc351dd1fc39fe030ec64b6b6498",
+    "mig02-001-01-rear-end/analysis/incident/mig02-incident/reviewed/revision-001/manifest.json": "7c66cb2c4883b10e748c38af31b667553d2dd31743030ef31353809ec341a1a0",
+    "mig02-001-01-rear-end/analysis/incident/mig02-incident/reviewed/revision-001/reviewed_assessments.jsonl": "00c47fdf07c7d9d949f018bea97ab41719d4329757ea65b05a47880fffe2f1c7",
+    "mig02-001-01-rear-end/analysis/incident/mig02-incident/reviewed/revision-001/reviewed_events.jsonl": "d6e39cd69c16d6a60769afbe209e7a6ae399dbf33cbdcf2d1dc4dfe43863cdec",
+    "mig02-001-01-rear-end/analysis/incident/mig02-incident/reviewed/revision-002/manifest.json": "e0e6069804df2c76f15848af57de4f2218cd69acc56f282e68570fd4015b308c",
+    "mig02-001-01-rear-end/analysis/incident/mig02-incident/reviewed/revision-002/reviewed_assessments.jsonl": "16a62d4182955caf10ea72c31b1dc5c9c40ad4997390a0389bd06c79d3bdfff1",
+    "mig02-001-01-rear-end/analysis/incident/mig02-incident/reviewed/revision-002/reviewed_events.jsonl": "fce57b485e5ad018e5d6b33c1ff3635d8eb69aec67cffcffcfffb4dab373f154",
+    "mig02-001-01-rear-end/analysis/incident/mig02-incident/reviewed/revision-003/manifest.json": "05ca84cee6191d8bafeda74e1988364d992cfc4f70662b4790c700e1b56bbe51",
+    "mig02-001-01-rear-end/analysis/incident/mig02-incident/reviewed/revision-003/reviewed_assessments.jsonl": "c1e77cd36f2794cf58ec63632e690542516604093d9d00d39d47315d30bd704f",
+    "mig02-001-01-rear-end/analysis/incident/mig02-incident/reviewed/revision-003/reviewed_events.jsonl": "4f6d5b55313cf187c6d052bcb2beb647b02d23990bbb77512a64b66f7383ed33",
+    "mig02-001-01-rear-end/analysis/incident/mig02-incident/reviews/revision-001/revision.json": "9f0f82386524cea9e347065f0a8fdf97337fa233ad4e0c4224afb10eb0772a95",
+    "mig02-001-01-rear-end/analysis/incident/mig02-incident/reviews/revision-001/sha256.json": "b1b31742a7ffb53ad76a7c79eddc6d9549b8721a0724f4c3300694a51f0b8ca8",
+    "mig02-001-01-rear-end/analysis/incident/mig02-incident/reviews/revision-002/revision.json": "4b2354fb124f1023c417685d2995c066c51311f5e45c6ef70c624bb28b33fd7a",
+    "mig02-001-01-rear-end/analysis/incident/mig02-incident/reviews/revision-002/sha256.json": "023651fc86df7f411019314ae9a3646ba142aff2c8ebd5fd0e77446336e9bc2f",
+    "mig02-001-01-rear-end/analysis/incident/mig02-incident/reviews/revision-003/revision.json": "768b5b1609d0299e21d17d92a3b8ff919f0b11c3cfe378bec5adbedd4346cd72",
+    "mig02-001-01-rear-end/analysis/incident/mig02-incident/reviews/revision-003/sha256.json": "7653c82325d99ace9ef08845545f9fb4d215541555b50450a22d3e83bacf3c01",
+    "mig02-001-01-rear-end/analysis/movement/mig02-movement/config.json": "0778bce605b803d2ed68784010df8c5cffcc3b82f35dba04d84065fc73039b92",
+    "mig02-001-01-rear-end/analysis/movement/mig02-movement/events.jsonl": "e44a150694754b24007d1786197a770ff2441b4441a02800e5f48de297620d79",
+    "mig02-001-01-rear-end/analysis/movement/mig02-movement/lane_sequences.json": "335439a6ff1e9370ab0e98b88dbe4b2b785e1b0975857719a81a94aaddfeea06",
+    "mig02-001-01-rear-end/analysis/movement/mig02-movement/manifest.json": "2273b0a4c7e68f9feab826722ef8c91374ccc5ab24a80188801d9cea78273261",
+    "mig02-001-01-rear-end/analysis/movement/mig02-movement/movement_observations.jsonl": "c93559ac17e9988381315df619c3def57471616c0bb0a958fbe9073a18a01bcf",
+    "mig02-001-01-rear-end/analysis/movement/mig02-movement/separation.jsonl": "1ac543f562d122c0de4a06cd54d4b595be68c17d3b24236491b07f9674d1c793",
+    "mig02-001-01-rear-end/analysis/movement/mig02-movement/sequence.json": "99b601ea1a3ebfc2e96e3824adb3c2665516357e67067bcaffd13fe7814cdd48",
+    "mig02-001-01-rear-end/analysis/movement/mig02-movement/smoothed.jsonl": "8f52d77a69adc4a9122aedd5a2566c426f8aeef004b24450136891793d66a676",
+    "mig02-001-01-rear-end/analysis/reconstruction/week8-incident/manifest.json": "9a94738ffae95e409d2b37a9cdda34288793512ed73d0c9b1ec90c130b6b9331",
+    "mig02-001-01-rear-end/analysis/reconstruction/week8-incident/markers.json": "b49f764a7e6858802fc265a881b2ebc60c7b1ff1d25a291ff276540d1ca44b4c",
+    "mig02-001-01-rear-end/analysis/reconstruction/week8-incident/observations.jsonl": "47e464f130c81fede8b3fe1d455abcdd2ffb73f3b726cb668e6977dbbd75c8e8",
+    "mig02-001-01-rear-end/analysis/reconstruction/week8-incident/replay_frames.jsonl": "f18b02d74fb52e3da3ff0d952f853e932df6123b848a7b0cf48bd66f6049c06e",
+    "mig02-001-01-rear-end/analysis/reconstruction/week8-incident/scene.json": "a0df2a70f7c1a91690c629f738c03138822ca04a1bf12f116ee8fa5e15db48ef",
+    "mig02-001-01-rear-end/analysis/reconstruction/week8-incident/source_frames.jsonl": "93481680839f4561dc451e73d885abde1e80b698f91d19b48aa0125bb3191cbf",
+    "mig02-001-01-rear-end/analysis/tracks/staged-tracks/run_manifest.json": "d23668b85e47c463450809f560e6e9808f25b42b317b470f8faff704a1fc8731",
+    "mig02-001-01-rear-end/analysis/tracks/staged-tracks/tracks.jsonl": "bde7feb598b83d2e83d53a451e4738e9389badb5c61b62c65877b078d47dcbc7",
+    "mig02-001-01-rear-end/metadata/evidence_manifest.json": "740b8a3ec891f912232b1b32196f06bc5c64ea8f0deb8d3b7741851fd84230c6",
+    "mig02-001-01-rear-end/metadata/video_metadata.json": "67f037667bfe93dcf0a5ae7b183bdf9bab2758b08ab7ec7a44a69f7b43e826cf"
+  },
+  "case_id": "mig02-001-01-rear-end",
+  "config_identifiers": [
+    "movement-week7-002",
+    "incident-week8-002"
+  ],
+  "contract_version": "1.0",
+  "created_at": "2026-10-30T00:00:00Z",
+  "model_identifiers": [
+    "scripted-tracks-no-detector"
+  ],
+  "processing_policy": "local_only",
+  "producer": "minivision-reconstruct",
+  "producer_revision": "c66000af37099e39920ff0e8ac621ce5be09090d",
+  "sources": [
+    {
+      "calibration_revision": "revision-001",
+      "frame_origin": 0,
+      "incident_manifest": "mig02-001-01-rear-end/analysis/incident/mig02-incident/manifest.json",
+      "incident_run": "mig02-incident",
+      "movement_manifest": "mig02-001-01-rear-end/analysis/movement/mig02-movement/manifest.json",
+      "movement_run": "mig02-movement",
+      "original_video_sha256": "4c011023d403773d0b056ed275dbe59bec7d4e14b0356f3e54eef092c651753d",
+      "reconstruction_manifest": "mig02-001-01-rear-end/analysis/reconstruction/week8-incident/manifest.json",
+      "reconstruction_run": "week8-incident",
+      "review_revision": "revision-003",
+      "reviewed_manifest": "mig02-001-01-rear-end/analysis/incident/mig02-incident/reviewed/revision-003/manifest.json",
+      "track_revision": "automatic",
+      "tracking_run": "staged-tracks",
+      "transformations": [
+        {
+          "mapping": "mig02-001-01-rear-end/analysis/reconstruction/week8-incident/replay_frames.jsonl",
+          "operation": "producer reconstruction replay"
+        }
+      ],
+      "video_metadata": {
+        "codec": "mjpeg",
+        "creation_time": null,
+        "duration_seconds": 14.0,
+        "extraction_tool": "ffprobe",
+        "frame_count_source": "reported",
+        "frame_rate": {
+          "denominator": 1,
+          "numerator": 25
+        },
+        "height": 480,
+        "original_filename": "mig02-001-01-rear-end-staged-synthetic.avi",
+        "reported_frame_count": 350,
+        "width": 640
+      },
+      "view_id": "fixed-camera-1"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+<div class="reconstruction-print-fallback" hidden>
+<ul class="review-moments">
+{% for item in moments %}
+<li><span class="citation"><bdi dir="ltr">{{ item.view_id }} @ {{ '%.1f'|format(item.timestamp_seconds) }}s</bdi></span> {{ {'event': 'Event', 'note': 'Observation', 'contact': 'Candidate collision'}.get(item.kind, 'After the contact') }}</li>
+{% else %}<li>No cited events available for this view.</li>{% endfor %}
+</ul>
+</div>

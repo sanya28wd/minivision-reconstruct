@@ -1,0 +1,92 @@
+{#- Officer decisions (RPT-38): AI original beside each Override, approval lock, versions.
+    Context: decision (ReportState), findings, override_reasons, reason_max_chars, csrf_token.
+    Forms appear only in the review workspace, only on an unapproved newest version. Officer text is escaped
+    by autoescape; it is never sent to the AI. The reasons are plain UI reasons, not RTA categories. -#}
+{% macro version_banner(decision) %}
+<div class="alert" data-decision-banner role="status">
+  <p><strong>Version {{ decision.version_number }} · {% if decision.is_approved %}<span class="badge badge--verified">Approved</span> <time datetime="{{ (decision.approved_at|utc).isoformat() }}">{{ (decision.approved_at|utc).isoformat() }}</time>{% else %}Draft, not approved{% endif %}</strong>{% if decision.is_approved %}. This version is read-only.{% endif %}{% if not print_view and decision.version_number != decision.latest_version %} (an earlier version, shown unchanged){% endif %}</p>
+  {% if decision.versions|length > 1 and not print_view %}
+  <p class="meta">Versions:
+    {% for v in decision.versions %}{% if v.version_number == decision.version_number %}<strong>Version {{ v.version_number }}</strong>{% else %}<a href="?version={{ v.version_number }}">Version {{ v.version_number }}</a>{% endif %}{% if v.is_approved %} (approved){% endif %}{% if not loop.last %} · {% endif %}{% endfor %}
+  </p>
+  {% endif %}
+</div>
+{% endmacro %}
+
+{% macro decision_panel(decision, findings, report, override_reasons, reason_max_chars, csrf_token) %}
+<section data-report-section="decisions" aria-label="Officer decisions">
+<h2>Officer decisions</h2>
+<p class="meta">The officer decides. An override is recorded beside the AI's original finding, never in place of it, and always with a reason. The reasons are plain interface reasons, not official categories. Officer text is kept apart from the analysis and never sent to the AI.</p>
+{% if findings %}
+<div class="table-scroll" role="region" aria-label="Findings and overrides" tabindex="0">
+<table>
+  <thead><tr><th>Finding</th><th>AI original</th><th>Officer override</th></tr></thead>
+  <tbody>
+  {% for key, finding in findings.items() %}
+    {% set ov = decision.overrides.get(key) %}
+    <tr data-finding-key="{{ key }}">
+      <td><bdi dir="auto">{{ finding.label }}</bdi></td>
+      <td><span class="ai-original">{{ finding.ai_value | fault_status_label if finding.kind == 'party' else finding.ai_value }}</span></td>
+      <td>
+        {% if ov %}
+        <p><strong>Officer override</strong>: {{ ov.new_value | fault_status_label if finding.kind == 'party' else ov.new_value }}</p>
+        <p>Reason: {{ ov.reason_label }}<br><bdi dir="auto">{{ ov.reason_text }}</bdi></p>
+        <p class="meta">Made in version {{ ov.version_number }}, {{ (ov.created_at|utc).strftime('%Y-%m-%d %H:%M UTC') }}</p>
+        {% else %}
+        <span class="meta">No override</span>
+        {% endif %}
+        {% if review_workspace and not print_view and decision.can_edit %}
+        <details>
+          <summary>{% if ov %}Change override{% else %}Override{% endif %}</summary>
+          <form method="post" action="/reports/{{ report.run_id }}/overrides" class="override-form">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+            <input type="hidden" name="finding_key" value="{{ key }}">
+            <div class="field">
+              <label for="new-value-{{ loop.index0 }}">New value</label>
+              <select id="new-value-{{ loop.index0 }}" name="new_value" required>
+                {% for value in finding.allowed_values if value != finding.ai_value %}<option value="{{ value }}">{{ value | fault_status_label if finding.kind == 'party' else value }}</option>{% endfor %}
+              </select>
+            </div>
+            <div class="field">
+              <label for="reason-{{ loop.index0 }}">Reason</label>
+              <select id="reason-{{ loop.index0 }}" name="reason_code" required>
+                {% for code, label in override_reasons %}<option value="{{ code }}">{{ label }}</option>{% endfor %}
+              </select>
+            </div>
+            <div class="field">
+              <label for="reason-text-{{ loop.index0 }}">Explain in a few words</label>
+              <textarea id="reason-text-{{ loop.index0 }}" name="reason_text" rows="3" maxlength="{{ reason_max_chars }}" required></textarea>
+            </div>
+            <button type="submit">Save override</button>
+          </form>
+        </details>
+        {% endif %}
+      </td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+{% else %}
+<p>This report has no party or violation findings to override.</p>
+{% endif %}
+{% if review_workspace and not print_view %}
+  {% if decision.is_approved %}
+  <p><a class="button button--secondary" href="/reports/{{ report.run_id }}/versions/{{ decision.version_number }}/package">Download approved version {{ decision.version_number }} package</a> · <a href="/reports/{{ report.run_id }}/print?version={{ decision.version_number }}" target="_blank" rel="noopener noreferrer">Print approved version {{ decision.version_number }} (A4 / PDF)</a></p>
+  {% endif %}
+  {% if decision.can_edit and report.is_valid %}
+  <form method="post" action="/reports/{{ report.run_id }}/approve" class="approve-form">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+    <p class="meta">Approving makes version {{ decision.version_number }} your decision and locks it read-only. Any later change creates a new version; this one stays as it is.</p>
+    <button type="submit">Approve version {{ decision.version_number }}</button>
+  </form>
+  {% elif decision.is_approved and decision.is_latest %}
+  <form method="post" action="/reports/{{ report.run_id }}/versions" class="new-version-form">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+    <p class="meta">Version {{ decision.version_number }} is locked. To change anything, start version {{ decision.latest_version + 1 }}; it begins with the same overrides.</p>
+    <button type="submit">Start version {{ decision.latest_version + 1 }}</button>
+  </form>
+  {% endif %}
+{% endif %}
+</section>
+{% endmacro %}

@@ -1,0 +1,23 @@
+{
+  "provenance": "synthetic",
+  "note": "Hand-written RPT-42 browser fixture. Synthetic video, not model output or real footage.",
+  "input_hash": "806f3198735472739356ec32e3d89e92e3d122403e9dbe73cb38e2e4d88c97ad",
+  "prompt_version": "overview-2",
+  "response": {
+    "summary": "Synthetic E2E incident.",
+    "facts": {
+      "parties": [
+        {
+          "description": "exterior vehicle",
+          "timestamp_seconds": 0.0,
+          "confidence": 1.0
+        }
+      ],
+      "events": [],
+      "candidate_collisions": [],
+      "behaviour_observations": [],
+      "location_conditions": [],
+      "structured_facts": []
+    }
+  }
+}

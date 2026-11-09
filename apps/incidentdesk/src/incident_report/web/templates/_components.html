@@ -1,0 +1,10 @@
+{#- Shared template macros. Every value is escaped by the environment's autoescape. -#}
+
+{#- bilingual(key): an English + Arabic pair from the label catalogue (web/labels.json).
+    The Arabic half is omitted, never invented, when the catalogue has no Arabic for the term. -#}
+{% macro bilingual(key) -%}
+{%- set item = label(key) -%}
+<span class="bilingual"><span class="bilingual__en" lang="en" dir="ltr">{{ item.en }}</span>
+{%- if item.ar %} <span class="bilingual__ar" lang="ar" dir="rtl">{{ item.ar }}</span>{% endif -%}
+</span>
+{%- endmacro %}

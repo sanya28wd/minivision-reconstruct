@@ -1,0 +1,216 @@
+{
+  "observation_notes": [
+    {
+      "party_code": "P1",
+      "timestamp_seconds": 0.0,
+      "note": "White sedan drives straight through junction opening in upper-left background."
+    },
+    {
+      "party_code": "P2",
+      "timestamp_seconds": 1.0,
+      "note": "Silver sedan turns left across path of P1 at intersection in upper left."
+    },
+    {
+      "party_code": "P1",
+      "timestamp_seconds": 2.5,
+      "note": "Front of P1 collides with right side of turning silver sedan P2."
+    },
+    {
+      "party_code": "P2",
+      "timestamp_seconds": 3.0,
+      "note": "P2 is impacted on right side and comes to a stop."
+    }
+  ],
+  "incident_assessment": {
+    "assessment_note": "A silver sedan turning left collides with a straight-travelling white sedan at a junction visible in the distant background.",
+    "camera_role": "fixed_camera",
+    "contact_state": "contact_observed",
+    "contact_interval_start_seconds": 2.2,
+    "contact_interval_end_seconds": 3.0
+  },
+  "party_checklist": [
+    {
+      "party_code": "P1",
+      "first_seen_seconds": 0.0,
+      "attributes_seen_at_seconds": 1.5,
+      "movement_seen_at_seconds": 1.5,
+      "party_type": "sedan",
+      "party_type_other": "",
+      "marking": "none_seen",
+      "colour_family": "white",
+      "colour_other": "",
+      "manoeuvre": "continue_same_road",
+      "manoeuvre_other": "",
+      "turn_direction": "straight",
+      "roundabout_exit_position": "not_applicable",
+      "road_class_on_approach": "main_road",
+      "road_class_basis": "more_than_two_lanes_and_long",
+      "confidence": 0.8
+    },
+    {
+      "party_code": "P2",
+      "first_seen_seconds": 1.0,
+      "attributes_seen_at_seconds": 2.0,
+      "movement_seen_at_seconds": 2.0,
+      "party_type": "sedan",
+      "party_type_other": "",
+      "marking": "none_seen",
+      "colour_family": "silver",
+      "colour_other": "",
+      "manoeuvre": "into_side_road",
+      "manoeuvre_other": "",
+      "turn_direction": "left",
+      "roundabout_exit_position": "not_applicable",
+      "road_class_on_approach": "main_road",
+      "road_class_basis": "more_than_two_lanes_and_long",
+      "confidence": 0.8
+    }
+  ],
+  "collision_observations": [
+    {
+      "kind": "vehicle_contact_vehicle",
+      "subject": "P1",
+      "other_party": "P2",
+      "injury_grade": "unknown",
+      "visibility": "visible",
+      "timestamp_seconds": 2.5,
+      "confidence": 0.85
+    },
+    {
+      "kind": "vehicle_stopped_at_scene",
+      "subject": "P2",
+      "other_party": "",
+      "injury_grade": "unknown",
+      "visibility": "visible",
+      "timestamp_seconds": 3.5,
+      "confidence": 0.85
+    },
+    {
+      "kind": "vehicle_stopped_at_scene",
+      "subject": "P1",
+      "other_party": "",
+      "injury_grade": "unknown",
+      "visibility": "visible",
+      "timestamp_seconds": 3.5,
+      "confidence": 0.85
+    }
+  ],
+  "structured_facts": [
+    {
+      "subject": "scene",
+      "field": "conflict_zone_type",
+      "value": "unsignalised_junction",
+      "other_party": "",
+      "timestamp_seconds": 0.0,
+      "confidence": 0.8
+    },
+    {
+      "subject": "scene",
+      "field": "officer_directing_traffic",
+      "value": "no",
+      "other_party": "",
+      "timestamp_seconds": 0.0,
+      "confidence": 0.95
+    },
+    {
+      "subject": "scene",
+      "field": "visibility_conditions",
+      "value": "clear",
+      "other_party": "",
+      "timestamp_seconds": 0.0,
+      "confidence": 0.95
+    },
+    {
+      "subject": "scene",
+      "field": "posted_speed_limit_kmh",
+      "value": "not_visible",
+      "other_party": "",
+      "timestamp_seconds": 0.0,
+      "confidence": 0.9
+    },
+    {
+      "subject": "P1",
+      "field": "motion_state_before_contact",
+      "value": "moving",
+      "other_party": "",
+      "timestamp_seconds": 2.0,
+      "confidence": 0.9
+    },
+    {
+      "subject": "P2",
+      "field": "motion_state_before_contact",
+      "value": "moving",
+      "other_party": "",
+      "timestamp_seconds": 2.0,
+      "confidence": 0.9
+    },
+    {
+      "subject": "P1",
+      "field": "approach_control_faced",
+      "value": "none_confirmed",
+      "other_party": "",
+      "timestamp_seconds": 2.0,
+      "confidence": 0.75
+    },
+    {
+      "subject": "P2",
+      "field": "approach_control_faced",
+      "value": "none_confirmed",
+      "other_party": "",
+      "timestamp_seconds": 2.0,
+      "confidence": 0.75
+    },
+    {
+      "subject": "P1",
+      "field": "impact_zone_on_party",
+      "value": "front",
+      "other_party": "",
+      "timestamp_seconds": 2.5,
+      "confidence": 0.85
+    },
+    {
+      "subject": "P2",
+      "field": "impact_zone_on_party",
+      "value": "right_side",
+      "other_party": "",
+      "timestamp_seconds": 2.5,
+      "confidence": 0.85
+    },
+    {
+      "subject": "P1",
+      "field": "relative_position_of_other",
+      "value": "B_from_A_left",
+      "other_party": "P2",
+      "timestamp_seconds": 2.3,
+      "confidence": 0.8
+    },
+    {
+      "subject": "P2",
+      "field": "relative_position_of_other",
+      "value": "B_from_A_right",
+      "other_party": "P1",
+      "timestamp_seconds": 2.3,
+      "confidence": 0.8
+    }
+  ],
+  "events": [
+    {
+      "description": "P1 strikes P2 at the background intersection opening.",
+      "timestamp_seconds": 2.5,
+      "confidence": 0.85
+    }
+  ],
+  "behaviour_observations": [],
+  "location_conditions": [],
+  "text_readings": [
+    {
+      "kind": "other",
+      "text": "DİYARBAKIR",
+      "language": "other",
+      "timestamp_seconds": 0.0,
+      "confidence": 0.9
+    }
+  ],
+  "driver_observations": [],
+  "drowsiness_observations": []
+}

@@ -1,0 +1,29 @@
+{
+	admin off
+	auto_https off
+}
+http://localhost:8080, http://127.0.0.1:8080 {
+	bind 127.0.0.1
+	@tools path /reconstruct/*
+	header @tools Cache-Control "no-store"
+	handle /reconstruct/tracks/* {
+		reverse_proxy 127.0.0.1:8511
+	}
+	handle /reconstruct/calibration/* {
+		reverse_proxy 127.0.0.1:8512
+	}
+	handle /reconstruct/replay/* {
+		reverse_proxy 127.0.0.1:8513
+	}
+	# Available to clients that support relative media URLs. The unchanged replay
+	# currently emits an absolute loopback URL, so it still uses port 8766 directly.
+	handle_path /reconstruct/media/* {
+		reverse_proxy 127.0.0.1:8766
+	}
+	handle {
+		reverse_proxy 127.0.0.1:8000
+	}
+	handle_errors {
+		respond "A local service is not running. Start the app and reconstruction tools, then retry." 503
+	}
+}

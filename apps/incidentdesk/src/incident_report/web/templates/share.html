@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block title %}Open share link{% endblock %}
+{% block content %}
+<h1>Open share link</h1>
+<p id="share-status" role="status">Opening your share link…</p>
+<noscript>JavaScript is needed to open this share link. Enable it and open the original link again.</noscript>
+<script src="/static/js/share.js" defer></script>
+{% endblock %}

@@ -1,0 +1,84 @@
+/*
+  Design tokens (RPT-04): CSS custom properties only, no selectors other than :root.
+  Provenance of every group is recorded in docs/UI_FOUNDATION.md ("Tokens") and the licence in
+  THIRD_PARTY_NOTICES.md.
+
+  Sources used below:
+  - UAE Design System v3.0.7 (TDRA-ae/aegov-dls, MIT): src/base/root.css for the font stacks, the
+    type scale and the container paddings; src/theme/colors.js for the "aeblack" neutral ramp
+    (OKLCH values converted to sRGB hex; conversion in docs/UI_FOUNDATION.md).
+  - Spec 001, "Look": the teal accent #006E6D. The tint and the darker shade are computed from it.
+  - Project choice (no upstream value): spacing steps, widths, radii, focus ring width.
+  The gold federal identity and the DS's colour ramps (gold, red, green) are NOT used.
+  Fault-chip colours follow ADR 0004 as amended for RPT-56.
+
+  Every text colour pair used by app.css is checked for 4.5:1 contrast by tests/test_ui_accessibility.py.
+*/
+
+:root {
+  color-scheme: light;
+
+  /* --- Colour: neutrals (UAE DS "aeblack" ramp) --- */
+  --color-bg: #f7f7f7;            /* aeblack-50, page background */
+  --color-surface: #ffffff;       /* white, cards, header, footer */
+  --color-text: #1b1d21;          /* aeblack-900 */
+  --color-text-muted: #4b4f58;    /* aeblack-600 */
+  --color-border: #c3c6cb;        /* aeblack-200, decorative dividers */
+  --color-input-border: #797e86;  /* aeblack-400, form control edges (3:1 needed) */
+
+  /* --- Colour: fault status chips (RPT-56; RTA forms plus report abstention) --- */
+  --color-fault-pink: #d93874;   /* At Fault (pink) */
+  --color-fault-green: #1b8a5a;  /* Not at Fault (green) */
+  --color-fault-white: #ffffff;  /* RTA White form (F1) */
+  --color-fault-grey: #797e86;   /* Report-owned Cannot Determine; neutral aeblack-400 */
+
+  /* --- Colour: agreement badges (RPT-23, amber Check badge) --- */
+  --color-badge-amber-bg: #fef3c7;   /* light amber background */
+  --color-badge-amber-text: #78350f; /* amber-900 text, contrast > 8.5:1 against #fef3c7, #ffffff, #f7f7f7 */
+
+  /* --- Colour: accent (spec 001 "Look") --- */
+  --color-accent: #006e6d;        /* spec 001: teal #006E6D */
+  --color-accent-strong: #005857; /* accent darkened 20% (computed), pressed and hover */
+  --color-accent-tint: #e6f0f0;   /* accent at 10% over white (computed), notice backgrounds */
+  --color-on-accent: #ffffff;     /* text on accent */
+  --color-link: var(--color-accent);
+  --color-focus-ring: var(--color-accent);
+
+  /* --- Typography (UAE DS root.css stacks; Arabic stack adds Roboto and Tahoma, see docs) --- */
+  --font-body: "Roboto", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif;
+  --font-arabic: "Noto Kufi Arabic", "Roboto", ui-sans-serif, system-ui, "Segoe UI", Tahoma, sans-serif;
+
+  /* Type scale, UAE DS root.css (rem / line-height) */
+  --text-xs: 0.75rem;
+  --text-xs-line-height: 1rem;
+  --text-sm: 0.875rem;
+  --text-sm-line-height: 1.25rem;
+  --text-base: 1rem;
+  --text-base-line-height: 1.5rem;
+  --text-lg: 1.125rem;
+  --text-lg-line-height: 1.5rem;
+  --text-xl: 1.25rem;
+  --text-xl-line-height: 1.75rem;
+  /* DS h6 and h5 sizes, used for section and page headings in an application screen */
+  --text-h2: 1.25rem;
+  --text-h2-line-height: 1.75rem;
+  --text-h2-weight: 600;
+  --text-h1: 1.625rem;
+  --text-h1-line-height: 2.125rem;
+  --text-h1-weight: 700;
+
+  /* --- Spacing: project choice, 0.25rem steps --- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+
+  /* --- Layout and shape: project choice --- */
+  --container-max: 64rem;
+  --radius: 0.25rem;
+  --focus-ring-offset: 2px;
+  --control-min-size: 2.75rem;    /* 44 px touch/click target (ui-ux-pro-max rule "Touch & Interaction") */
+  --border-width: 1px;
+}

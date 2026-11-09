@@ -1,0 +1,47 @@
+{
+  "revision_id": "revision-001",
+  "reviewer": "synthetic-fixture-reviewer",
+  "created_at": "2026-10-30T06:13:54.487596+00:00",
+  "previous_sha256": "fc1b194e63299bfa94f6c18881c3ad3d001f94ba75a983d629a5ab90b7f63486",
+  "document": {
+    "schema_version": "1.0",
+    "decisions": [
+      {
+        "target_kind": "event",
+        "target_id": "collision_candidate-t1-2-f152",
+        "action": "confirm",
+        "note": "Synthetic mixed-action review",
+        "modified_peak_time": null,
+        "modified_location": null,
+        "modified_outcome": null,
+        "modified_contributing_track_ids": null,
+        "reviewer": "synthetic-fixture-reviewer",
+        "decided_at": "2026-10-30T00:00:00Z"
+      },
+      {
+        "target_kind": "assessment",
+        "target_id": "assessment-collision_candidate-t1-2-f152",
+        "action": "reject",
+        "note": "Synthetic mixed-action review",
+        "modified_peak_time": null,
+        "modified_location": null,
+        "modified_outcome": null,
+        "modified_contributing_track_ids": null,
+        "reviewer": "synthetic-fixture-reviewer",
+        "decided_at": "2026-10-30T00:00:00Z"
+      },
+      {
+        "target_kind": "event",
+        "target_id": "collision_candidate-t3-4-f152",
+        "action": "modify",
+        "note": "Synthetic mixed-action review",
+        "modified_peak_time": 6.081,
+        "modified_location": null,
+        "modified_outcome": null,
+        "modified_contributing_track_ids": null,
+        "reviewer": "synthetic-fixture-reviewer",
+        "decided_at": "2026-10-30T00:00:00Z"
+      }
+    ]
+  }
+}

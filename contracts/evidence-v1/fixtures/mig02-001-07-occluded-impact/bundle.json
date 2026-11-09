@@ -1,0 +1,95 @@
+{
+  "artifacts": {
+    "mig02-001-07-occluded-impact/analysis/calibration/revision-001/calibration.json": "9005aca0650298741423db96d37ae72c8673deeb915bb0ef51e9d0de4d624cdb",
+    "mig02-001-07-occluded-impact/analysis/incident/mig02-incident/assessments.jsonl": "314d08c2ed70477a8885ab4209527c2e6392ab2db246ef7efba2d1380d3cb83e",
+    "mig02-001-07-occluded-impact/analysis/incident/mig02-incident/config.json": "10cffda55285a45eaf2f81cf758a5a1d5cb08f79a793c72d56bb2d54327abe81",
+    "mig02-001-07-occluded-impact/analysis/incident/mig02-incident/conflicts.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mig02-001-07-occluded-impact/analysis/incident/mig02-incident/events.jsonl": "ab4109a8ca5c40d575bf329cfc276bc9130179da669c8c016f4cd45019755a2a",
+    "mig02-001-07-occluded-impact/analysis/incident/mig02-incident/manifest.json": "efd052da19ae4e84033027b6b38c101d83239a3c1d0e3f40a6bd0e0ba599a198",
+    "mig02-001-07-occluded-impact/analysis/incident/mig02-incident/reviewed/revision-001/manifest.json": "da7bd88958f7554f77c15e33d6c4902019c929b3f3efe125bcb5db240bdca6d7",
+    "mig02-001-07-occluded-impact/analysis/incident/mig02-incident/reviewed/revision-001/reviewed_assessments.jsonl": "1c269cd35b21538051f34e167485642c90ff0c61ddceb959d8febc384cec0b87",
+    "mig02-001-07-occluded-impact/analysis/incident/mig02-incident/reviewed/revision-001/reviewed_events.jsonl": "f5bd1d1fed35ee61a9f73552c1c6866e62f1a58379cf2c411998d7e8a0377a0c",
+    "mig02-001-07-occluded-impact/analysis/incident/mig02-incident/reviewed/revision-002/manifest.json": "39361ae9e991a10358e14ce8ae68697d133862174d94307fd3ffc6aa82a755e4",
+    "mig02-001-07-occluded-impact/analysis/incident/mig02-incident/reviewed/revision-002/reviewed_assessments.jsonl": "1d603591697376cb7ed5a23a3d2326b1abcbaf8d9574f6fa56e42b0290b1c949",
+    "mig02-001-07-occluded-impact/analysis/incident/mig02-incident/reviewed/revision-002/reviewed_events.jsonl": "dd84476da7ad3bc5e235b02090995b38b21920ead754e528a41a9a3cd82eb6b6",
+    "mig02-001-07-occluded-impact/analysis/incident/mig02-incident/reviewed/revision-003/manifest.json": "cdde4f66d96634a059c5641c5980a86d604ebd926446b5c94ec13821a7f166a4",
+    "mig02-001-07-occluded-impact/analysis/incident/mig02-incident/reviewed/revision-003/reviewed_assessments.jsonl": "d44a92d1ebd6108bf8aa49bb3b771456e3e5536da21f3a7594da6d9515322ee3",
+    "mig02-001-07-occluded-impact/analysis/incident/mig02-incident/reviewed/revision-003/reviewed_events.jsonl": "da0c302fc978e3c2fd51c54491d3c7fadb4dcab8ba3eb66ecc767518036165b0",
+    "mig02-001-07-occluded-impact/analysis/incident/mig02-incident/reviews/revision-001/revision.json": "fe4405a4f8e46bf02f8b4a9a372d1b8a7d4a946c55e47352f053a62a01291599",
+    "mig02-001-07-occluded-impact/analysis/incident/mig02-incident/reviews/revision-001/sha256.json": "b481513039b208cbabba0bb9c426be7ddc0e2109112c5988c259f4e3698e6e13",
+    "mig02-001-07-occluded-impact/analysis/incident/mig02-incident/reviews/revision-002/revision.json": "55526fd3df1459be85a29782ca2922e711a0378e6ae46921d458f9ecb18c699e",
+    "mig02-001-07-occluded-impact/analysis/incident/mig02-incident/reviews/revision-002/sha256.json": "cb089f3742068fa0cd2fcc04b97cb88544492654a4f048c6c3930fe40fa20e1b",
+    "mig02-001-07-occluded-impact/analysis/incident/mig02-incident/reviews/revision-003/revision.json": "768cd08c23ec79b714acaa1eef6d71f3981d847c7fd93cb0a8b9eb1f1b4ed7da",
+    "mig02-001-07-occluded-impact/analysis/incident/mig02-incident/reviews/revision-003/sha256.json": "53061d63bad3d3c95239930cd7920ce8adbaf5e58ffe7f482df440c12ee90e6a",
+    "mig02-001-07-occluded-impact/analysis/movement/mig02-movement/config.json": "0778bce605b803d2ed68784010df8c5cffcc3b82f35dba04d84065fc73039b92",
+    "mig02-001-07-occluded-impact/analysis/movement/mig02-movement/events.jsonl": "b3a203b2770de23082fe3499b32085189dd98c1352d20f95e15daba58195e76c",
+    "mig02-001-07-occluded-impact/analysis/movement/mig02-movement/lane_sequences.json": "27862c5cdabb15e52fb79300e235636669916a0e94d335b213dea821b5c80247",
+    "mig02-001-07-occluded-impact/analysis/movement/mig02-movement/manifest.json": "a62840aa8cbef261262f41de85bf0184806e728c68ce25942891a67f9effd008",
+    "mig02-001-07-occluded-impact/analysis/movement/mig02-movement/movement_observations.jsonl": "c7b02e1e545d6b76a60b14d166f0459982101879f7bef323985338717e0b5322",
+    "mig02-001-07-occluded-impact/analysis/movement/mig02-movement/separation.jsonl": "883371825171b04d3ac2ed5258efc8c4e31f035ab3d79040e1d192bf2194dec1",
+    "mig02-001-07-occluded-impact/analysis/movement/mig02-movement/sequence.json": "c6923f7d508af5f15fb6e1f89c104a2f2ed3a128a566cd8d8578137d8000cba1",
+    "mig02-001-07-occluded-impact/analysis/movement/mig02-movement/smoothed.jsonl": "0e1d51876b917b3e274c2d1c1d9f762a12514e583551a32c2d11c4d8e5bee62e",
+    "mig02-001-07-occluded-impact/analysis/reconstruction/week8-incident/manifest.json": "16b4497a5205b519365e7a9638cb7c03ac9e14a5739f209d2fe6e1d1865bb005",
+    "mig02-001-07-occluded-impact/analysis/reconstruction/week8-incident/markers.json": "b49f764a7e6858802fc265a881b2ebc60c7b1ff1d25a291ff276540d1ca44b4c",
+    "mig02-001-07-occluded-impact/analysis/reconstruction/week8-incident/observations.jsonl": "d26feeb00671583871e3a304a7f06200b81e7d6d58c0a6b39dd60afc1995c61f",
+    "mig02-001-07-occluded-impact/analysis/reconstruction/week8-incident/replay_frames.jsonl": "f18b02d74fb52e3da3ff0d952f853e932df6123b848a7b0cf48bd66f6049c06e",
+    "mig02-001-07-occluded-impact/analysis/reconstruction/week8-incident/scene.json": "a0df2a70f7c1a91690c629f738c03138822ca04a1bf12f116ee8fa5e15db48ef",
+    "mig02-001-07-occluded-impact/analysis/reconstruction/week8-incident/source_frames.jsonl": "93481680839f4561dc451e73d885abde1e80b698f91d19b48aa0125bb3191cbf",
+    "mig02-001-07-occluded-impact/analysis/tracks/staged-tracks/run_manifest.json": "7e5fc18e95076c05c5c2490fbaafef812cfee1aff908895a30830c23a1f103ff",
+    "mig02-001-07-occluded-impact/analysis/tracks/staged-tracks/tracks.jsonl": "e02adf5b4d1f12e4287f12bbf85249002c87f456326c9bc9a6a1bec07a09bd1b",
+    "mig02-001-07-occluded-impact/metadata/evidence_manifest.json": "8c2595356ff75e2d083928a2de12c6cc5e981aa18ee15c57bf46678792fe66a2",
+    "mig02-001-07-occluded-impact/metadata/video_metadata.json": "c3cfdb5e86c960e1d75dbbc5aaaeefbf63aa3f1dacf786f6e0e710c166fe1c13"
+  },
+  "case_id": "mig02-001-07-occluded-impact",
+  "config_identifiers": [
+    "movement-week7-002",
+    "incident-week8-002"
+  ],
+  "contract_version": "1.0",
+  "created_at": "2026-10-30T00:00:00Z",
+  "model_identifiers": [
+    "scripted-tracks-no-detector"
+  ],
+  "processing_policy": "local_only",
+  "producer": "minivision-reconstruct",
+  "producer_revision": "c66000af37099e39920ff0e8ac621ce5be09090d",
+  "sources": [
+    {
+      "calibration_revision": "revision-001",
+      "frame_origin": 0,
+      "incident_manifest": "mig02-001-07-occluded-impact/analysis/incident/mig02-incident/manifest.json",
+      "incident_run": "mig02-incident",
+      "movement_manifest": "mig02-001-07-occluded-impact/analysis/movement/mig02-movement/manifest.json",
+      "movement_run": "mig02-movement",
+      "original_video_sha256": "ae95e9dfa704405619b7ebacfd6133a563414a5f85d7c0c5d66c94baa8e7f9ae",
+      "reconstruction_manifest": "mig02-001-07-occluded-impact/analysis/reconstruction/week8-incident/manifest.json",
+      "reconstruction_run": "week8-incident",
+      "review_revision": "revision-003",
+      "reviewed_manifest": "mig02-001-07-occluded-impact/analysis/incident/mig02-incident/reviewed/revision-003/manifest.json",
+      "track_revision": "automatic",
+      "tracking_run": "staged-tracks",
+      "transformations": [
+        {
+          "mapping": "mig02-001-07-occluded-impact/analysis/reconstruction/week8-incident/replay_frames.jsonl",
+          "operation": "producer reconstruction replay"
+        }
+      ],
+      "video_metadata": {
+        "codec": "mjpeg",
+        "creation_time": null,
+        "duration_seconds": 14.0,
+        "extraction_tool": "ffprobe",
+        "frame_count_source": "reported",
+        "frame_rate": {
+          "denominator": 1,
+          "numerator": 25
+        },
+        "height": 480,
+        "original_filename": "mig02-001-07-occluded-impact-staged-synthetic.avi",
+        "reported_frame_count": 350,
+        "width": 640
+      },
+      "view_id": "fixed-camera-1"
+    }
+  ]
+}

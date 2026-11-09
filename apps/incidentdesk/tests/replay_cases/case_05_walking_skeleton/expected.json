@@ -1,0 +1,12 @@
+{
+  "case_id": "case_05_walking_skeleton",
+  "provenance": "synthetic",
+  "summary": "Synthetic placeholder summary: this sentence was written by hand to prove the upload-to-report path works. It describes no real footage and no real incident.",
+  "is_valid": true,
+  "validation_errors": [],
+  "parties": null,
+  "events": null,
+  "candidate_collisions": null,
+  "_comment_rpt15_overall_fault": "RESERVED FOR RPT-15: overall fault determinations",
+  "overall_fault": null
+}

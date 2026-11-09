@@ -1,0 +1,2 @@
+DROP TABLE evidence_import_failed_artifacts;
+DROP TABLE evidence_import_failed_blobs;

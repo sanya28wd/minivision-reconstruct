@@ -1,0 +1,46 @@
+{#- The shell every page extends (RPT-04). Page templates fill the "title" and "content" blocks.
+    Context: ui_lang is "en" (default) or "ar"; "ar" sets lang="ar" dir="rtl". Anything else is English.
+    Only classes, no inline style or script, so a strict Content-Security-Policy stays possible. -#}
+{%- set page_lang = "ar" if ui_lang == "ar" else "en" -%}
+{%- set page_dir = "rtl" if page_lang == "ar" else "ltr" -%}
+<!doctype html>
+<html lang="{{ page_lang }}" dir="{{ page_dir }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}{% endblock %} | Incident Video Report — prototype</title>
+<link rel="stylesheet" href="{{ embedded_css.fonts if embedded_css else '/static/css/fonts.css' }}">
+<link rel="stylesheet" href="{{ embedded_css.tokens if embedded_css else '/static/css/tokens.css' }}">
+<link rel="stylesheet" href="{{ embedded_css.app if embedded_css else '/static/css/app.css' }}">
+{% block head %}{% endblock %}
+</head>
+<body>
+{% if not print_view %}<a class="skip-link" href="#main">Skip to main content</a>{% endif %}
+<header class="site-header">
+  <div class="prototype-banner"><p class="container">Prototype, advisory only, the officer decides.</p></div>
+  <div class="container site-header__inner">
+    <a class="brand" href="{{ '#main' if print_view else '/' }}">
+      <span class="brand__name">Incident Video Report — prototype</span>
+      <span class="brand__line">BITS Pilani Dubai prototype</span>
+    </a>
+    {% if not print_view %}
+    <nav class="site-nav" aria-label="Quick actions">
+      <a class="btn-feedback" href="/samples">Samples</a>
+      <a class="btn-feedback" href="/feedback">Feedback</a>
+    </nav>
+    {% endif %}
+  </div>
+  <div class="ai-notice"><p class="container">Videos are processed by an external AI service under a zero-retention setup.</p></div>
+</header>
+<main id="main" tabindex="-1">
+  <div class="container">
+{% block content %}{% endblock %}
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <p>BITS Pilani Dubai prototype. University prototype, not an official system.</p>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block title %}New incident{% endblock %}
+{% block content %}
+<h1>New incident</h1>
+<p>Submit incident footage for review. Upload driver-facing views into the Interior box and road-facing or CCTV views into the Exterior box. Multiple files may be submitted for each box.</p>
+
+<form method="post" action="/reports" enctype="multipart/form-data">
+  <input type="hidden" name="staging_csrf" value="{{ staging_csrf }}" disabled>
+  <fieldset class="drop-box drop-box--interior">
+    <legend>Interior cameras (driver-facing)</legend>
+    <p class="drop-box__hint">In-cabin cameras, driver-monitoring views, or passenger area footage.</p>
+    <div class="field">
+      <label for="interior_files">Interior video files</label>
+      <input id="interior_files" name="interior_files" type="file" accept="video/*" multiple value="interior">
+    </div>
+    <div class="field">
+      <label for="interior_label">Camera label (optional)</label>
+      <input id="interior_label" name="interior_label" type="text" maxlength="{{ max_chars }}">
+    </div>
+    <div class="field">
+      <label for="interior_acquisition_method">Acquisition method (optional)</label>
+      <input id="interior_acquisition_method" name="interior_acquisition_method" type="text" maxlength="{{ max_chars }}">
+    </div>
+  </fieldset>
+
+  <fieldset class="drop-box drop-box--exterior">
+    <legend>Exterior cameras (road-facing, dashcam, CCTV)</legend>
+    <p class="drop-box__hint">Forward dashcam, rear view, other vehicle cameras, or traffic CCTV footage.</p>
+    <div class="field">
+      <label for="exterior_files">Exterior video files</label>
+      <input id="exterior_files" name="exterior_files" type="file" accept="video/*" multiple value="exterior">
+    </div>
+    <div class="field">
+      <label for="exterior_label">Camera label (optional)</label>
+      <input id="exterior_label" name="exterior_label" type="text" maxlength="{{ max_chars }}">
+    </div>
+    <div class="field">
+      <label for="exterior_acquisition_method">Acquisition method (optional)</label>
+      <input id="exterior_acquisition_method" name="exterior_acquisition_method" type="text" maxlength="{{ max_chars }}">
+    </div>
+  </fieldset>
+
+  <fieldset class="drop-box drop-box--context">
+    <legend>Officer question and context (optional)</legend>
+    <p class="drop-box__hint">Stored separately with the incident record. Never sent to the vision models or analysis pipeline.</p>
+    <div class="field">
+      <label for="officer_question">Officer question or context</label>
+      <input id="officer_question" name="officer_question" type="text" maxlength="{{ max_chars }}">
+    </div>
+  </fieldset>
+
+  <div class="upload-progress-note">
+    <p class="meta">Intake pipeline: Videos are staged to disk, SHA-256 fingerprinted on arrival, validated with ffprobe, and analysed independently before comparison.</p>
+  </div>
+
+  <p id="staging-status" role="status" aria-live="polite"></p>
+  <p><button type="submit">Get report</button></p>
+</form>
+<script src="/static/early-upload.js" defer></script>
+{% endblock %}

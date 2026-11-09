@@ -1,0 +1,85 @@
+{
+  "artifacts": {
+    "mig02-multi-review/analysis/calibration/revision-001/calibration.json": "40843a041f35f911ab561c28eb5832906aa5c55b1d143467904a37a19fcf1d78",
+    "mig02-multi-review/analysis/incident/mig02-incident/assessments.jsonl": "853740974382601528f5bc21a41006c8cb44e98d915f39b7ed0eed2b751a03a7",
+    "mig02-multi-review/analysis/incident/mig02-incident/config.json": "10cffda55285a45eaf2f81cf758a5a1d5cb08f79a793c72d56bb2d54327abe81",
+    "mig02-multi-review/analysis/incident/mig02-incident/conflicts.jsonl": "7826be66cae2dbe10a35ccb8d83969366bc9e00a8366ff6e5d6b030d564b26d5",
+    "mig02-multi-review/analysis/incident/mig02-incident/events.jsonl": "f5c5aec3e80d1068d0fa151d20ea7703b652019cbd3a0fa26ca478631746bc70",
+    "mig02-multi-review/analysis/incident/mig02-incident/manifest.json": "fc1b194e63299bfa94f6c18881c3ad3d001f94ba75a983d629a5ab90b7f63486",
+    "mig02-multi-review/analysis/incident/mig02-incident/reviewed/revision-001/manifest.json": "39b8ff1906e42bea4bfb95f7a94731ce8ddef5adbb275fec0df93ad389d52ab5",
+    "mig02-multi-review/analysis/incident/mig02-incident/reviewed/revision-001/reviewed_assessments.jsonl": "dfc92735e768d801b71580b53e2d94f8520d77e5f6d54547711b5d909852b7b5",
+    "mig02-multi-review/analysis/incident/mig02-incident/reviewed/revision-001/reviewed_events.jsonl": "a17421c81fdc17760494dc1633df01a336e34d208121b3557a0c9e45463ab7af",
+    "mig02-multi-review/analysis/incident/mig02-incident/reviews/revision-001/revision.json": "f22d9c6b93dfaba2dcc8af60dbab977564809ad39f5f2f9206e833f696e88c35",
+    "mig02-multi-review/analysis/incident/mig02-incident/reviews/revision-001/sha256.json": "1e0e81e909a28efee8085a109af1cfba059e7ed46dde6a979a3927c0b74ddac6",
+    "mig02-multi-review/analysis/movement/mig02-movement/config.json": "0778bce605b803d2ed68784010df8c5cffcc3b82f35dba04d84065fc73039b92",
+    "mig02-multi-review/analysis/movement/mig02-movement/events.jsonl": "771ab0ca7c6d0b58e1e7ebe8a9545a0ae49faa54d87ef5076d0d209144908dfc",
+    "mig02-multi-review/analysis/movement/mig02-movement/lane_sequences.json": "c1fa0a67791bdabcc70afc17fbf2f62ff61e0c15f9c1f89eb29a985de7017f97",
+    "mig02-multi-review/analysis/movement/mig02-movement/manifest.json": "bf0af03cb90c718b06a53f22312342992362e4900cbd2c757ab1cbd2e50b3d76",
+    "mig02-multi-review/analysis/movement/mig02-movement/movement_observations.jsonl": "da23174a7e814d899278a90db46f8317b5b0967f373da9b8a606eea856efcc84",
+    "mig02-multi-review/analysis/movement/mig02-movement/separation.jsonl": "09aaae9793b372b4b99d099e14b59373345558587d8d0a4352a7de4b587bb50c",
+    "mig02-multi-review/analysis/movement/mig02-movement/sequence.json": "d1468e6d01edbbf16092407d130e9b8e1391e2f0567fce6e21bef1c59df183c1",
+    "mig02-multi-review/analysis/movement/mig02-movement/smoothed.jsonl": "9e66a369c2eb9e91082bee75e0268d94aac0180d6ec129541d7a96a71aab7c51",
+    "mig02-multi-review/analysis/reconstruction/week8-incident/manifest.json": "0678bae749ba7584e26d4f5b676b34500839cd53860f80e85bb3ab83073de808",
+    "mig02-multi-review/analysis/reconstruction/week8-incident/markers.json": "b49f764a7e6858802fc265a881b2ebc60c7b1ff1d25a291ff276540d1ca44b4c",
+    "mig02-multi-review/analysis/reconstruction/week8-incident/observations.jsonl": "ece89a7293e07a5ada10b60b88e9f303da90216152e7b8dd6062bfa1bd69b857",
+    "mig02-multi-review/analysis/reconstruction/week8-incident/replay_frames.jsonl": "f18b02d74fb52e3da3ff0d952f853e932df6123b848a7b0cf48bd66f6049c06e",
+    "mig02-multi-review/analysis/reconstruction/week8-incident/scene.json": "a0df2a70f7c1a91690c629f738c03138822ca04a1bf12f116ee8fa5e15db48ef",
+    "mig02-multi-review/analysis/reconstruction/week8-incident/source_frames.jsonl": "93481680839f4561dc451e73d885abde1e80b698f91d19b48aa0125bb3191cbf",
+    "mig02-multi-review/analysis/tracks/staged-tracks/run_manifest.json": "d3439a3af9b74a753305ad9d31682e1f93e473a85bf81da0eb6091369e94be45",
+    "mig02-multi-review/analysis/tracks/staged-tracks/tracks.jsonl": "54702e1e5d5f116bb1cb1402299645af5d309ddc9be474ea8dfb52ff78f9ef23",
+    "mig02-multi-review/metadata/evidence_manifest.json": "463cad734cf0efec437957f31a3be4d3d7e51e5780e7d462833e67a1e39644c0",
+    "mig02-multi-review/metadata/video_metadata.json": "be9d151fd5e28a962a65b81dd9c021af2f535057ddfc13adc45188e7b2b9e781"
+  },
+  "case_id": "mig02-multi-review",
+  "config_identifiers": [
+    "movement-week7-002",
+    "incident-week8-002"
+  ],
+  "contract_version": "1.0",
+  "created_at": "2026-10-30T00:00:00Z",
+  "model_identifiers": [
+    "scripted-tracks-no-detector"
+  ],
+  "processing_policy": "local_only",
+  "producer": "minivision-reconstruct",
+  "producer_revision": "c66000af37099e39920ff0e8ac621ce5be09090d",
+  "sources": [
+    {
+      "calibration_revision": "revision-001",
+      "frame_origin": 0,
+      "incident_manifest": "mig02-multi-review/analysis/incident/mig02-incident/manifest.json",
+      "incident_run": "mig02-incident",
+      "movement_manifest": "mig02-multi-review/analysis/movement/mig02-movement/manifest.json",
+      "movement_run": "mig02-movement",
+      "original_video_sha256": "1d5fded9a95a2082cbbaad5de8d521e5a45ae37889b141d6478d77c652de1d11",
+      "reconstruction_manifest": "mig02-multi-review/analysis/reconstruction/week8-incident/manifest.json",
+      "reconstruction_run": "week8-incident",
+      "review_revision": "revision-001",
+      "reviewed_manifest": "mig02-multi-review/analysis/incident/mig02-incident/reviewed/revision-001/manifest.json",
+      "track_revision": "automatic",
+      "tracking_run": "staged-tracks",
+      "transformations": [
+        {
+          "mapping": "mig02-multi-review/analysis/reconstruction/week8-incident/replay_frames.jsonl",
+          "operation": "producer reconstruction replay"
+        }
+      ],
+      "video_metadata": {
+        "codec": "mjpeg",
+        "creation_time": null,
+        "duration_seconds": 14.0,
+        "extraction_tool": "ffprobe",
+        "frame_count_source": "reported",
+        "frame_rate": {
+          "denominator": 1,
+          "numerator": 25
+        },
+        "height": 480,
+        "original_filename": "mig02-multi-review-staged-synthetic.avi",
+        "reported_frame_count": 350,
+        "width": 640
+      },
+      "view_id": "fixed-camera-1"
+    }
+  ]
+}

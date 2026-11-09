@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Calibration{% endblock %}
+{% block head %}<script src="/static/js/calibration-points.js" defer></script><script type="module" src="/static/js/native-write.js"></script>{% endblock %}
+{% block content %}
+<h1>Calibration</h1><p>Producer road-plane calibration · {{ data.case_id }} · reconstruction proposals only.</p>
+<p><a href="/reports/{{ run_id }}/review">Back to incident</a></p>
+{% if request.query_params.get('saved') %}<p role="status">Saved calibration revision {{ request.query_params.get('saved') }}.</p>{% endif %}
+<p>Editing calibration {{ current_revision }}. Attaching a new export remains a separate action.</p>
+<form method="get"><input type="hidden" name="revision" value="{{ current_revision }}"><label>Source frame <input name="frame" type="number" min="0" value="{{ frame }}"></label><button>Show frame</button></form>
+<p>Click the source image to add image coordinates, then enter the measured road-plane coordinates. All point lists can also be edited with the keyboard.</p>
+<label>Add clicked point to <select id="point-target"><option value="control_text">Control points</option><option value="validation_text">Held-out validation points</option></select></label>
+<img class="native-source-image" id="calibration-source" src="{{ base }}/frame?frame={{ frame }}&amp;revision={{ current_revision | urlencode }}" alt="Source frame {{ frame }}; enter equivalent image coordinates in the point lists below">
+<form method="post" id="calibration-form" data-native-write>
+<input type="hidden" name="action_id" value="{{ action_id }}">
+<input type="hidden" name="csrf_token" value="{{ csrf_token }}"><input type="hidden" name="frame" value="{{ frame }}">
+<input type="hidden" name="calibration_revision" value="{{ current_revision }}">
+<label>Reviewer <input name="reviewer" required maxlength="200"></label><label>Reason <textarea name="reason" required maxlength="2000"></textarea></label>
+<label>Mode <select name="mode">{% for mode in ['metric','non_metric'] %}<option {% if mode == data.mode %}selected{% endif %}>{{ mode }}</option>{% endfor %}</select></label>
+<label>World unit <select name="world_unit">{% for unit in ['m','ft','relative_units'] %}<option {% if unit == data.world_unit %}selected{% endif %}>{{ unit }}</option>{% endfor %}</select></label>
+<p>Each point row: image x, image y, road-plane x, road-plane y. Non-metric calibration uses relative units.</p>
+<label>Control points <textarea id="control_text" name="control_text" rows="7" required>{{ data.control_text }}</textarea></label>
+<label>Held-out validation points <textarea id="validation_text" name="validation_text" rows="4" required>{{ data.validation_text }}</textarea></label>
+<label>Validation tolerance (selected world units) <input name="validation_tolerance" type="number" step="any" required value="{{ data.validation_tolerance }}"></label>
+<fieldset><legend>Road features</legend><label>Feature name <input id="feature-name"></label><label>Kind <select id="feature-kind"><option>lane</option><option>stop_line</option><option>crossing</option><option>monitored_zone</option></select></label>
+<label>Image vertices (x,y per line) <textarea id="feature-points" rows="4"></textarea></label><button type="button" id="add-feature">Add road feature</button>
+<label>Feature list (keyboard-editable JSON; remove entries to delete features) <textarea id="features" name="features" rows="8">{{ features_json }}</textarea></label></fieldset>
+<button name="action" value="preview">Preview calibration</button><button name="action" value="download">Download calibration JSON</button><button name="action" value="save">Save calibration and road overlay</button>
+</form>
+<p id="native-write-status" role="status" aria-live="polite"></p>
+<button type="button" id="retry-native-write" hidden>Retry pending action</button>
+<p id="calibration-status" role="status">Saved calibration: control RMSE {{ data.calibration.control_rmse }}, validation RMSE {{ data.calibration.validation_rmse }}, worst validation point {{ data.calibration.validation_max_error }} {{ data.world_unit }}.</p>
+<canvas id="calibration-preview" class="native-source-image" aria-label="Calibration road overlay preview"></canvas>
+{% endblock %}

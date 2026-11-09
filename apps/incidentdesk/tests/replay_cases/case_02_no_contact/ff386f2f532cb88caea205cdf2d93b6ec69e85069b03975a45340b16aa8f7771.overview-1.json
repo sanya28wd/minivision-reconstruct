@@ -1,0 +1,44 @@
+{
+  "provenance": "synthetic-fixture",
+  "note": "Hand-crafted recorded response following RPT-11 typed facts contract. Synthetic fixture.",
+  "input_hash": "ff386f2f532cb88caea205cdf2d93b6ec69e85069b03975a45340b16aa8f7771",
+  "prompt_version": "overview-1",
+  "response": {
+    "summary": "Vehicles observed traveling in parallel lanes with no collisions.",
+    "facts": {
+      "parties": [
+        {
+          "description": "white Honda Civic sedan",
+          "timestamp_seconds": 0.4,
+          "confidence": 0.9,
+          "color": "white",
+          "make_model": "Honda Civic",
+          "body_type": "sedan"
+        },
+        {
+          "description": "green Ford transit van",
+          "timestamp_seconds": 0.4,
+          "confidence": 0.9,
+          "color": "green",
+          "make_model": "Ford transit",
+          "body_type": "van"
+        }
+      ],
+      "events": [
+        {
+          "description": "white Honda Civic sedan proceeds in left lane",
+          "timestamp_seconds": 0.8,
+          "confidence": 0.9
+        },
+        {
+          "description": "green Ford transit van proceeds in right lane",
+          "timestamp_seconds": 0.8,
+          "confidence": 0.9
+        }
+      ],
+      "candidate_collisions": [],
+      "behaviour_observations": [],
+      "location_conditions": []
+    }
+  }
+}

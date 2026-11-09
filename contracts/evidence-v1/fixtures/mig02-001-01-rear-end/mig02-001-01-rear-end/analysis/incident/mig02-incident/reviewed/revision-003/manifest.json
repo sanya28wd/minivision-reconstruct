@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0",
+  "case_id": "mig02-001-01-rear-end",
+  "run_id": "mig02-incident",
+  "review_revision": "revision-003",
+  "source_incident_manifest_sha256": "1568c3a7e7de51b2cb859e02b0e891a84d4dfc351dd1fc39fe030ec64b6b6498",
+  "review_revision_sha256": "768b5b1609d0299e21d17d92a3b8ff919f0b11c3cfe378bec5adbedd4346cd72",
+  "created_at": "2026-10-30T05:48:27.513453+00:00",
+  "artifacts": [
+    {
+      "filename": "reviewed_assessments.jsonl",
+      "sha256": "c1e77cd36f2794cf58ec63632e690542516604093d9d00d39d47315d30bd704f"
+    },
+    {
+      "filename": "reviewed_events.jsonl",
+      "sha256": "4f6d5b55313cf187c6d052bcb2beb647b02d23990bbb77512a64b66f7383ed33"
+    }
+  ]
+}

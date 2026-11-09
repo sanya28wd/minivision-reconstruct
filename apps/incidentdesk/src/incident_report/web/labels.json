@@ -1,0 +1,87 @@
+{
+  "_comment": "Every Arabic string shown in the UI lives in this file (RPT-04, ADR 0004/0006). Arabic comes only from GLOSSARY.md or the spec, never invented. ar_status: sourced | translation pending owner review | none (no official Arabic known; English only). The glossary gives these Cause labels only as examples; the full MOI Cause list arrives with the ticket that renders collisions.",
+  "labels": [
+    {
+      "key": "accident_outcome.simple",
+      "en": "Simple Accident",
+      "ar": "حادث بسيط",
+      "ar_status": "sourced",
+      "source": "GLOSSARY.md, Accident Outcome"
+    },
+    {
+      "key": "accident_outcome.injury",
+      "en": "Injury Accident",
+      "ar_status": "none",
+      "source": "GLOSSARY.md, Accident Outcome; the glossary gives no Arabic term"
+    },
+    {
+      "key": "accident_outcome.fatal",
+      "en": "Fatal Accident",
+      "ar": "وفيات",
+      "ar_status": "sourced",
+      "source": "GLOSSARY.md, Accident Outcome"
+    },
+    {
+      "key": "injury_grade.serious",
+      "en": "Serious",
+      "ar": "بالغة",
+      "ar_status": "sourced",
+      "source": "GLOSSARY.md, Injury Grade"
+    },
+    {
+      "key": "injury_grade.moderate",
+      "en": "Moderate",
+      "ar": "متوسطة",
+      "ar_status": "sourced",
+      "source": "GLOSSARY.md, Injury Grade"
+    },
+    {
+      "key": "injury_grade.minor",
+      "en": "Minor",
+      "ar": "بسيطة",
+      "ar_status": "sourced",
+      "source": "GLOSSARY.md, Injury Grade"
+    },
+    {
+      "key": "accident_type.collision_between_vehicles",
+      "en": "Collision between vehicles",
+      "ar": "صدم وتصادم",
+      "ar_status": "sourced",
+      "source": "GLOSSARY.md, Accident Type"
+    },
+    {
+      "key": "accident_type.run_over",
+      "en": "Run-over",
+      "ar": "دهس",
+      "ar_status": "sourced",
+      "source": "GLOSSARY.md, Accident Type"
+    },
+    {
+      "key": "accident_type.rollover",
+      "en": "Rollover",
+      "ar": "تدهور",
+      "ar_status": "sourced",
+      "source": "GLOSSARY.md, Accident Type"
+    },
+    {
+      "key": "accident_type.other",
+      "en": "Other",
+      "ar_status": "none",
+      "source": "GLOSSARY.md, Accident Type; the glossary gives no Arabic term"
+    },
+    {
+      "key": "cause.sudden_swerving",
+      "en": "Sudden swerving",
+      "ar": "الانحراف المفاجئ",
+      "ar_status": "sourced",
+      "source": "GLOSSARY.md, Cause (example)"
+    },
+    {
+      "key": "cause.insufficient_distance",
+      "en": "Not leaving sufficient distance",
+      "ar": "عدم ترك مسافة كافية",
+      "ar_status": "sourced",
+      "source": "GLOSSARY.md, Cause (example)"
+    }
+  ]
+}

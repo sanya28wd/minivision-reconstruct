@@ -17,3 +17,11 @@ tools/TrackEval/
 evaluation/week3/tuning_grid/
 evaluation/week3/tracks/
 evaluation/week3/detection_cache/
+
+# IncidentDesk (MIG-01): per-person and secret files
+CLAUDE.local.md
+.env
+.env.test
+apps/incidentdesk/.venv/
+apps/incidentdesk/.mypy_cache/
+apps/incidentdesk/.ruff_cache/

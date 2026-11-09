@@ -1,0 +1,30 @@
+{
+  "case_id": "case_04_citation_error_repaired",
+  "provenance": "synthetic-fixture",
+  "summary": "Initial summary with invalid citation timestamp.",
+  "is_valid": true,
+  "repair_outcome": "repaired",
+  "validation_errors": [],
+  "parties": [
+    {
+      "description": "white Nissan Sunny sedan",
+      "timestamp_seconds": 0.5,
+      "confidence": 0.9,
+      "color": "white",
+      "make_model": "Nissan Sunny",
+      "body_type": "sedan",
+      "_comment_rpt15_fault": "RESERVED FOR RPT-15: pink | green | white fault status per party",
+      "fault_status": null
+    }
+  ],
+  "events": [
+    {
+      "description": "sedan turns right",
+      "timestamp_seconds": 1.0,
+      "confidence": 0.9
+    }
+  ],
+  "candidate_collisions": [],
+  "_comment_rpt15_overall_fault": "RESERVED FOR RPT-15: overall fault determinations",
+  "overall_fault": null
+}

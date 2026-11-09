@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0",
+  "case_id": "mig02-001-05-near-miss-crossing",
+  "run_id": "week8-incident",
+  "tracking_run": "staged-tracks",
+  "track_revision": "automatic",
+  "calibration_revision": "revision-001",
+  "source_video_path": "mig02-001-05-near-miss-crossing/original/mig02-001-05-near-miss-crossing-staged-synthetic.avi",
+  "source_video_sha256": "b5399a6aa6282f03cba8cc31d1960f1366be03e165e6267dd05a9d803e93f0e0",
+  "source_tracks_path": "mig02-001-05-near-miss-crossing/analysis/tracks/staged-tracks/tracks.jsonl",
+  "source_tracks_sha256": "d28bc85b7a9aadfe34176b0b2091ce39bfe91aa01a5a9cb53f7cf776199c9443",
+  "source_calibration_path": "mig02-001-05-near-miss-crossing/analysis/calibration/revision-001/calibration.json",
+  "source_calibration_sha256": "396a41afebb5a6fe54fc3aee40b6cf761e9b975e674a96da75df59f8bced8630",
+  "replay_fps": 30,
+  "proxy_width": 640,
+  "proxy_height": 480,
+  "source_width": 640,
+  "source_height": 480,
+  "source_frame_count": 400,
+  "replay_frame_count": 480,
+  "repeated_frames": 80,
+  "omitted_frames": 0,
+  "duration_seconds": 16.0,
+  "observation_count": 573,
+  "unavailable_observations": 0,
+  "created_at": "2026-10-30T05:47:30.554530+00:00",
+  "artifacts": [
+    {
+      "filename": "markers.json",
+      "sha256": "b49f764a7e6858802fc265a881b2ebc60c7b1ff1d25a291ff276540d1ca44b4c"
+    },
+    {
+      "filename": "observations.jsonl",
+      "sha256": "1b557c4954107450baf3f30e8f30521923e7499192c73d9434ebdc590d92bb2c"
+    },
+    {
+      "filename": "replay.mp4",
+      "sha256": "5e89e2caf5a89141e680986e1ff66c3b144f8f06c1aa50954e2413bab5f9fe3b"
+    },
+    {
+      "filename": "replay_frames.jsonl",
+      "sha256": "03ee42ad69af196af1c083a2ab956b248ea96bb2500249b24c78919e5d7dabbc"
+    },
+    {
+      "filename": "scene.json",
+      "sha256": "a0df2a70f7c1a91690c629f738c03138822ca04a1bf12f116ee8fa5e15db48ef"
+    },
+    {
+      "filename": "source_frames.jsonl",
+      "sha256": "1281a62298f588766b2bcf32e249a4c4d2a05c842377a469d1639d7bb5785591"
+    }
+  ]
+}

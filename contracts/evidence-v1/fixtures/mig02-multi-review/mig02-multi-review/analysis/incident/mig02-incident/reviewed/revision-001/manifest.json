@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0",
+  "case_id": "mig02-multi-review",
+  "run_id": "mig02-incident",
+  "review_revision": "revision-001",
+  "source_incident_manifest_sha256": "fc1b194e63299bfa94f6c18881c3ad3d001f94ba75a983d629a5ab90b7f63486",
+  "review_revision_sha256": "f22d9c6b93dfaba2dcc8af60dbab977564809ad39f5f2f9206e833f696e88c35",
+  "created_at": "2026-10-30T06:13:54.781354+00:00",
+  "artifacts": [
+    {
+      "filename": "reviewed_assessments.jsonl",
+      "sha256": "dfc92735e768d801b71580b53e2d94f8520d77e5f6d54547711b5d909852b7b5"
+    },
+    {
+      "filename": "reviewed_events.jsonl",
+      "sha256": "a17421c81fdc17760494dc1633df01a336e34d208121b3557a0c9e45463ab7af"
+    }
+  ]
+}

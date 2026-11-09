@@ -1,0 +1,334 @@
+{
+  "parties": [
+    {
+      "description": "P1 white sedan",
+      "view_id": "experiment",
+      "timestamp_seconds": 0.0,
+      "confidence": 0.85,
+      "color": "white",
+      "body_type": "sedan",
+      "party_code": "P1"
+    },
+    {
+      "description": "P2 white sedan",
+      "view_id": "experiment",
+      "timestamp_seconds": 0.0,
+      "confidence": 0.85,
+      "color": "white",
+      "body_type": "sedan",
+      "party_code": "P2"
+    }
+  ],
+  "events": [
+    {
+      "description": "P2 white sedan strikes the side of P1 white sedan as P1 white sedan makes a left turn across the roadway.",
+      "timestamp_seconds": 3.3,
+      "confidence": 0.9
+    }
+  ],
+  "candidate_collisions": [
+    {
+      "description": "P2 white sedan: vehicle contact vehicle (P1 white sedan)",
+      "view_id": "experiment",
+      "timestamp_seconds": 3.3,
+      "confidence": 0.9
+    }
+  ],
+  "behaviour_observations": [],
+  "location_conditions": [],
+  "structured_facts": [
+    {
+      "subject": "scene",
+      "field": "conflict_zone_type",
+      "value": "unsignalised_junction",
+      "other_party": "",
+      "timestamp_seconds": 3.3,
+      "confidence": 0.85
+    },
+    {
+      "subject": "scene",
+      "field": "officer_directing_traffic",
+      "value": "no",
+      "other_party": "",
+      "timestamp_seconds": 3.3,
+      "confidence": 0.95
+    },
+    {
+      "subject": "scene",
+      "field": "visibility_conditions",
+      "value": "clear",
+      "other_party": "",
+      "timestamp_seconds": 3.3,
+      "confidence": 0.95
+    },
+    {
+      "subject": "scene",
+      "field": "posted_speed_limit_kmh",
+      "value": "not_visible",
+      "other_party": "",
+      "timestamp_seconds": 3.3,
+      "confidence": 0.9
+    },
+    {
+      "subject": "P1 white sedan",
+      "field": "motion_state_before_contact",
+      "value": "moving",
+      "other_party": "",
+      "timestamp_seconds": 3.0,
+      "confidence": 0.9
+    },
+    {
+      "subject": "P2 white sedan",
+      "field": "motion_state_before_contact",
+      "value": "moving",
+      "other_party": "",
+      "timestamp_seconds": 3.0,
+      "confidence": 0.9
+    },
+    {
+      "subject": "P1 white sedan",
+      "field": "approach_control_faced",
+      "value": "none_confirmed",
+      "other_party": "",
+      "timestamp_seconds": 3.0,
+      "confidence": 0.8
+    },
+    {
+      "subject": "P2 white sedan",
+      "field": "approach_control_faced",
+      "value": "none_confirmed",
+      "other_party": "",
+      "timestamp_seconds": 3.0,
+      "confidence": 0.8
+    },
+    {
+      "subject": "P1 white sedan",
+      "field": "impact_zone_on_party",
+      "value": "right_side",
+      "other_party": "",
+      "timestamp_seconds": 3.3,
+      "confidence": 0.85
+    },
+    {
+      "subject": "P2 white sedan",
+      "field": "impact_zone_on_party",
+      "value": "front",
+      "other_party": "",
+      "timestamp_seconds": 3.3,
+      "confidence": 0.85
+    },
+    {
+      "subject": "P1 white sedan",
+      "field": "relative_position_of_other",
+      "value": "B_from_A_right",
+      "other_party": "P2 white sedan",
+      "timestamp_seconds": 3.2,
+      "confidence": 0.85
+    },
+    {
+      "subject": "P2 white sedan",
+      "field": "relative_position_of_other",
+      "value": "B_ahead_same_direction",
+      "other_party": "P1 white sedan",
+      "timestamp_seconds": 3.2,
+      "confidence": 0.8
+    },
+    {
+      "subject": "P1 white sedan",
+      "field": "party_type",
+      "value": "car",
+      "other_party": "",
+      "view_id": "experiment",
+      "timestamp_seconds": 2.0,
+      "confidence": 0.85
+    },
+    {
+      "subject": "P1 white sedan",
+      "field": "movement",
+      "value": "left_turn",
+      "other_party": "",
+      "view_id": "experiment",
+      "timestamp_seconds": 2.5,
+      "confidence": 0.85
+    },
+    {
+      "subject": "P1 white sedan",
+      "field": "roundabout_entry_state",
+      "value": "not_in_roundabout",
+      "other_party": "",
+      "view_id": "experiment",
+      "timestamp_seconds": 2.5,
+      "confidence": 0.85
+    },
+    {
+      "subject": "P1 white sedan",
+      "field": "entry_origin",
+      "value": "public_road_same_road",
+      "other_party": "",
+      "view_id": "experiment",
+      "timestamp_seconds": 2.5,
+      "confidence": 0.85
+    },
+    {
+      "subject": "P2 white sedan",
+      "field": "party_type",
+      "value": "car",
+      "other_party": "",
+      "view_id": "experiment",
+      "timestamp_seconds": 1.5,
+      "confidence": 0.85
+    },
+    {
+      "subject": "P2 white sedan",
+      "field": "movement",
+      "value": "straight",
+      "other_party": "",
+      "view_id": "experiment",
+      "timestamp_seconds": 2.0,
+      "confidence": 0.85
+    },
+    {
+      "subject": "P2 white sedan",
+      "field": "roundabout_entry_state",
+      "value": "not_in_roundabout",
+      "other_party": "",
+      "view_id": "experiment",
+      "timestamp_seconds": 2.0,
+      "confidence": 0.85
+    },
+    {
+      "subject": "P2 white sedan",
+      "field": "entry_origin",
+      "value": "public_road_same_road",
+      "other_party": "",
+      "view_id": "experiment",
+      "timestamp_seconds": 2.0,
+      "confidence": 0.85
+    }
+  ],
+  "text_readings": [
+    {
+      "kind": "other",
+      "text": "DİYARBAKIR",
+      "language": "other",
+      "timestamp_seconds": 1.0,
+      "confidence": 0.9
+    }
+  ],
+  "driver_observations": [],
+  "collision_observations": [
+    {
+      "kind": "vehicle_contact_vehicle",
+      "subject": "P2 white sedan",
+      "other_party": "P1 white sedan",
+      "injury_grade": "unknown",
+      "visibility": "visible",
+      "timestamp_seconds": 3.3,
+      "confidence": 0.9,
+      "view_id": "experiment"
+    },
+    {
+      "kind": "vehicle_stopped_at_scene",
+      "subject": "P1 white sedan",
+      "other_party": "",
+      "injury_grade": "unknown",
+      "visibility": "visible",
+      "timestamp_seconds": 4.5,
+      "confidence": 0.9,
+      "view_id": "experiment"
+    },
+    {
+      "kind": "vehicle_stopped_at_scene",
+      "subject": "P2 white sedan",
+      "other_party": "",
+      "injury_grade": "unknown",
+      "visibility": "visible",
+      "timestamp_seconds": 4.5,
+      "confidence": 0.9,
+      "view_id": "experiment"
+    }
+  ],
+  "drowsiness_observations": [],
+  "party_checklist": [
+    {
+      "party_code": "P1",
+      "first_seen_seconds": 0.0,
+      "attributes_seen_at_seconds": 2.0,
+      "movement_seen_at_seconds": 2.5,
+      "party_type": "sedan",
+      "party_type_other": "",
+      "marking": "none_seen",
+      "colour_family": "white",
+      "colour_other": "",
+      "manoeuvre": "into_side_road",
+      "manoeuvre_other": "",
+      "turn_direction": "left",
+      "roundabout_exit_position": "not_applicable",
+      "road_class_on_approach": "side_road",
+      "road_class_basis": "two_lanes_or_fewer",
+      "confidence": 0.85,
+      "view_id": "experiment",
+      "display_name": "P1 white sedan"
+    },
+    {
+      "party_code": "P2",
+      "first_seen_seconds": 0.0,
+      "attributes_seen_at_seconds": 1.5,
+      "movement_seen_at_seconds": 2.0,
+      "party_type": "sedan",
+      "party_type_other": "",
+      "marking": "none_seen",
+      "colour_family": "white",
+      "colour_other": "",
+      "manoeuvre": "continue_same_road",
+      "manoeuvre_other": "",
+      "turn_direction": "straight",
+      "roundabout_exit_position": "not_applicable",
+      "road_class_on_approach": "side_road",
+      "road_class_basis": "two_lanes_or_fewer",
+      "confidence": 0.85,
+      "view_id": "experiment",
+      "display_name": "P2 white sedan"
+    }
+  ],
+  "observation_notes": [
+    {
+      "party_code": "P1",
+      "timestamp_seconds": 0.0,
+      "note": "White sedan enters the junction from the approach on the upper left, making a left turn across traffic.",
+      "view_id": "experiment",
+      "subject": "P1 white sedan"
+    },
+    {
+      "party_code": "P2",
+      "timestamp_seconds": 0.0,
+      "note": "White sedan moves along the straight roadway on the upper left heading towards the junction, colliding with P1 white sedan.",
+      "view_id": "experiment",
+      "subject": "P2 white sedan"
+    },
+    {
+      "party_code": "P1",
+      "timestamp_seconds": 3.3,
+      "note": "P1 white sedan is struck by P2 white sedan on its right side/front in the intersection.",
+      "view_id": "experiment",
+      "subject": "P1 white sedan"
+    },
+    {
+      "party_code": "P2",
+      "timestamp_seconds": 3.3,
+      "note": "P2 white sedan impacts P1 white sedan and both vehicles come to a stop at the scene.",
+      "view_id": "experiment",
+      "subject": "P2 white sedan"
+    }
+  ],
+  "incident_assessments": [
+    {
+      "assessment_note": "A collision occurs between two white sedans (P1 white sedan and P2 white sedan) on the roadway approach in the upper left background, observed by a fixed camera.",
+      "camera_role": "fixed_camera",
+      "contact_state": "contact_observed",
+      "contact_interval_start_seconds": 3.0,
+      "contact_interval_end_seconds": 3.6,
+      "view_id": "experiment"
+    }
+  ]
+}

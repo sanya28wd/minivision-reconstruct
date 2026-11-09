@@ -1,0 +1,17 @@
+/* Workspace layout choices; colours and controls inherit the RPT-04 tokens. */
+.review-workspace { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: var(--space-6); }
+.review-player, .review-report { min-width: 0; }
+.review-player { align-self: start; padding: var(--space-4); background: var(--color-surface); border: 1px solid var(--color-border); }
+.review-player select { width: 100%; margin-block-end: var(--space-3); }
+.review-player figure { margin: 0; min-width: 0; }
+.review-player video { display: block; width: 100%; }
+.review-videos.is-comparing { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-2); }
+.review-scrubber { position: relative; height: 3rem; margin-block: var(--space-2); border-block-start: 2px solid var(--color-accent); }
+.review-marker { position: absolute; top: 0; transform: translateX(-50%); min-width: var(--control-min-size); min-height: var(--control-min-size); padding: 0; font-size: var(--text-xs); }
+.review-timeline { padding-inline-start: var(--space-6); }
+.review-timeline li { padding: var(--space-2); margin-block-end: var(--space-2); border-inline-start: 3px solid transparent; }
+.review-timeline li[aria-current="true"] { border-color: var(--color-accent); background: var(--color-accent-tint); }
+.review-workspace .citation { overflow-wrap: anywhere; text-align: start; max-width: 100%; }
+.review-workspace :focus-visible { outline: 3px solid var(--color-focus-ring); outline-offset: var(--focus-ring-offset); }
+.review-workspace [hidden] { display: none; }
+@media (max-width: 54rem) { .review-workspace { grid-template-columns: minmax(0, 1fr); } }

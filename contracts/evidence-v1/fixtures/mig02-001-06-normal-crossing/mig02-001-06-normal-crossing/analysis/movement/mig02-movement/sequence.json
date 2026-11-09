@@ -1,0 +1,147 @@
+{
+  "schema_version": "1.0",
+  "case_id": "mig02-001-06-normal-crossing",
+  "entries": [
+    {
+      "rank": 1,
+      "event_id": "first_observed-t1-f54",
+      "event_type": "first_observed",
+      "track_ids": [
+        1
+      ],
+      "peak_time": 2.16,
+      "time_window": [
+        2.14,
+        2.18
+      ],
+      "order_unresolved_with": []
+    },
+    {
+      "rank": 2,
+      "event_id": "first_observed-t2-f67",
+      "event_type": "first_observed",
+      "track_ids": [
+        2
+      ],
+      "peak_time": 2.68,
+      "time_window": [
+        2.66,
+        2.7
+      ],
+      "order_unresolved_with": []
+    },
+    {
+      "rank": 3,
+      "event_id": "stop-t1-f128",
+      "event_type": "stop",
+      "track_ids": [
+        1
+      ],
+      "peak_time": 5.12,
+      "time_window": [
+        4.92,
+        5.6
+      ],
+      "order_unresolved_with": []
+    },
+    {
+      "rank": 4,
+      "event_id": "closest_approach-t1-2-f171",
+      "event_type": "closest_approach",
+      "track_ids": [
+        1,
+        2
+      ],
+      "peak_time": 6.84,
+      "time_window": [
+        6.28,
+        7.36
+      ],
+      "order_unresolved_with": []
+    },
+    {
+      "rank": 5,
+      "event_id": "start-t1-f203",
+      "event_type": "start",
+      "track_ids": [
+        1
+      ],
+      "peak_time": 8.12,
+      "time_window": [
+        7.64,
+        8.32
+      ],
+      "order_unresolved_with": []
+    },
+    {
+      "rank": 6,
+      "event_id": "stop_line_crossing-t1-f216",
+      "event_type": "stop_line_crossing",
+      "track_ids": [
+        1
+      ],
+      "peak_time": 8.64,
+      "time_window": [
+        8.56,
+        8.76
+      ],
+      "order_unresolved_with": []
+    },
+    {
+      "rank": 7,
+      "event_id": "zone_entry-t1-f225",
+      "event_type": "zone_entry",
+      "track_ids": [
+        1
+      ],
+      "peak_time": 9.0,
+      "time_window": [
+        8.92,
+        9.04
+      ],
+      "order_unresolved_with": []
+    },
+    {
+      "rank": 8,
+      "event_id": "zone_exit-t1-f245",
+      "event_type": "zone_exit",
+      "track_ids": [
+        1
+      ],
+      "peak_time": 9.8,
+      "time_window": [
+        9.72,
+        9.82
+      ],
+      "order_unresolved_with": []
+    },
+    {
+      "rank": 9,
+      "event_id": "last_observed-t2-f298",
+      "event_type": "last_observed",
+      "track_ids": [
+        2
+      ],
+      "peak_time": 11.92,
+      "time_window": [
+        11.9,
+        11.94
+      ],
+      "order_unresolved_with": []
+    },
+    {
+      "rank": 10,
+      "event_id": "last_observed-t1-f394",
+      "event_type": "last_observed",
+      "track_ids": [
+        1
+      ],
+      "peak_time": 15.76,
+      "time_window": [
+        15.74,
+        15.78
+      ],
+      "order_unresolved_with": []
+    }
+  ]
+}

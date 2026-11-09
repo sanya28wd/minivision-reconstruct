@@ -1,0 +1,140 @@
+{
+  "schema_version": "1.0",
+  "case_id": "mig02-relative",
+  "entries": [
+    {
+      "rank": 1,
+      "event_id": "first_observed-t1-f68",
+      "event_type": "first_observed",
+      "track_ids": [
+        1
+      ],
+      "peak_time": 2.72,
+      "time_window": [
+        2.7,
+        2.74
+      ],
+      "order_unresolved_with": []
+    },
+    {
+      "rank": 2,
+      "event_id": "first_observed-t2-f149",
+      "event_type": "first_observed",
+      "track_ids": [
+        2
+      ],
+      "peak_time": 5.96,
+      "time_window": [
+        5.94,
+        5.9799999999999995
+      ],
+      "order_unresolved_with": [
+        "stop-t1-f149"
+      ]
+    },
+    {
+      "rank": 3,
+      "event_id": "stop-t1-f149",
+      "event_type": "stop",
+      "track_ids": [
+        1
+      ],
+      "peak_time": 5.96,
+      "time_window": [
+        5.72,
+        6.44
+      ],
+      "order_unresolved_with": [
+        "first_observed-t2-f149"
+      ]
+    },
+    {
+      "rank": 4,
+      "event_id": "start-t1-f197",
+      "event_type": "start",
+      "track_ids": [
+        1
+      ],
+      "peak_time": 7.88,
+      "time_window": [
+        7.4,
+        8.12
+      ],
+      "order_unresolved_with": []
+    },
+    {
+      "rank": 5,
+      "event_id": "stop_line_crossing-t1-f211",
+      "event_type": "stop_line_crossing",
+      "track_ids": [
+        1
+      ],
+      "peak_time": 8.44,
+      "time_window": [
+        8.36,
+        8.56
+      ],
+      "order_unresolved_with": []
+    },
+    {
+      "rank": 6,
+      "event_id": "zone_entry-t1-f221",
+      "event_type": "zone_entry",
+      "track_ids": [
+        1
+      ],
+      "peak_time": 8.84,
+      "time_window": [
+        8.72,
+        8.88
+      ],
+      "order_unresolved_with": []
+    },
+    {
+      "rank": 7,
+      "event_id": "stop-t2-f265",
+      "event_type": "stop",
+      "track_ids": [
+        2
+      ],
+      "peak_time": 10.6,
+      "time_window": [
+        10.48,
+        11.08
+      ],
+      "order_unresolved_with": []
+    },
+    {
+      "rank": 8,
+      "event_id": "last_observed-t1-f349",
+      "event_type": "last_observed",
+      "track_ids": [
+        1
+      ],
+      "peak_time": 13.96,
+      "time_window": [
+        13.940000000000001,
+        13.98
+      ],
+      "order_unresolved_with": [
+        "last_observed-t2-f349"
+      ]
+    },
+    {
+      "rank": 9,
+      "event_id": "last_observed-t2-f349",
+      "event_type": "last_observed",
+      "track_ids": [
+        2
+      ],
+      "peak_time": 13.96,
+      "time_window": [
+        13.940000000000001,
+        13.98
+      ],
+      "order_unresolved_with": [
+        "last_observed-t1-f349"
+      ]
+    }
+  ]
+}

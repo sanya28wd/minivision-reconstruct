@@ -1,0 +1,327 @@
+{
+  "$defs": {
+    "FrameRate": {
+      "additionalProperties": false,
+      "properties": {
+        "numerator": {
+          "exclusiveMinimum": 0,
+          "title": "Numerator",
+          "type": "integer"
+        },
+        "denominator": {
+          "exclusiveMinimum": 0,
+          "title": "Denominator",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "numerator",
+        "denominator"
+      ],
+      "title": "FrameRate",
+      "type": "object"
+    },
+    "SourceBinding": {
+      "additionalProperties": false,
+      "properties": {
+        "producer_case_id": {
+          "anyOf": [
+            {
+              "maxLength": 200,
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Producer Case Id"
+        },
+        "view_id": {
+          "maxLength": 200,
+          "minLength": 1,
+          "title": "View Id",
+          "type": "string"
+        },
+        "original_video_sha256": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Original Video Sha256",
+          "type": "string"
+        },
+        "reconstruction_manifest": {
+          "title": "Reconstruction Manifest",
+          "type": "string"
+        },
+        "movement_manifest": {
+          "title": "Movement Manifest",
+          "type": "string"
+        },
+        "incident_manifest": {
+          "title": "Incident Manifest",
+          "type": "string"
+        },
+        "reviewed_manifest": {
+          "title": "Reviewed Manifest",
+          "type": "string"
+        },
+        "tracking_run": {
+          "title": "Tracking Run",
+          "type": "string"
+        },
+        "track_revision": {
+          "title": "Track Revision",
+          "type": "string"
+        },
+        "calibration_revision": {
+          "title": "Calibration Revision",
+          "type": "string"
+        },
+        "reconstruction_run": {
+          "title": "Reconstruction Run",
+          "type": "string"
+        },
+        "movement_run": {
+          "title": "Movement Run",
+          "type": "string"
+        },
+        "incident_run": {
+          "title": "Incident Run",
+          "type": "string"
+        },
+        "review_revision": {
+          "title": "Review Revision",
+          "type": "string"
+        },
+        "video_metadata": {
+          "$ref": "#/$defs/VideoMetadata"
+        },
+        "transformations": {
+          "items": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "title": "Transformations",
+          "type": "array"
+        },
+        "frame_origin": {
+          "const": 0,
+          "title": "Frame Origin",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "view_id",
+        "original_video_sha256",
+        "reconstruction_manifest",
+        "movement_manifest",
+        "incident_manifest",
+        "reviewed_manifest",
+        "tracking_run",
+        "track_revision",
+        "calibration_revision",
+        "reconstruction_run",
+        "movement_run",
+        "incident_run",
+        "review_revision",
+        "video_metadata",
+        "transformations",
+        "frame_origin"
+      ],
+      "title": "SourceBinding",
+      "type": "object"
+    },
+    "VideoMetadata": {
+      "additionalProperties": false,
+      "properties": {
+        "original_filename": {
+          "title": "Original Filename",
+          "type": "string"
+        },
+        "duration_seconds": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Duration Seconds"
+        },
+        "frame_rate": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/FrameRate"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "width": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Width"
+        },
+        "height": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Height"
+        },
+        "codec": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Codec"
+        },
+        "reported_frame_count": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Reported Frame Count"
+        },
+        "frame_count_source": {
+          "enum": [
+            "reported",
+            "derived",
+            "unavailable"
+          ],
+          "title": "Frame Count Source",
+          "type": "string"
+        },
+        "creation_time": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Creation Time"
+        },
+        "extraction_tool": {
+          "title": "Extraction Tool",
+          "type": "string"
+        }
+      },
+      "required": [
+        "original_filename",
+        "duration_seconds",
+        "frame_rate",
+        "width",
+        "height",
+        "codec",
+        "reported_frame_count",
+        "frame_count_source",
+        "creation_time",
+        "extraction_tool"
+      ],
+      "title": "VideoMetadata",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "contract_version": {
+      "const": "1.0",
+      "title": "Contract Version",
+      "type": "string"
+    },
+    "producer": {
+      "const": "minivision-reconstruct",
+      "title": "Producer",
+      "type": "string"
+    },
+    "producer_revision": {
+      "pattern": "^[a-f0-9]{40}$",
+      "title": "Producer Revision",
+      "type": "string"
+    },
+    "case_id": {
+      "maxLength": 200,
+      "minLength": 1,
+      "title": "Case Id",
+      "type": "string"
+    },
+    "created_at": {
+      "title": "Created At",
+      "type": "string"
+    },
+    "processing_policy": {
+      "const": "local_only",
+      "title": "Processing Policy",
+      "type": "string"
+    },
+    "config_identifiers": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Config Identifiers",
+      "type": "array"
+    },
+    "model_identifiers": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Model Identifiers",
+      "type": "array"
+    },
+    "artifacts": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "title": "Artifacts",
+      "type": "object"
+    },
+    "sources": {
+      "items": {
+        "$ref": "#/$defs/SourceBinding"
+      },
+      "title": "Sources",
+      "type": "array"
+    }
+  },
+  "required": [
+    "contract_version",
+    "producer",
+    "producer_revision",
+    "case_id",
+    "created_at",
+    "processing_policy",
+    "config_identifiers",
+    "model_identifiers",
+    "artifacts",
+    "sources"
+  ],
+  "title": "Envelope",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

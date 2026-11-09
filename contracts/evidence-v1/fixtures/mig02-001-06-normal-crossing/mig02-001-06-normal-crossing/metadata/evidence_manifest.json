@@ -1,0 +1,23 @@
+{
+  "case_id": "mig02-001-06-normal-crossing",
+  "codec": "mjpeg",
+  "decoded_frame_count": 400,
+  "duration_seconds": 16.0,
+  "file_size_bytes": 5351254,
+  "first_decoded_timestamp_seconds": 0.0,
+  "frame_count_source": "reported",
+  "frame_rate_decimal": 25.0,
+  "frame_rate_denominator": 1,
+  "frame_rate_numerator": 25,
+  "height": 480,
+  "ingested_at": "2026-10-30T05:47:32.768961Z",
+  "last_decoded_timestamp_seconds": 15.96,
+  "metadata_extraction_tool": "ffprobe",
+  "original_source_filename": "mig02-001-06-normal-crossing-staged-synthetic.avi",
+  "preserved_relative_path": "mig02-001-06-normal-crossing/original/mig02-001-06-normal-crossing-staged-synthetic.avi",
+  "preserved_sha256": "e0cd565ca340e8fc7430b845ead8143e53ee8228268ff8abddb4aba4afdf5b10",
+  "reported_frame_count": 400,
+  "schema_version": "1.0",
+  "source_sha256": "e0cd565ca340e8fc7430b845ead8143e53ee8228268ff8abddb4aba4afdf5b10",
+  "width": 640
+}

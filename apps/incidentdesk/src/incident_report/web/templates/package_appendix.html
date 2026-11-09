@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Reconstruction proposal appendix{% endblock %}
+{% block content %}
+<h1>{{ proposal_label }}</h1>
+<p>This appendix preserves the imported proposal and review context available when this report version was approved. It does not change Fault Status, violations, fines or officer decisions. Later reconstruction changes are excluded.</p>
+{% for view in report.views %}
+<section><h2>{{ view.label or view.filename }}</h2>
+<p>View SHA-256 {{ view.sha256 }}</p>
+{% set panel = reconstruction.get(view.sha256) %}
+{% if panel %}{% include "reconstruction_cross_check.html" %}{% endif %}
+{% set driver_panel = driver_context.get(view.sha256) %}
+{% if driver_panel %}{% include "reconstruction_driver_context.html" %}{% endif %}
+</section>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,73 @@
+{
+  "samples": [
+    {
+      "id": "day1",
+      "licence": "unknown — owner to confirm",
+      "prompt_version": "overview-2",
+      "recording": "recordings/day1.json",
+      "source_clip": "day1.mp4",
+      "source_run_id": "cff071db-cdde-4ea5-b556-ddc48af3089b",
+      "title": "Research clip day1.mp4",
+      "view": {
+        "duration_seconds": 15.530667,
+        "filename": "day1.mp4",
+        "mime_type": "video/mp4",
+        "role": "exterior",
+        "sha256": "3edb026749b1068c3c40200c21aa276f05a327b06313f565929824141da2d8e3",
+        "size_bytes": 1685629
+      }
+    },
+    {
+      "id": "night1",
+      "licence": "unknown — owner to confirm",
+      "prompt_version": "overview-2",
+      "recording": "recordings/night1.json",
+      "source_clip": "night1.mp4",
+      "source_run_id": "ff2bca0f-66af-4fe8-8ae3-43c7e70320bb",
+      "title": "Research clip night1.mp4",
+      "view": {
+        "duration_seconds": 20.085261,
+        "filename": "night1.mp4",
+        "mime_type": "video/mp4",
+        "role": "exterior",
+        "sha256": "c508565c17afec0c9786b82a4d4a594bd74e88bd7a7f3f581d0f837bbf59ecf5",
+        "size_bytes": 997314
+      }
+    },
+    {
+      "id": "major-01",
+      "licence": "unknown — owner to confirm",
+      "prompt_version": "overview-2",
+      "recording": "recordings/major-01.json",
+      "source_clip": "MAJOR_01.mp4",
+      "source_run_id": "956951f0-1282-4e8b-b40f-4b8571d820bc",
+      "title": "Research clip MAJOR_01.mp4",
+      "view": {
+        "duration_seconds": 5.166667,
+        "filename": "MAJOR_01.mp4",
+        "mime_type": "video/mp4",
+        "role": "exterior",
+        "sha256": "675820991fd060e236d1837ef9d81edebf07a36003505bea169ec4c422012d36",
+        "size_bytes": 1647099
+      }
+    },
+    {
+      "id": "minor-01",
+      "licence": "unknown — owner to confirm",
+      "prompt_version": "overview-2",
+      "recording": "recordings/minor-01.json",
+      "source_clip": "MINOR_01.mp4",
+      "source_run_id": "49275f5a-df17-4412-937e-12c2cb883bdb",
+      "title": "Research clip MINOR_01.mp4",
+      "view": {
+        "duration_seconds": 7.633333,
+        "filename": "MINOR_01.mp4",
+        "mime_type": "video/mp4",
+        "role": "exterior",
+        "sha256": "d64d67e28e8508d7bc4b28383a958317c26f951055a4f196f59545bbb239f198",
+        "size_bytes": 6892675
+      }
+    }
+  ],
+  "schema_version": 1
+}

@@ -1,0 +1,14 @@
+{
+  "case_id": "case_02_no_contact",
+  "description": "Two vehicles passing in parallel lanes without contact (synthetic test footage)",
+  "prompt_version": "overview-1",
+  "origin": "replay",
+  "views": [
+    {
+      "filename": "no_contact_boxes.mp4",
+      "role": "exterior",
+      "sha256": "2120b0ebc44b3fba42a765b5a2f89db255765f9205a48896aebf794f27f304fc",
+      "label": "front dashcam"
+    }
+  ]
+}

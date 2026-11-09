@@ -1,0 +1,65 @@
+{
+  "parties": [],
+  "events": [],
+  "candidate_collisions": [],
+  "behaviour_observations": [],
+  "location_conditions": [],
+  "structured_facts": [
+    {
+      "subject": "scene",
+      "field": "conflict_zone_type",
+      "value": "mid_block",
+      "other_party": "",
+      "timestamp_seconds": 0.5,
+      "confidence": 0.95
+    },
+    {
+      "subject": "scene",
+      "field": "officer_directing_traffic",
+      "value": "no",
+      "other_party": "",
+      "timestamp_seconds": 0.5,
+      "confidence": 0.98
+    },
+    {
+      "subject": "scene",
+      "field": "visibility_conditions",
+      "value": "clear",
+      "other_party": "",
+      "timestamp_seconds": 0.5,
+      "confidence": 0.98
+    },
+    {
+      "subject": "scene",
+      "field": "posted_speed_limit_kmh",
+      "value": "not_visible",
+      "other_party": "",
+      "timestamp_seconds": 0.5,
+      "confidence": 0.95
+    }
+  ],
+  "text_readings": [],
+  "driver_observations": [],
+  "collision_observations": [],
+  "drowsiness_observations": [],
+  "party_checklist": [],
+  "observation_notes": [
+    {
+      "party_code": "scene",
+      "timestamp_seconds": 0.5,
+      "note": "A camera vehicle travels along an empty rural two-lane road flanked by lush green trees under a partly cloudy sky.",
+      "view_id": "experiment",
+      "subject": "scene"
+    }
+  ],
+  "incident_assessments": [
+    {
+      "assessment_note": "The camera vehicle drives continuously along a clear rural road with no collisions or other road users present.",
+      "camera_role": "witness_vehicle_not_involved",
+      "contact_state": "no_contact_observed",
+      "contact_interval_start_seconds": null,
+      "contact_interval_end_seconds": null,
+      "view_id": "experiment"
+    }
+  ]
+}

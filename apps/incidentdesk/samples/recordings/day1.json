@@ -1,0 +1,54 @@
+{
+  "calls": [
+    {
+      "error": "Gemini request failed.",
+      "fps": 1.0,
+      "input_hash": "fa17d985ff47c8df1daad6a7f9a80e2f33a2a9542d03a3b78c92ec0b5711628c",
+      "latency_ms": 12416.407999997318,
+      "model": "gemini-3.8-flash",
+      "prompt_version": "overview-2",
+      "provider_error": {
+        "http_status": 503,
+        "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+        "status": "UNAVAILABLE"
+      },
+      "raw_response": null,
+      "request_hash": "5a9bb86544fc76eeb3ba1f17e25d73b30117ed586f1e35daa68d4752efc7b20a",
+      "retry_index": 0,
+      "status_code": 503,
+      "view_id": "3edb026749b1068c3c40200c21aa276f05a327b06313f565929824141da2d8e3"
+    },
+    {
+      "error": "Gemini request failed.",
+      "fps": 1.0,
+      "input_hash": "fa17d985ff47c8df1daad6a7f9a80e2f33a2a9542d03a3b78c92ec0b5711628c",
+      "latency_ms": 15384.671500003606,
+      "model": "gemini-3.8-flash",
+      "prompt_version": "overview-2",
+      "provider_error": {
+        "http_status": 503,
+        "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+        "status": "UNAVAILABLE"
+      },
+      "raw_response": null,
+      "request_hash": "5a9bb86544fc76eeb3ba1f17e25d73b30117ed586f1e35daa68d4752efc7b20a",
+      "retry_index": 1,
+      "status_code": 503,
+      "view_id": "3edb026749b1068c3c40200c21aa276f05a327b06313f565929824141da2d8e3"
+    },
+    {
+      "error": null,
+      "fps": 1.0,
+      "input_hash": "fa17d985ff47c8df1daad6a7f9a80e2f33a2a9542d03a3b78c92ec0b5711628c",
+      "latency_ms": 38815.4577000023,
+      "model": "gemini-3.8-flash",
+      "prompt_version": "overview-2",
+      "provider_error": null,
+      "raw_response": "{\"candidates\":[{\"content\":{\"parts\":[{\"media_resolution\":null,\"code_execution_result\":null,\"executable_code\":null,\"file_data\":null,\"function_call\":null,\"function_response\":null,\"inline_data\":null,\"text\":\"{\\n  \\\"parties\\\": [\\n    {\\n      \\\"description\\\": \\\"camera vehicle\\\",\\n      \\\"timestamp_seconds\\\": 0.0,\\n      \\\"confidence\\\": 0.95\\n    }\\n  ],\\n  \\\"events\\\": [],\\n  \\\"candidate_collisions\\\": [],\\n  \\\"behaviour_observations\\\": [\\n    {\\n      \\\"description\\\": \\\"camera vehicle is traveling forward along a rural roadway lined with trees\\\",\\n      \\\"timestamp_seconds\\\": 0.0,\\n      \\\"confidence\\\": 0.95\\n    }\\n  ],\\n  \\\"location_conditions\\\": [\\n    {\\n      \\\"description\\\": \\\"rural two-lane paved road surrounded by dense green vegetation and trees under clear daylight\\\",\\n      \\\"timestamp_seconds\\\": 0.0,\\n      \\\"confidence\\\": 0.95\\n    }\\n  ],\\n  \\\"structured_facts\\\": [\\n    {\\n      \\\"subject\\\": \\\"scene\\\",\\n      \\\"field\\\": \\\"conflict_zone_type\\\",\\n      \\\"value\\\": \\\"mid_block\\\",\\n      \\\"other_party\\\": \\\"\\\",\\n      \\\"timestamp_seconds\\\": 0.0,\\n      \\\"confidence\\\": 0.95\\n    },\\n    {\\n      \\\"subject\\\": \\\"scene\\\",\\n      \\\"field\\\": \\\"officer_directing_traffic\\\",\\n      \\\"value\\\": \\\"no\\\",\\n      \\\"other_party\\\": \\\"\\\",\\n      \\\"timestamp_seconds\\\": 0.0,\\n      \\\"confidence\\\": 0.98\\n    },\\n    {\\n      \\\"subject\\\": \\\"scene\\\",\\n      \\\"field\\\": \\\"visibility_conditions\\\",\\n      \\\"value\\\": \\\"clear\\\",\\n      \\\"other_party\\\": \\\"\\\",\\n      \\\"timestamp_seconds\\\": 0.0,\\n      \\\"confidence\\\": 0.98\\n    },\\n    {\\n      \\\"subject\\\": \\\"scene\\\",\\n      \\\"field\\\": \\\"posted_speed_limit_kmh\\\",\\n      \\\"value\\\": \\\"not_visible\\\",\\n      \\\"other_party\\\": \\\"\\\",\\n      \\\"timestamp_seconds\\\": 0.0,\\n      \\\"confidence\\\": 0.95\\n    },\\n    {\\n      \\\"subject\\\": \\\"camera vehicle\\\",\\n      \\\"field\\\": \\\"party_type\\\",\\n      \\\"value\\\": \\\"car\\\",\\n      \\\"other_party\\\": \\\"\\\",\\n      \\\"timestamp_seconds\\\": 0.0,\\n      \\\"confidence\\\": 0.9\\n    },\\n    {\\n      \\\"subject\\\": \\\"camera vehicle\\\",\\n      \\\"field\\\": \\\"motion_state_before_contact\\\",\\n      \\\"value\\\": \\\"moving\\\",\\n      \\\"other_party\\\": \\\"\\\",\\n      \\\"timestamp_seconds\\\": 0.0,\\n      \\\"confidence\\\": 0.98\\n    },\\n    {\\n      \\\"subject\\\": \\\"camera vehicle\\\",\\n      \\\"field\\\": \\\"movement\\\",\\n      \\\"value\\\": \\\"straight\\\",\\n      \\\"other_party\\\": \\\"\\\",\\n      \\\"timestamp_seconds\\\": 0.0,\\n      \\\"confidence\\\": 0.95\\n    }\\n  ]\\n}\",\"thought\":null,\"thought_signature\":\"Ep0KCpoKAWkUfROJY0Wqg5ZfWxJjqpnJu2c6m8YThDarrzm-nZp-DX2N0OmFNFphjsLx2GcNEa4sfnMg1mGQH4nfdJTQTUtMzku8_aSGEPxpbSWs2DZWqrmcblgNiOaVy3mdVtw99_Vhw2-ig-_4RryJVAnTl0CuuqNhBEQm2rQxnyHuWlMcJCXVx1aKvHD57CXO2nu3v3kb_DBjQTR7U4SC0t4Dbk0GCMF-FH92EVbOnG8LrQOgDNOcaw-FpdkjOOChTVTH8RQUY1cvYmW59jJZN5-2v4Ww2Xs7TJHXR5LCAOBRaanqXLs8p6zp67tC-2ark4rf79KeTRYvnlzMndNR7l_cKGADATR_hgJWIScvU2DkRPHLWXzBZtzYW3xRLY-FJMI21tvYiIdartXucdX-EwW4zomfjwStGSpS0ic7Kbcnn4doC4B06ZyUSvug5mz5_c0TDZVwn5rKa-T5fWP_k7HBvtX11DiRPHAy3HiZLe594O8Q0bAnc2KDxiDCUUmutFwVP32Ux9QF_ewW8VHeqYIHHOxFucQ3j8aP2f8aHMDiasyUiD2WbVDqNlK4UAv-uuORkndzw7vu3GYupgRQTGGEGszmUawxpRODKW-Btagg66kZmL68UJYm2wR9QgHMiud3KWvWAHSAO9Dth_lhBZPP-hnjjXCM7ivyD8Mj88GyIFMg9xvVBFd5-9PvDgGzzBdK7gRjiMjhIfCzLaZF4ErRj90yRv-NpdvBLjBtmja0mt1-ckX-Qn-onMo0Cja9yL-bgJ5ALILkoE91QOnMJNjX4DhgQxgA-DVueUq9rTQ3myiQ7GqIskVJG4OdzoANDncfxcXbfYuL7vSWmPYrAizBSZhJPzNwxW_oi2X_a4OGL5DU3hsD3SWcSdiG7fREGPwJZw8Kl-KOa9dYZGmnGyi2OE8U69w78-S5Y8LK1gLIsquN7FMkg_f8TxvhVQQl_WRXIASg9B3Nhg9U31XydX_RSal5rwkMvmSzpgf4e6VMifkH_GTADExEkOqhHdKajdOCX02jfZiSiZeldOH73oHro33t5R6S1hDDpcFks_B4mmfmDSA27FvyhRRZvaZrtb7zppl04iU8fnqzierlvh1doCW9ZkXQWdDfHQGnuqFmuIhPb-io5Ou2WQMVVaeJyxopUisc7xEio2oBiPbiuqshsDfjML1JiTGntfoAKQhqlJA26w_yUfFvy7U6ppjOhPMCNsQ95U5J-vu6Sxz9_ahiuJmyYCt2ytJhmR2R-z9q7g-BztKjfw5l2U4tvbFIw2F3o7AeKPFu336OlvgxxQFAOFSrV-coSBX3FBLDt7afz8wtaXeadqwitJt5k28l4yh28PJw0jsh2jVSHyDBRbe2yTuGBEDuaTJxsm6WymTlf4jyNLW6KFRJiCic__mQJk__N9hz4iDeTFx4euEaj-jObjUqkgww2s7dN2ruddDlxokAnTDlEOlNN79eunHlvEa2L_kyJjvNewtqBZ6HP91hBNwBUtZO2BuaVPUIwXp-t22YjJMR8QcP6hhhoy-sW2o_h3ptaEcwNUMXaBMslxkqWzD0tdynFmqnl3eBCm_dWgugW9QBE8uPF4JbSLKftGVt49SSWKx4fNv8-HGyYXry6hNfG9vEGaLKcCk98kIuvm70SQILowwckyeLtRVIZug7EDdUXln9-G6HxyTWM_AKwfVR4ti-xNLWs6rJ-m80Z2YLgflX6lNEpNgYy-OfbTY-Ld2YTZ9w_L29gg==\",\"video_metadata\":null,\"tool_call\":null,\"tool_response\":null,\"part_metadata\":null,\"audio_transcription\":null,\"media_processing\":null,\"speech_metadata\":null}],\"role\":\"model\"},\"citation_metadata\":null,\"finish_message\":null,\"token_count\":null,\"finish_reason\":\"STOP\",\"grounding_metadata\":null,\"avg_logprobs\":null,\"index\":0,\"logprobs_result\":null,\"safety_ratings\":null,\"url_context_metadata\":null,\"continuation_token\":null}],\"create_time\":null,\"model_version\":\"gemini-3.8-flash\",\"prompt_feedback\":null,\"response_id\":\"6hvRaqSRHaDQg8UP8MuciAo\",\"usage_metadata\":{\"cache_tokens_details\":null,\"cached_content_token_count\":null,\"candidates_token_count\":647,\"candidates_tokens_details\":null,\"prompt_token_count\":2382,\"prompt_tokens_details\":[{\"modality\":\"VIDEO\",\"token_count\":1365},{\"modality\":\"TEXT\",\"token_count\":1017}],\"thoughts_token_count\":294,\"tool_use_prompt_token_count\":null,\"tool_use_prompt_tokens_details\":null,\"total_token_count\":3323,\"traffic_type\":null},\"model_status\":null,\"automatic_function_calling_history\":[],\"parsed\":{\"parties\":[{\"description\":\"camera vehicle\",\"timestamp_seconds\":0.0,\"confidence\":0.95}],\"events\":[],\"candidate_collisions\":[],\"behaviour_observations\":[{\"description\":\"camera vehicle is traveling forward along a rural roadway lined with trees\",\"timestamp_seconds\":0.0,\"confidence\":0.95}],\"location_conditions\":[{\"description\":\"rural two-lane paved road surrounded by dense green vegetation and trees under clear daylight\",\"timestamp_seconds\":0.0,\"confidence\":0.95}],\"structured_facts\":[{\"subject\":\"scene\",\"field\":\"conflict_zone_type\",\"value\":\"mid_block\",\"other_party\":\"\",\"timestamp_seconds\":0.0,\"confidence\":0.95},{\"subject\":\"scene\",\"field\":\"officer_directing_traffic\",\"value\":\"no\",\"other_party\":\"\",\"timestamp_seconds\":0.0,\"confidence\":0.98},{\"subject\":\"scene\",\"field\":\"visibility_conditions\",\"value\":\"clear\",\"other_party\":\"\",\"timestamp_seconds\":0.0,\"confidence\":0.98},{\"subject\":\"scene\",\"field\":\"posted_speed_limit_kmh\",\"value\":\"not_visible\",\"other_party\":\"\",\"timestamp_seconds\":0.0,\"confidence\":0.95},{\"subject\":\"camera vehicle\",\"field\":\"party_type\",\"value\":\"car\",\"other_party\":\"\",\"timestamp_seconds\":0.0,\"confidence\":0.9},{\"subject\":\"camera vehicle\",\"field\":\"motion_state_before_contact\",\"value\":\"moving\",\"other_party\":\"\",\"timestamp_seconds\":0.0,\"confidence\":0.98},{\"subject\":\"camera vehicle\",\"field\":\"movement\",\"value\":\"straight\",\"other_party\":\"\",\"timestamp_seconds\":0.0,\"confidence\":0.95}]}}",
+      "request_hash": "5a9bb86544fc76eeb3ba1f17e25d73b30117ed586f1e35daa68d4752efc7b20a",
+      "retry_index": 2,
+      "status_code": null,
+      "view_id": "3edb026749b1068c3c40200c21aa276f05a327b06313f565929824141da2d8e3"
+    }
+  ]
+}

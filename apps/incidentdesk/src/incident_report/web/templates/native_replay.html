@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %}Reconstruction replay{% endblock %}
+{% block head %}<link rel="stylesheet" href="{{ base }}/assets/workspace.css"><script type="module" src="/static/js/replay-adapter.js"></script>{% endblock %}
+{% block content %}
+<h1>Reconstruction replay</h1><p>Producer proposals · {{ data.case_id }}. Review decisions and contributor assessments do not change Fault Status.</p>
+<p><a href="/reports/{{ run_id }}/review">Back to incident</a></p>
+<form method="get" id="replay-selection">
+<label>Scene revision <select name="scene_revision">{% for revision in data.scenes %}<option {% if revision == values.scene_revision %}selected{% endif %}>{{ revision }}</option>{% endfor %}</select></label>
+<label>Marker revision <select name="marker_revision">{% for revision in data.markers %}<option {% if revision == values.marker_revision %}selected{% endif %}>{{ revision }}</option>{% endfor %}</select></label>
+<label>Incident review revision <select name="review_revision">{% for revision in data.review_revisions|default(['initial']) %}<option {% if revision == values.review_revision %}selected{% endif %}>{{ revision }}</option>{% endfor %}</select></label>
+<label>Source frame for movement tables <input name="frame" type="number" min="0" value="{{ values.frame }}"></label><button>Open saved selections</button>
+</form>
+<div id="native-replay-host"><div class="replay-root"></div></div>
+<form method="post" id="replay-write" data-base="{{ base }}">
+<input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+<label>Reviewer <input name="reviewer" required maxlength="120"></label><label>Reason <textarea name="reason" required maxlength="2000"></textarea></label>
+<p>The app records session attribution and reviewer/reason hashes. Producer files retain their original format.</p>
+<p id="replay-save-status" role="status">Enter attribution before saving. If completion is uncertain, inspect revisions before repeating an action.</p>
+<button type="button" id="retry-native-write" hidden>Retry pending action</button>
+<p><a id="snapshot-download" hidden>Download saved snapshot</a></p>
+<button name="action" value="reconstruction_export">Export replay from the selected saved revisions</button>
+<h2>Incident analysis</h2>
+{% if data.incidents is defined %}
+<table><caption>Reviewed producer candidates, with native source citations</caption><thead><tr><th>Candidate</th><th>Source frame/time</th><th>Reviewed time</th><th>Status</th><th>Evidence</th></tr></thead><tbody>
+{% for item in data.incidents.events %}<tr><td>{{ item.proposal.event_id }} · {{ item.proposal.event_type }}</td><td>{{ item.proposal.peak_frame }} / {{ item.proposal.peak_time }} s <button type="button" class="native-seek" data-frame="{{ item.proposal.peak_frame }}">Go to source frame</button></td><td>{{ item.peak_time }} s</td><td>{{ item.status }}</td><td><details><summary>Signals and review</summary><p>Source window {{ item.proposal.time_window }} s · confidence {{ item.proposal.confidence }}</p><ul>{% for signal in item.proposal.signals %}<li>{{ signal.name }} · source frames {{ signal.source_frames | join(', ') }} · {{ signal.description }}</li>{% endfor %}</ul>{% if item.decision %}<p>{{ item.decision.reviewer }} · {{ item.decision.decided_at }} · {{ item.decision.note }}</p>{% endif %}</details></td></tr>{% endfor %}</tbody></table>
+<table><caption>Contributor assessments (producer observations)</caption><thead><tr><th>Assessment</th><th>Outcome</th><th>Status</th><th>Evidence</th></tr></thead><tbody>{% for item in data.incidents.assessments %}<tr><td>{{ item.proposal.assessment_id }}</td><td>{{ item.outcome }} · contributing tool tracks {{ item.contributing_track_ids | join(', ') }}</td><td>{{ item.status }} · event {{ item.event_status }}</td><td><p>Event {{ item.proposal.event_id }} · lookback {{ item.proposal.lookback_window }} s · observed actions {{ item.proposal.observed_actions | join(', ') }}</p><p>{{ item.proposal.disclaimer }}</p>{% if item.decision %}<p>{{ item.decision.reviewer }} · {{ item.decision.decided_at }} · {{ item.decision.note }}</p>{% endif %}</td></tr>{% endfor %}</tbody></table>
+<label>Target kind <select name="target_kind"><option>event</option><option>assessment</option></select></label>
+{% for item in data.incidents.assessments %}<details><summary>Assessment {{ item.proposal.assessment_id }}: evidence and uncertainty</summary>
+<p>Confidence {{ item.proposal.confidence }} · {{ item.proposal.provenance }} · road context {{ item.proposal.applicable_road_context_refs | join(', ') }}</p>
+{% for kind,label in [('supporting_evidence','Supporting evidence'),('counterevidence','Counterevidence')] %}<h3>{{ label }}</h3><ul>{% for evidence in item.proposal[kind] %}<li>Tool track {{ evidence.track_id }} · {{ evidence.action_time }} s · source frames {{ evidence.source_frames | join(', ') }} · events {{ evidence.event_ids | join(', ') }} · {{ evidence.description }}</li>{% else %}<li>None supplied by the producer.</li>{% endfor %}</ul>{% endfor %}
+<h3>Unresolved facts</h3><ul>{% for fact in item.proposal.unresolved_facts %}<li>{% if fact.decisive %}<strong>Decisive: </strong>{% endif %}{{ fact.kind }} · tool tracks {{ fact.track_ids | join(', ') }} · source time window {{ fact.time_window if fact.time_window is not none else 'Unavailable' }} · {{ fact.description }}</li>{% else %}<li>None supplied by the producer.</li>{% endfor %}</ul>
+</details>{% endfor %}
+<label>Target identifier <select name="target_id">{% for item in data.incidents.events %}<option>{{ item.proposal.event_id }}</option>{% endfor %}{% for item in data.incidents.assessments %}<option>{{ item.proposal.assessment_id }}</option>{% endfor %}</select></label>
+<label>Decision <select name="decision_action"><option>confirm</option><option>reject</option><option>modify</option></select></label>
+<label>Reviewer note (required for reject/modify) <textarea name="note" maxlength="2000"></textarea></label>
+<label>Corrected peak time, seconds (event modify only) <input name="modified_peak_time" type="number" min="0" step="any"></label>
+<label>Corrected location, x,y (event modify only) <input name="modified_location"></label>
+<label>Corrected outcome (assessment modify only) <select name="modified_outcome"><option value="">Unchanged</option>{% for outcome in ['ONE_CONTRIBUTOR','MULTIPLE_CONTRIBUTORS','NO_SUPPORTED_CONTRIBUTOR','UNDETERMINED'] %}<option>{{ outcome }}</option>{% endfor %}</select></label>
+<label>Corrected contributing track IDs, comma-separated (assessment modify only) <input name="modified_contributing_track_ids"></label>
+<label><input type="checkbox" name="change_contributors" value="yes">Replace contributor list; an empty list means no contributors</label>
+{% if values.review_revision != data.review_revisions[-1] %}<p>Select the latest review revision to record a decision. Historical revisions remain viewable and exportable.</p>{% endif %}
+<button name="action" value="incident_review" {% if values.review_revision != data.review_revisions[-1] %}disabled{% endif %}>Save review decision</button><button name="action" value="incident_export">Export reviewed view</button><button name="action" value="export_attach">Export reviewed view and attach</button>
+{% else %}<p>No associated incident run is available.</p>{% endif %}
+</form>
+<p><a id="reattach-review" hidden>Open incident and re-confirm mappings</a></p>
+<h2>Movement and uncertainty</h2>
+{% if data.movement is defined %}
+<p>Source frame {{ data.movement.source_frame }} · {{ data.movement.manifest.unit }} · {{ data.movement.manifest.limitations | join(' ') }}</p>
+<table><caption>Motion and heading at this source frame</caption><thead><tr><th>Tool track / source time</th><th>Position ± uncertainty</th><th>Heading ± uncertainty</th><th>State / road feature</th></tr></thead><tbody>{% for item in data.movement.movement %}<tr><td>{{ item.track_id }} / {{ item.timestamp_seconds }} s</td><td>{{ item.world_x if item.world_x is not none else 'Unavailable' }}, {{ item.world_y if item.world_y is not none else 'Unavailable' }} ± {{ item.position_uncertainty if item.position_uncertainty is not none else 'Unavailable' }}</td><td>{{ item.heading_degrees if item.heading_degrees is not none else 'Unavailable' }} ± {{ item.heading_uncertainty_degrees if item.heading_uncertainty_degrees is not none else 'Unavailable' }} degrees</td><td>{{ item.movement_state }} / {{ item.lane_or_zone_id or 'Unavailable' }}</td></tr>{% else %}<tr><td colspan="4">No motion observations at this frame.</td></tr>{% endfor %}</tbody></table>
+<table><caption>Raw and smoothed positions at this frame</caption><thead><tr><th>Tool track / time</th><th>Raw position</th><th>Smoothed position</th><th>State / provenance</th></tr></thead><tbody>{% for item in data.movement.smoothed %}<tr><td>{{ item.track_id }} / {{ item.source_time }} s</td><td>{{ item.raw_position if item.raw_position is not none else 'Unavailable' }}</td><td>{{ item.smoothed_position if item.smoothed_position is not none else 'Unavailable' }}</td><td>{{ item.state }} / {{ item.provenance }}</td></tr>{% endfor %}</tbody></table>
+<table><caption>Contact-point separation at this frame</caption><thead><tr><th>Tool tracks / source time</th><th>Separation ± uncertainty</th></tr></thead><tbody>{% for item in data.movement.separation %}<tr><td>{{ item.track_a }} / {{ item.track_b }} · {{ item.source_time }} s</td><td>{{ item.separation }} ± {{ item.uncertainty }} {{ item.unit }} · physical distance: {{ item.physical_distance }}</td></tr>{% endfor %}</tbody></table>
+<table><caption>Movement events</caption><thead><tr><th>Event / tracks</th><th>Native source frames / peak time</th><th>Time window</th><th>Evidence / status</th></tr></thead><tbody>{% for item in data.movement.events %}<tr><td>{{ item.event_type }} / {{ item.track_ids | join(', ') }}</td><td>{{ item.start_frame }}–{{ item.end_frame }} / {{ item.peak_time }} s</td><td>{{ item.time_window }} s</td><td>{{ item.evidence_signals | join('; ') }} · {{ item.status }}</td></tr>{% endfor %}</tbody></table>
+<table><caption>Ordered movement sequence</caption><thead><tr><th>Rank / event</th><th>Source peak / window</th><th>Ordering uncertainty</th></tr></thead><tbody>{% for item in data.movement.sequence.entries %}<tr><td>{{ item.rank }} / {{ item.event_id }} · {{ item.event_type }}</td><td>{{ item.peak_time }} s / {{ item.time_window }} s</td><td>{% if item.order_unresolved_with %}Order unresolved with {{ item.order_unresolved_with | join(', ') }}{% else %}No unresolved peer in this producer sequence{% endif %}</td></tr>{% endfor %}</tbody></table>
+<table><caption>Lane sequences</caption><thead><tr><th>Tool track</th><th>Road features</th></tr></thead><tbody>{% for track, lanes in data.movement.lanes.items() %}<tr><td>{{ track }}</td><td>{{ lanes | join(' → ') }}</td></tr>{% endfor %}</tbody></table>
+{% else %}<p>No movement run is available.</p>{% endif %}
+{% endblock %}

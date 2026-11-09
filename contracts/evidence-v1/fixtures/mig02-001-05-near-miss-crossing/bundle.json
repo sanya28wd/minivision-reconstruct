@@ -1,0 +1,95 @@
+{
+  "artifacts": {
+    "mig02-001-05-near-miss-crossing/analysis/calibration/revision-001/calibration.json": "396a41afebb5a6fe54fc3aee40b6cf761e9b975e674a96da75df59f8bced8630",
+    "mig02-001-05-near-miss-crossing/analysis/incident/mig02-incident/assessments.jsonl": "c7003af41da0fd9829166f1fd98646eae1c995030a4130aa84259768f2fffcd3",
+    "mig02-001-05-near-miss-crossing/analysis/incident/mig02-incident/config.json": "10cffda55285a45eaf2f81cf758a5a1d5cb08f79a793c72d56bb2d54327abe81",
+    "mig02-001-05-near-miss-crossing/analysis/incident/mig02-incident/conflicts.jsonl": "3fd9124b9f1a8dec87c31dce14096df10e42f5df07d1d067491618112e018853",
+    "mig02-001-05-near-miss-crossing/analysis/incident/mig02-incident/events.jsonl": "29ea9d9c7fcfbaf98a3fd398d772b703af51b6f3f67afbdc4013e11f4a63b1e6",
+    "mig02-001-05-near-miss-crossing/analysis/incident/mig02-incident/manifest.json": "5014d4ea23467dd3c881a38ca74f7a6d43108a006e9c834032b55531c6dd457f",
+    "mig02-001-05-near-miss-crossing/analysis/incident/mig02-incident/reviewed/revision-001/manifest.json": "e8cf02c3a8ff66a048d89f6cdc70bf6ff9b53cfde65bf34d0a081885eeae86ff",
+    "mig02-001-05-near-miss-crossing/analysis/incident/mig02-incident/reviewed/revision-001/reviewed_assessments.jsonl": "aee0b578509765153f48efb36dc0afd0ef7281d2bd8d3603cc9e8ae9ee712548",
+    "mig02-001-05-near-miss-crossing/analysis/incident/mig02-incident/reviewed/revision-001/reviewed_events.jsonl": "022be9db018bd0c91beed202cab589ce99b5881d9d2e21a370473d338e64a557",
+    "mig02-001-05-near-miss-crossing/analysis/incident/mig02-incident/reviewed/revision-002/manifest.json": "d2b2db61dc2acf8e97ea6ce22dd60c049534682603e6f0dcc2634810b327ddc5",
+    "mig02-001-05-near-miss-crossing/analysis/incident/mig02-incident/reviewed/revision-002/reviewed_assessments.jsonl": "1228f7cc2c34bffe8f0c2b989c7f63823fc2cc8c831b0d250e08abdc751bfdce",
+    "mig02-001-05-near-miss-crossing/analysis/incident/mig02-incident/reviewed/revision-002/reviewed_events.jsonl": "11ee05199111890e7c1f34ec614db4162fac6d00b24283d3d8fc14ce668f21b0",
+    "mig02-001-05-near-miss-crossing/analysis/incident/mig02-incident/reviewed/revision-003/manifest.json": "1f39970c4ab3917adf9f863596e03e6f7c55808d73b80988544195ac5c1164ee",
+    "mig02-001-05-near-miss-crossing/analysis/incident/mig02-incident/reviewed/revision-003/reviewed_assessments.jsonl": "85f73298c1ff709b891a9b6550cc9120475d1c3223c6063899eeae148486ae2d",
+    "mig02-001-05-near-miss-crossing/analysis/incident/mig02-incident/reviewed/revision-003/reviewed_events.jsonl": "1459d9fa932a1201eda27384b56455d040e9309c68ea5e8b7feed9e54a0dd289",
+    "mig02-001-05-near-miss-crossing/analysis/incident/mig02-incident/reviews/revision-001/revision.json": "512b5ec7445e00a75f04d5d35e5a9e7b9df9157504f6ec6a05cae40a2a36c84c",
+    "mig02-001-05-near-miss-crossing/analysis/incident/mig02-incident/reviews/revision-001/sha256.json": "8100fabcfd6ede1ea1a027a36d2717300428a6775b370144bf42d01841f9ae3f",
+    "mig02-001-05-near-miss-crossing/analysis/incident/mig02-incident/reviews/revision-002/revision.json": "1403c0506fbc77e6322b55248257140b6b0f72c4bccd2d2864a7cbb9f1f0c38d",
+    "mig02-001-05-near-miss-crossing/analysis/incident/mig02-incident/reviews/revision-002/sha256.json": "5f873c34cddc9e6e68ff3340949792af8397ba96a99a6441bc93b03fd185dadd",
+    "mig02-001-05-near-miss-crossing/analysis/incident/mig02-incident/reviews/revision-003/revision.json": "c74567b7cd34880f724f3e53c0fca03c6a572adda2d4d8f64386d3ef14aa4b96",
+    "mig02-001-05-near-miss-crossing/analysis/incident/mig02-incident/reviews/revision-003/sha256.json": "2ab9094ae952a5d23b2b4e481a6dea869e7d42b25faffea919bab2e0d70c11dd",
+    "mig02-001-05-near-miss-crossing/analysis/movement/mig02-movement/config.json": "0778bce605b803d2ed68784010df8c5cffcc3b82f35dba04d84065fc73039b92",
+    "mig02-001-05-near-miss-crossing/analysis/movement/mig02-movement/events.jsonl": "def3d36265ef90926c101dbb6f69fd8a7000d2e581f4f8be4b9e21ebb43ff2fb",
+    "mig02-001-05-near-miss-crossing/analysis/movement/mig02-movement/lane_sequences.json": "27862c5cdabb15e52fb79300e235636669916a0e94d335b213dea821b5c80247",
+    "mig02-001-05-near-miss-crossing/analysis/movement/mig02-movement/manifest.json": "5827992f219a329c4726f3a5b92d89bf9205ca07c3b332f081bf64c22273bef1",
+    "mig02-001-05-near-miss-crossing/analysis/movement/mig02-movement/movement_observations.jsonl": "c46312806d23db6fb530cc1192fcb8809a806ed9eb06bad79fdab4431f10bdcd",
+    "mig02-001-05-near-miss-crossing/analysis/movement/mig02-movement/separation.jsonl": "3692f5a3fb293f6eb44980058df81caa1d8cd0e7e5c4eac795aaeb070012d74b",
+    "mig02-001-05-near-miss-crossing/analysis/movement/mig02-movement/sequence.json": "ae748ed64680f46ad4509bdee3c0d27f08380b8991306b9e0f7ed0b0fc6f255c",
+    "mig02-001-05-near-miss-crossing/analysis/movement/mig02-movement/smoothed.jsonl": "77cd80e13a601554229c1b1c87afc8d97b4406961e23b862c5ae6c20c793d75e",
+    "mig02-001-05-near-miss-crossing/analysis/reconstruction/week8-incident/manifest.json": "fb0065d5ec3e6c03ba91383611c98bbe13ea0b61258eea9ea4d60d6c40deaa06",
+    "mig02-001-05-near-miss-crossing/analysis/reconstruction/week8-incident/markers.json": "b49f764a7e6858802fc265a881b2ebc60c7b1ff1d25a291ff276540d1ca44b4c",
+    "mig02-001-05-near-miss-crossing/analysis/reconstruction/week8-incident/observations.jsonl": "1b557c4954107450baf3f30e8f30521923e7499192c73d9434ebdc590d92bb2c",
+    "mig02-001-05-near-miss-crossing/analysis/reconstruction/week8-incident/replay_frames.jsonl": "03ee42ad69af196af1c083a2ab956b248ea96bb2500249b24c78919e5d7dabbc",
+    "mig02-001-05-near-miss-crossing/analysis/reconstruction/week8-incident/scene.json": "a0df2a70f7c1a91690c629f738c03138822ca04a1bf12f116ee8fa5e15db48ef",
+    "mig02-001-05-near-miss-crossing/analysis/reconstruction/week8-incident/source_frames.jsonl": "1281a62298f588766b2bcf32e249a4c4d2a05c842377a469d1639d7bb5785591",
+    "mig02-001-05-near-miss-crossing/analysis/tracks/staged-tracks/run_manifest.json": "99781e857fd372c43bf57f86ac25ae272d835311754456b08ae9879addddca85",
+    "mig02-001-05-near-miss-crossing/analysis/tracks/staged-tracks/tracks.jsonl": "d28bc85b7a9aadfe34176b0b2091ce39bfe91aa01a5a9cb53f7cf776199c9443",
+    "mig02-001-05-near-miss-crossing/metadata/evidence_manifest.json": "57e07223212311a3ea2aee10a18d2234ed95db4c1a2f4e1cdad8b523dba18149",
+    "mig02-001-05-near-miss-crossing/metadata/video_metadata.json": "24c985d9ea1a8351fa491b57a88a649578286f7bc6eea3e295c215dc5d9208f1"
+  },
+  "case_id": "mig02-001-05-near-miss-crossing",
+  "config_identifiers": [
+    "movement-week7-002",
+    "incident-week8-002"
+  ],
+  "contract_version": "1.0",
+  "created_at": "2026-10-30T00:00:00Z",
+  "model_identifiers": [
+    "scripted-tracks-no-detector"
+  ],
+  "processing_policy": "local_only",
+  "producer": "minivision-reconstruct",
+  "producer_revision": "c66000af37099e39920ff0e8ac621ce5be09090d",
+  "sources": [
+    {
+      "calibration_revision": "revision-001",
+      "frame_origin": 0,
+      "incident_manifest": "mig02-001-05-near-miss-crossing/analysis/incident/mig02-incident/manifest.json",
+      "incident_run": "mig02-incident",
+      "movement_manifest": "mig02-001-05-near-miss-crossing/analysis/movement/mig02-movement/manifest.json",
+      "movement_run": "mig02-movement",
+      "original_video_sha256": "b5399a6aa6282f03cba8cc31d1960f1366be03e165e6267dd05a9d803e93f0e0",
+      "reconstruction_manifest": "mig02-001-05-near-miss-crossing/analysis/reconstruction/week8-incident/manifest.json",
+      "reconstruction_run": "week8-incident",
+      "review_revision": "revision-003",
+      "reviewed_manifest": "mig02-001-05-near-miss-crossing/analysis/incident/mig02-incident/reviewed/revision-003/manifest.json",
+      "track_revision": "automatic",
+      "tracking_run": "staged-tracks",
+      "transformations": [
+        {
+          "mapping": "mig02-001-05-near-miss-crossing/analysis/reconstruction/week8-incident/replay_frames.jsonl",
+          "operation": "producer reconstruction replay"
+        }
+      ],
+      "video_metadata": {
+        "codec": "mjpeg",
+        "creation_time": null,
+        "duration_seconds": 16.0,
+        "extraction_tool": "ffprobe",
+        "frame_count_source": "reported",
+        "frame_rate": {
+          "denominator": 1,
+          "numerator": 25
+        },
+        "height": 480,
+        "original_filename": "mig02-001-05-near-miss-crossing-staged-synthetic.avi",
+        "reported_frame_count": 400,
+        "width": 640
+      },
+      "view_id": "fixed-camera-1"
+    }
+  ]
+}

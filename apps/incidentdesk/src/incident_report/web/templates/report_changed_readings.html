@@ -1,0 +1,24 @@
+{# Same-view disagreement is not included in Report.contradictions by RPT-29.
+   Display the original readings without changing reconciliation or rule inputs. #}
+{% if report.facts %}
+{% set seen = namespace(keys=[]) %}
+{% for reading in report.facts.structured_facts %}
+{% set key = (reading.subject, reading.field, reading.other_party, reading.view_id) %}
+{% if key not in seen.keys %}
+{% set seen.keys = seen.keys + [key] %}
+{% set group = namespace(readings=[], values=[]) %}
+{% for other in report.facts.structured_facts %}
+{% if (other.subject, other.field, other.other_party, other.view_id) == key and other.value not in ['unknown', 'not_visible', 'not_in_view'] %}
+{% set group.readings = group.readings + [other] %}
+{% if other.value not in group.values %}{% set group.values = group.values + [other.value] %}{% endif %}
+{% endif %}
+{% endfor %}
+{% if group.values | length > 1 %}
+<div class="alert" data-changed-reading>
+<p><strong>This view changed its reading</strong>: <bdi dir="auto">{{ reading.subject }}</bdi> — {{ reading.field | replace('_', ' ') }}{% if reading.other_party %} (<bdi dir="auto">{{ reading.other_party }}</bdi>){% endif %}. Cannot Determine.</p>
+<ul>{% for other in group.readings %}<li><bdi dir="auto">{{ other.value | replace('_', ' ') }}</bdi> {{ citation(other) }}</li>{% endfor %}</ul>
+</div>
+{% endif %}
+{% endif %}
+{% endfor %}
+{% endif %}

@@ -1,0 +1,23 @@
+{
+  "case_id": "mig02-multi-review",
+  "codec": "mjpeg",
+  "decoded_frame_count": 350,
+  "duration_seconds": 14.0,
+  "file_size_bytes": 4808564,
+  "first_decoded_timestamp_seconds": 0.0,
+  "frame_count_source": "reported",
+  "frame_rate_decimal": 25.0,
+  "frame_rate_denominator": 1,
+  "frame_rate_numerator": 25,
+  "height": 480,
+  "ingested_at": "2026-10-30T06:13:49.156939Z",
+  "last_decoded_timestamp_seconds": 13.96,
+  "metadata_extraction_tool": "ffprobe",
+  "original_source_filename": "mig02-multi-review-staged-synthetic.avi",
+  "preserved_relative_path": "mig02-multi-review/original/mig02-multi-review-staged-synthetic.avi",
+  "preserved_sha256": "1d5fded9a95a2082cbbaad5de8d521e5a45ae37889b141d6478d77c652de1d11",
+  "reported_frame_count": 350,
+  "schema_version": "1.0",
+  "source_sha256": "1d5fded9a95a2082cbbaad5de8d521e5a45ae37889b141d6478d77c652de1d11",
+  "width": 640
+}

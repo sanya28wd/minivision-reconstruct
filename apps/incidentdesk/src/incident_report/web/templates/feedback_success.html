@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Feedback received{% endblock %}
+{% block content %}
+<div class="feedback-success">
+  <div class="alert alert--success" role="status">
+    <h1>Thank you for your feedback</h1>
+    <p>Your feedback has been received and recorded. It helps us improve the quality and safety of the system.</p>
+  </div>
+
+  <section class="feedback-summary-card" aria-label="Feedback summary">
+    <h2>Submission summary</h2>
+    {% if submission.category %}
+    <p><strong>Category:</strong> {{ submission.category.value | capitalize }}</p>
+    {% endif %}
+    {% if submission.name %}
+    <p><strong>Submitted by:</strong> {{ submission.name }}</p>
+    {% endif %}
+    <div class="feedback-quote">
+      <p><strong>Your note:</strong></p>
+      <p class="feedback-text">{{ submission.text }}</p>
+    </div>
+    {% if submission.screenshot_sha256 %}
+    <p><strong>Screenshot:</strong> <a href="/feedback/screenshots/{{ submission.screenshot_sha256 }}" target="_blank">View attached screenshot</a> <span class="hash">({{ submission.screenshot_sha256[:12] }}...)</span></p>
+    {% endif %}
+  </section>
+
+  <p class="form-actions">
+    <a href="{{ submission.screen or '/' }}" class="button">Return</a>
+  </p>
+</div>
+{% endblock %}

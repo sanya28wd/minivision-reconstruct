@@ -1,0 +1,94 @@
+{
+  "observation_notes": [
+    {"party_code": "P1", "timestamp_seconds": 0.0, "note": "White sedan travels right-to-left across the roundabout perimeter, clearing the intersection."},
+    {"party_code": "P2", "timestamp_seconds": 0.0, "note": "Dark car proceeds down the main road approach towards the roundabout."},
+    {"party_code": "P3", "timestamp_seconds": 0.0, "note": "White car enters the roundabout from the main road approach and continues through without colliding."},
+    {"party_code": "P4", "timestamp_seconds": 1.0, "note": "White van travels along the lower right roadway past the roundabout area."},
+    {"party_code": "P5", "timestamp_seconds": 2.0, "note": "Yellow cab truck enters frame along the lower road behind the white van."},
+    {"party_code": "scene", "timestamp_seconds": 0.0, "note": "Elevated view overlooking a large landscaped roundabout in an urban residential area with traffic moving normally."}
+  ],
+  "incident_assessment": {
+    "assessment_note": "Traffic flows normally through and around the roundabout with no collisions visible.",
+    "camera_role": "fixed_camera",
+    "contact_state": "no_contact_observed",
+    "contact_interval_start_seconds": null,
+    "contact_interval_end_seconds": null
+  },
+  "party_checklist": [
+    {
+      "party_code": "P1",
+      "first_seen_seconds": 0.0,
+      "attributes_seen_at_seconds": 0.5,
+      "movement_seen_at_seconds": 0.0,
+      "party_type": "sedan",
+      "party_type_other": "",
+      "marking": "none_seen",
+      "colour_family": "white",
+      "colour_other": "",
+      "manoeuvre": "circulating",
+      "manoeuvre_other": "",
+      "turn_direction": "straight",
+      "roundabout_exit_position": "not_applicable",
+      "road_class_on_approach": "roundabout",
+      "road_class_basis": "roundabout_carriageway",
+      "confidence": 0.95
+    },
+    {
+      "party_code": "P2",
+      "first_seen_seconds": 0.0,
+      "attributes_seen_at_seconds": 0.5,
+      "movement_seen_at_seconds": 0.0,
+      "party_type": "sedan",
+      "party_type_other": "",
+      "marking": "none_seen",
+      "colour_family": "grey",
+      "colour_other": "",
+      "manoeuvre": "continue_same_road",
+      "manoeuvre_other": "",
+      "turn_direction": "straight",
+      "roundabout_exit_position": "not_applicable",
+      "road_class_on_approach": "main_road",
+      "road_class_basis": "more_than_two_lanes_and_long",
+      "confidence": 0.85
+    },
+    {
+      "party_code": "P3",
+      "first_seen_seconds": 0.0,
+      "attributes_seen_at_seconds": 0.5,
+      "movement_seen_at_seconds": 0.0,
+      "party_type": "sedan",
+      "party_type_other": "",
+      "marking": "none_seen",
+      "colour_family": "white",
+      "colour_other": "",
+      "manoeuvre": "roundabout_entry",
+      "manoeuvre_other": "",
+      "turn_direction": "straight",
+      "roundabout_exit_position": "not_applicable",
+      "road_class_on_approach": "main_road",
+      "road_class_basis": "more_than_two_lanes_and_long",
+      "confidence": 0.9
+    }
+  ],
+  "collision_observations": [],
+  "structured_facts": [
+    {"subject": "scene", "field": "conflict_zone_type", "value": "roundabout_unsignalised", "other_party": "", "timestamp_seconds": 0.0, "confidence": 0.95},
+    {"subject": "scene", "field": "officer_directing_traffic", "value": "no", "other_party": "", "timestamp_seconds": 0.0, "confidence": 0.95},
+    {"subject": "scene", "field": "visibility_conditions", "value": "clear", "other_party": "", "timestamp_seconds": 0.0, "confidence": 0.95},
+    {"subject": "scene", "field": "posted_speed_limit_kmh", "value": "not_visible", "other_party": "", "timestamp_seconds": 0.0, "confidence": 0.9},
+    {"subject": "P1", "field": "motion_state_before_contact", "value": "moving", "other_party": "", "timestamp_seconds": 0.0, "confidence": 0.95},
+    {"subject": "P1", "field": "approach_control_faced", "value": "none_confirmed", "other_party": "", "timestamp_seconds": 0.0, "confidence": 0.9},
+    {"subject": "P2", "field": "motion_state_before_contact", "value": "moving", "other_party": "", "timestamp_seconds": 0.0, "confidence": 0.9},
+    {"subject": "P2", "field": "approach_control_faced", "value": "none_confirmed", "other_party": "", "timestamp_seconds": 0.0, "confidence": 0.85},
+    {"subject": "P3", "field": "motion_state_before_contact", "value": "moving", "other_party": "", "timestamp_seconds": 0.0, "confidence": 0.95},
+    {"subject": "P3", "field": "approach_control_faced", "value": "none_confirmed", "other_party": "", "timestamp_seconds": 0.0, "confidence": 0.9}
+  ],
+  "events": [],
+  "behaviour_observations": [],
+  "location_conditions": [],
+  "text_readings": [
+    {"kind": "other", "text": "DİYARBAKIR", "language": "other", "timestamp_seconds": 0.0, "confidence": 0.95}
+  ],
+  "driver_observations": [],
+  "drowsiness_observations": []
+}

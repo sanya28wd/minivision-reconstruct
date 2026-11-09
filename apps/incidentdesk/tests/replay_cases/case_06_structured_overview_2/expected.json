@@ -1,0 +1,55 @@
+{
+  "case_id": "case_06_structured_overview_2",
+  "provenance": "synthetic-fixture",
+  "summary": "Collision observed between red Toyota sedan and blue Nissan Patrol SUV.",
+  "is_valid": true,
+  "validation_errors": [],
+  "parties": [
+    {
+      "description": "red Toyota sedan",
+      "timestamp_seconds": 0.5,
+      "confidence": 0.95,
+      "color": "red",
+      "make_model": "Toyota",
+      "body_type": "sedan",
+      "_comment_rpt15_fault": "RESERVED FOR RPT-15: pink | green | white fault status per party",
+      "fault_status": null
+    },
+    {
+      "description": "blue Nissan Patrol SUV",
+      "timestamp_seconds": 0.5,
+      "confidence": 0.95,
+      "color": "blue",
+      "make_model": "Nissan Patrol",
+      "body_type": "SUV",
+      "_comment_rpt15_fault": "RESERVED FOR RPT-15: pink | green | white fault status per party",
+      "fault_status": null
+    }
+  ],
+  "events": [
+    {
+      "description": "red Toyota sedan proceeds toward center",
+      "timestamp_seconds": 0.6,
+      "confidence": 0.9
+    },
+    {
+      "description": "blue Nissan Patrol SUV enters center",
+      "timestamp_seconds": 0.8,
+      "confidence": 0.9
+    },
+    {
+      "description": "contact between red Toyota sedan and blue Nissan Patrol SUV",
+      "timestamp_seconds": 1.0,
+      "confidence": 0.92
+    }
+  ],
+  "candidate_collisions": [
+    {
+      "description": "contact between red Toyota sedan and blue Nissan Patrol SUV",
+      "timestamp_seconds": 1.0,
+      "confidence": 0.92
+    }
+  ],
+  "_comment_rpt15_overall_fault": "RESERVED FOR RPT-15: overall fault determinations",
+  "overall_fault": null
+}

@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %}Feedback{% endblock %}
+{% block content %}
+<div class="feedback-page">
+  <h1>{% if run_id %}Feedback on this report{% else %}Feedback{% endif %}</h1>
+  <p class="meta">Help us improve the incident analysis system. Your feedback is stored securely and <strong>never enters video analysis</strong>.</p>
+
+  {% if run_id %}
+  <div class="context-banner" role="region" aria-label="Attached report context">
+    <p><strong>Attached context:</strong> Run <code>{{ run_id }}</code>{% if report_version %} · Prompt version <code>{{ report_version }}</code>{% endif %}</p>
+  </div>
+  {% endif %}
+
+  <form method="post" action="/feedback" enctype="multipart/form-data" class="feedback-form">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+    <input type="hidden" name="screen" value="{{ screen }}">
+    <input type="hidden" name="run_id" value="{{ run_id }}">
+    <input type="hidden" name="incident_id" value="{{ incident_id }}">
+    <input type="hidden" name="report_version" value="{{ report_version }}">
+
+    <div class="field">
+      <label for="category">Category (optional)</label>
+      <select id="category" name="category">
+        <option value="">— Select a category —</option>
+        {% for cat in categories %}
+        <option value="{{ cat.value }}">{{ cat.value | capitalize }}</option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="text">What happened? What could be improved? <span class="required" aria-hidden="true">*</span></label>
+      <textarea id="text" name="text" rows="6" maxlength="{{ max_chars }}" required placeholder="Describe what went wrong, what was confusing, or what you suggest..."></textarea>
+    </div>
+
+    <div class="field">
+      <label for="screenshot">Attach a screenshot (optional)</label>
+      <input id="screenshot" name="screenshot" type="file" accept="image/png,image/jpeg,image/webp,image/gif">
+      <p class="field-hint">PNG, JPEG, WebP, or GIF up to 5 MB.</p>
+    </div>
+
+    <div class="field">
+      <label for="name">Your name or identifier (optional)</label>
+      <input id="name" name="name" type="text" maxlength="200" placeholder="Officer name, callsign, or empty for anonymous">
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="button">Submit feedback</button>
+      <a href="{{ screen or '/' }}" class="button button--secondary">Cancel</a>
+    </div>
+  </form>
+</div>
+{% endblock %}

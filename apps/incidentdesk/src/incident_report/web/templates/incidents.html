@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% block title %}{{ page_title|default("Incidents") }}{% endblock %}
+{% block content %}
+<div class="incidents-page">
+  <header class="section-header">
+    <div>
+      <h1>{{ page_title|default("Incidents") }}</h1>
+      <p class="meta">{{ page_description|default("Incidents visible to your current session.") }}</p>
+    </div>
+    {% if not is_admin %}
+    <div class="header-actions">
+      <a href="/" class="button button--secondary">New incident</a>
+    </div>
+    {% endif %}
+  </header>
+
+  {% if not incidents %}
+  <p class="empty-state">No incidents found.</p>
+  {% else %}
+  <div class="table-container">
+    <table class="admin-table">
+      <thead>
+        <tr>
+          <th scope="col">Status</th>
+          <th scope="col">Created</th>
+          <th scope="col">Views</th>
+          <th scope="col">Report</th>
+          <th scope="col">Review</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in incidents %}
+        <tr>
+          <td>
+            {% if row.status_label == 'Ready' %}
+            <span class="badge badge--active">Ready</span>
+            {% elif row.status_label == 'Approved' %}
+            <span class="badge badge--verified">Approved</span>
+            {% elif row.status_label == 'Processing' %}
+            <span class="badge badge--new">Processing</span>
+            {% elif row.status_label == 'Invalid' %}
+            <span class="badge badge--invalid">Invalid</span>
+            {% else %}
+            <span class="badge badge--blocked">Failed</span>
+            {% endif %}
+          </td>
+          <td><time datetime="{{ row.created_at.isoformat() }}">{{ row.created_at.strftime('%Y-%m-%d %H:%M UTC') }}</time></td>
+          <td>
+            <span>{{ row.view_count }}</span>
+            {% if row.filenames %}
+            <span class="meta">({{ row.filenames }})</span>
+            {% endif %}
+          </td>
+          <td>
+            <a href="/reports/{{ row.run_id }}">View report</a>
+          </td>
+          <td>
+            {% if row.is_ready %}
+            <a href="/reports/{{ row.run_id }}/review">Review workspace</a>
+            {% else %}
+            <span class="meta">—</span>
+            {% endif %}
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  {% if has_prev or has_next %}
+  <nav class="pagination" aria-label="Incidents pagination">
+    <div class="pagination-controls">
+      {% if has_prev %}
+      <a href="{{ base_path }}?page={{ page - 1 }}" class="button button--secondary button--small">Previous</a>
+      {% endif %}
+      <span class="meta">Page {{ page }}</span>
+      {% if has_next %}
+      <a href="{{ base_path }}?page={{ page + 1 }}" class="button button--secondary button--small">Next</a>
+      {% endif %}
+    </div>
+  </nav>
+  {% endif %}
+  {% endif %}
+</div>
+{% endblock %}

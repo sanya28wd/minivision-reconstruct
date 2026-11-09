@@ -1,0 +1,44 @@
+{
+  "case_id": "case_02_no_contact",
+  "provenance": "synthetic-fixture",
+  "summary": "Vehicles observed traveling in parallel lanes with no collisions.",
+  "is_valid": true,
+  "validation_errors": [],
+  "parties": [
+    {
+      "description": "white Honda Civic sedan",
+      "timestamp_seconds": 0.4,
+      "confidence": 0.9,
+      "color": "white",
+      "make_model": "Honda Civic",
+      "body_type": "sedan",
+      "_comment_rpt15_fault": "RESERVED FOR RPT-15: pink | green | white fault status per party",
+      "fault_status": null
+    },
+    {
+      "description": "green Ford transit van",
+      "timestamp_seconds": 0.4,
+      "confidence": 0.9,
+      "color": "green",
+      "make_model": "Ford transit",
+      "body_type": "van",
+      "_comment_rpt15_fault": "RESERVED FOR RPT-15: pink | green | white fault status per party",
+      "fault_status": null
+    }
+  ],
+  "events": [
+    {
+      "description": "white Honda Civic sedan proceeds in left lane",
+      "timestamp_seconds": 0.8,
+      "confidence": 0.9
+    },
+    {
+      "description": "green Ford transit van proceeds in right lane",
+      "timestamp_seconds": 0.8,
+      "confidence": 0.9
+    }
+  ],
+  "candidate_collisions": [],
+  "_comment_rpt15_overall_fault": "RESERVED FOR RPT-15: overall fault determinations",
+  "overall_fault": null
+}

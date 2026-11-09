@@ -1,0 +1,31 @@
+{
+  "provenance": "synthetic-fixture",
+  "note": "Failed repair recording: timestamp remains out of range.",
+  "input_hash": "7795a6cbc87871b731a4cabf5bb3f026520b55079c9dda41d86435279de261e7",
+  "prompt_version": "overview-1-repair",
+  "response": {
+    "summary": "Repaired summary with still-invalid timestamp.",
+    "facts": {
+      "parties": [
+        {
+          "description": "silver Toyota Camry sedan",
+          "timestamp_seconds": 0.5,
+          "confidence": 0.9,
+          "color": "silver",
+          "make_model": "Toyota Camry",
+          "body_type": "sedan"
+        }
+      ],
+      "events": [
+        {
+          "description": "sedan enters roundabout",
+          "timestamp_seconds": 25.0,
+          "confidence": 0.85
+        }
+      ],
+      "candidate_collisions": [],
+      "behaviour_observations": [],
+      "location_conditions": []
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "provenance": "synthetic",
+  "note": "SYNTHETIC FIXTURE written by hand for the RPT-01 walking skeleton. Not model output, not real footage, not a real incident. Keyed to incident_report.samples.SAMPLE_VIEW_BYTES as one Exterior view.",
+  "input_hash": "0a45709f8b40e5c9a6669c7a99f5961591b3984d32f1bbd94cc87872bde37a05",
+  "prompt_version": "skeleton-1",
+  "response": {
+    "summary": "Synthetic placeholder summary: this sentence was written by hand to prove the upload-to-report path works. It describes no real footage and no real incident."
+  }
+}

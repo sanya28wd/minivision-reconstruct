@@ -1,0 +1,15 @@
+<section aria-label="Cited timeline">
+  <h2>Cited timeline</h2>
+  <p class="meta">Jump list of the cited moments listed under What happened, each on its own view's clock. Candidate collisions remain observations for review.</p>
+  {% for view in report.views %}
+  <h3><bdi dir="auto">{{ view.label or view.filename }}</bdi></h3>
+  {% set moments = report.storyline | selectattr('view_id', 'equalto', view.sha256) | list %}
+  <ul class="review-moments">
+    {% for item in moments %}
+    <li>{{ citation(item) }} {{ {'event': 'Event', 'note': 'Observation', 'contact': 'Candidate collision'}.get(item.kind, 'After the contact') }}</li>
+    {% else %}
+    <li>No cited events available for this view.</li>
+    {% endfor %}
+  </ul>
+  {% endfor %}
+</section>

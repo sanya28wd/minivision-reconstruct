@@ -1,0 +1,100 @@
+{
+  "observation_notes": [
+    {"party_code": "CAM", "timestamp_seconds": 0.0, "note": "CAM turns left onto the main road, approaches a signalised junction, and stops at the stop line facing red."},
+    {"party_code": "P1", "timestamp_seconds": 29.0, "note": "P1, an orange SUV, makes a left turn across the junction from the oncoming direction."},
+    {"party_code": "P2", "timestamp_seconds": 30.5, "note": "P2, a white SUV, makes a right turn or straight movement into the side intersection area and stops."},
+    {"party_code": "scene", "timestamp_seconds": 31.5, "note": "Vehicles P1 and P2 pass near each other without making physical contact."}
+  ],
+  "incident_assessment": {
+    "assessment_note": "Vehicles pass through the intersection with no physical contact observed, while CAM remains stopped at the red light.",
+    "camera_role": "witness_vehicle_not_involved",
+    "contact_state": "no_contact_observed",
+    "contact_interval_start_seconds": null,
+    "contact_interval_end_seconds": null
+  },
+  "party_checklist": [
+    {
+      "party_code": "CAM",
+      "first_seen_seconds": 0.0,
+      "attributes_seen_at_seconds": 20.0,
+      "movement_seen_at_seconds": 5.0,
+      "party_type": "car_body_unclear",
+      "party_type_other": "",
+      "marking": "none_seen",
+      "colour_family": "unknown",
+      "colour_other": "",
+      "manoeuvre": "continue_same_road",
+      "manoeuvre_other": "",
+      "turn_direction": "straight",
+      "roundabout_exit_position": "not_applicable",
+      "road_class_on_approach": "main_road",
+      "road_class_basis": "two_lanes_or_fewer",
+      "confidence": 0.95
+    },
+    {
+      "party_code": "P1",
+      "first_seen_seconds": 29.0,
+      "attributes_seen_at_seconds": 34.0,
+      "movement_seen_at_seconds": 31.0,
+      "party_type": "suv",
+      "party_type_other": "",
+      "marking": "none_seen",
+      "colour_family": "orange",
+      "colour_other": "",
+      "manoeuvre": "into_side_road",
+      "manoeuvre_other": "",
+      "turn_direction": "left",
+      "roundabout_exit_position": "not_applicable",
+      "road_class_on_approach": "main_road",
+      "road_class_basis": "two_lanes_or_fewer",
+      "confidence": 0.95
+    },
+    {
+      "party_code": "P2",
+      "first_seen_seconds": 3.0,
+      "attributes_seen_at_seconds": 25.0,
+      "movement_seen_at_seconds": 26.0,
+      "party_type": "suv",
+      "party_type_other": "",
+      "marking": "none_seen",
+      "colour_family": "white",
+      "colour_other": "",
+      "manoeuvre": "into_side_road",
+      "manoeuvre_other": "",
+      "turn_direction": "left",
+      "roundabout_exit_position": "not_applicable",
+      "road_class_on_approach": "main_road",
+      "road_class_basis": "two_lanes_or_fewer",
+      "confidence": 0.9
+    }
+  ],
+  "collision_observations": [],
+  "structured_facts": [
+    {"subject": "scene", "field": "conflict_zone_type", "value": "signalised_junction", "other_party": "", "timestamp_seconds": 31.0, "confidence": 0.95},
+    {"subject": "scene", "field": "officer_directing_traffic", "value": "no", "other_party": "", "timestamp_seconds": 31.0, "confidence": 0.95},
+    {"subject": "scene", "field": "posted_speed_limit_kmh", "value": "not_visible", "other_party": "", "timestamp_seconds": 31.0, "confidence": 0.9},
+    {"subject": "scene", "field": "visibility_conditions", "value": "clear", "other_party": "", "timestamp_seconds": 31.0, "confidence": 0.95},
+    {"subject": "CAM", "field": "motion_state_before_contact", "value": "stopped_in_lane", "other_party": "", "timestamp_seconds": 31.0, "confidence": 0.95},
+    {"subject": "CAM", "field": "approach_control_faced", "value": "signal", "other_party": "", "timestamp_seconds": 31.0, "confidence": 0.95},
+    {"subject": "CAM", "field": "signal_state_when_crossing_stop_line", "value": "not_applicable", "other_party": "", "timestamp_seconds": 31.0, "confidence": 0.95},
+    {"subject": "P1", "field": "motion_state_before_contact", "value": "moving", "other_party": "", "timestamp_seconds": 31.0, "confidence": 0.9},
+    {"subject": "P1", "field": "approach_control_faced", "value": "signal", "other_party": "", "timestamp_seconds": 31.0, "confidence": 0.9},
+    {"subject": "P1", "field": "signal_state_when_crossing_stop_line", "value": "not_visible", "other_party": "", "timestamp_seconds": 31.0, "confidence": 0.8},
+    {"subject": "P2", "field": "motion_state_before_contact", "value": "stopped_in_lane", "other_party": "", "timestamp_seconds": 31.0, "confidence": 0.85},
+    {"subject": "P2", "field": "approach_control_faced", "value": "signal", "other_party": "", "timestamp_seconds": 31.0, "confidence": 0.85},
+    {"subject": "P2", "field": "signal_state_when_crossing_stop_line", "value": "not_visible", "other_party": "", "timestamp_seconds": 31.0, "confidence": 0.8}
+  ],
+  "events": [
+    {"description": "CAM comes to a halt at the red traffic signal.", "timestamp_seconds": 29.5, "confidence": 0.95},
+    {"description": "P1 turns across the junction path in front of CAM.", "timestamp_seconds": 33.0, "confidence": 0.95}
+  ],
+  "behaviour_observations": [],
+  "location_conditions": [],
+  "text_readings": [
+    {"kind": "signboard", "text": "MARATHON", "language": "en", "timestamp_seconds": 23.0, "confidence": 0.9},
+    {"kind": "overlay_date", "text": "10-06-2021", "language": "en", "timestamp_seconds": 0.0, "confidence": 0.95},
+    {"kind": "overlay_time", "text": "11:36:40", "language": "en", "timestamp_seconds": 0.0, "confidence": 0.95}
+  ],
+  "driver_observations": [],
+  "drowsiness_observations": []
+}

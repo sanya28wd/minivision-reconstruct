@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}
+{%- if run.status == "failed" -%}
+Analysis failed
+{%- else -%}
+Processing incident
+{%- endif -%}
+{% endblock %}
+
+{% block head %}
+{%- if run.status == "processing" -%}
+<noscript><meta http-equiv="refresh" content="2"></noscript>
+<script src="/static/js/processing.js" defer></script>
+{%- endif -%}
+{% endblock %}
+
+{% block content %}
+<section class="processing-section">
+  {% if run.status == "failed" %}
+    <h1>Analysis failed</h1>
+    <div class="problem">
+      <p><strong>Error:</strong> {{ error }}</p>
+      <p>The analysis could not be completed. No partial report has been produced.</p>
+    </div>
+    <form method="post" action="/reports/{{ run.run_id }}/retry">
+      <button type="submit" class="button">Retry analysis</button>
+    </form>
+    <p><a href="/" class="button button--secondary">Start new incident</a></p>
+  {% else %}
+    <h1>Processing incident</h1>
+    <div class="card processing-card" data-run-id="{{ run.run_id }}">
+      <p class="processing-status">Status: <strong>Processing</strong></p>
+      <p class="processing-hint">You may safely leave this page and return later. The analysis will continue running.</p>
+
+      <ol class="step-list" aria-label="Analysis progress">
+        {% set steps = [
+          ("uploading", "Uploading"),
+          ("fingerprinting", "Fingerprinting"),
+          ("overview", "Overview"),
+          ("agreement", "Agreement"),
+          ("collision check", "Collision check"),
+          ("checks", "Checks"),
+          ("rules", "Rules"),
+          ("done", "Done")
+        ] %}
+        {% set step_keys = ["uploading", "fingerprinting", "overview", "agreement", "collision check", "checks", "rules", "done"] %}
+        {% set current_idx = step_keys.index(current_step) if current_step in step_keys else 0 %}
+        {% for key, label in steps %}
+          {% set idx = loop.index0 %}
+          {% if idx < current_idx %}
+            <li class="step-item step-item--done" data-step="{{ key }}"><span class="step-marker" aria-hidden="true">[x]</span> <span class="step-label">{{ label }}</span></li>
+          {% elif idx == current_idx %}
+            <li class="step-item step-item--active" data-step="{{ key }}" aria-current="step"><span class="step-marker" aria-hidden="true">[&gt;]</span> <span class="step-label"><strong>{{ label }}</strong></span> <span class="badge">In progress</span></li>
+          {% else %}
+            <li class="step-item step-item--pending" data-step="{{ key }}"><span class="step-marker" aria-hidden="true">[ ]</span> <span class="step-label">{{ label }}</span></li>
+          {% endif %}
+        {% endfor %}
+      </ol>
+
+      <p class="elapsed-time">Elapsed time: <span id="elapsed-time-val">{{ elapsed_seconds }}s</span></p>
+    </div>
+  {% endif %}
+</section>
+{% endblock %}

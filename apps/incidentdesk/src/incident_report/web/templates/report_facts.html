@@ -1,0 +1,9 @@
+{% from "review_citation.html" import citation with context %}
+{% macro fact_list(facts) %}
+<ul>
+{% for fact in facts %}
+<li><bdi dir="auto">{% if fact.subject is defined %}{{ fact.subject }}: {{ fact.field | replace('_', ' ') }} = {{ fact.value | replace('_', ' ') }}{% if fact.other_party %} ({{ fact.other_party }}){% endif %}{% else %}{{ fact.description }}{% endif %}</bdi> {{ citation(fact) }}
+{% if fact.make_model is defined %}<span class="meta">Colour: <bdi dir="auto">{{ fact.color or 'Cannot Determine' }}</bdi> · Make/model: <bdi dir="auto">{{ fact.make_model or 'Cannot Determine' }}</bdi> · Body type: <bdi dir="auto">{{ fact.body_type or 'Cannot Determine' }}</bdi>{% if fact.party_code %} · Checklist code: <bdi dir="auto">{{ fact.party_code }}</bdi>{% endif %}</span>{% endif %}</li>
+{% else %}<li>Cannot Determine: no cited observations available.</li>{% endfor %}
+</ul>
+{% endmacro %}

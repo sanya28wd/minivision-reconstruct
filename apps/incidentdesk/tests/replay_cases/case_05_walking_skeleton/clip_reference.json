@@ -1,0 +1,14 @@
+{
+  "case_id": "case_05_walking_skeleton",
+  "description": "Shipped walking skeleton fixture (ticket 5/RPT-01)",
+  "prompt_version": "skeleton-1",
+  "origin": "replay",
+  "views": [
+    {
+      "filename": "sample.mp4",
+      "role": "exterior",
+      "sha256": "a13c3dd3e55eeb72b6d635ff322d54f2f481f15a71abbe00419be9c5ff5d617d",
+      "label": "front dashcam"
+    }
+  ]
+}

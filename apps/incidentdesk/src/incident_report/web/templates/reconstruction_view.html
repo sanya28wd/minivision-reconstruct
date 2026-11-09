@@ -1,0 +1,51 @@
+{% if not print_view %}
+<div class="reconstruction-only">
+{% if view is defined and view.role is defined and view.role.value != 'interior' %}{% include "reconstruction_cross_check.html" %}{% endif %}
+{% for notice in panel.notices %}<p role="note" class="alert">{{ notice }}</p>{% endfor %}
+{% if panel.native_selections %}
+{% for selection in panel.native_selections %}
+<p><strong>Attached selection:</strong> <span>{{ selection.description }}</span></p>
+<p>Open in reconstruction tools: {% for label, url in selection.tools %}<a href="{{ url }}">{{ label }}</a> {% endfor %}</p>
+{% endfor %}
+{% else %}
+{% for selection in panel.tool_selections %}
+<p><strong>Choose in the tool dropdown:</strong> <span>{{ selection }}</span> <button type="button" data-copy-reconstruction="{{ selection }}">Copy selection details</button></p>
+<p>Open in reconstruction tools: {% for label, url in reconstruction_tools %}<a href="{{ url }}" target="_blank" rel="noopener">{{ label }}</a> {% endfor %}</p>
+{% endfor %}
+{% endif %}
+<ul class="review-moments">
+{% for group in panel.groups %}
+<li>{% if group.order_unresolved %}<strong>Order not determined</strong>{% endif %}
+<ul>{% for item in group.rows %}<li>
+  <span class="meta">{{ item.origin }}</span>{% if item.review_status %} · <strong>{{ item.review_status }}</strong>{% endif %}
+  {% if item.rejected %}<s>{{ item.text }}</s>{% else %}{{ item.text }}{% endif %}
+  {% if item.source_time is not none %}{% if review_workspace %}<button type="button" data-view-id="{{ item.view_id }}" data-seconds="{{ item.source_time }}">{{ '%.3f'|format(item.source_time) }} s</button>{% else %}<span class="citation">{{ '%.3f'|format(item.source_time) }} s</span>{% endif %}{% else %}<span>Source time unavailable</span>{% endif %}
+  {% if item.source_frame is not none %}<span class="meta">Source frame {{ item.source_frame }}</span>{% endif %}
+  {% if item.review_status == 'Modified by reconstruction reviewer' %}
+  <p>Original proposal: {{ item.original_time }} s. Requested correction: {{ item.requested_time }} s. Effective cited time: {{ item.source_time if item.source_time is not none else 'corrected time unknown — no frame citation' }}.</p>
+  {% endif %}
+  {% if item.needs_review %}<span>Needs review</span>{% endif %}
+  {% if item.reviewer %}<p>Reconstruction reviewer: {{ item.reviewer }}. Reason: {{ item.reason }}</p>{% endif %}
+  {% for state in item.track_states %}<span class="meta">Track evidence: {{ state }} at some point in this clip</span>{% endfor %}
+</li>{% endfor %}</ul></li>
+{% else %}<li>No cited events available for this view.</li>{% endfor %}
+</ul>
+{% if panel.stale_mappings %}<details><summary>Previous mappings — needs re-confirmation for the new reconstruction revision</summary>
+<ul>{% for mapping in panel.stale_mappings %}<li>{{ mapping.action }} {{ mapping.party_code or '' }} · {{ mapping.reviewer }} · {{ mapping.reason }} (superseded import {{ mapping.import_id }})</li>{% endfor %}</ul></details>{% endif %}
+{% if panel.tracks %}<details><summary>Associate reconstruction tracks with this view's parties</summary>
+<p>Associations are reviewer-set display aids. They do not determine fault, violations or approval.</p>
+{% for track in panel.tracks %}
+<form method="post" action="/reports/{{ report.run_id }}/reconstruction/mapping">
+<p><strong>{{ track.label }}</strong> · association: {{ track.action }} <span class="meta">(tool track identifier {{ track.track_id }})</span></p>
+<input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+<input type="hidden" name="import_id" value="{{ track.import_id }}">
+<input type="hidden" name="view" value="{{ view.sha256 }}">
+<input type="hidden" name="track_ref" value="{{ track.track_ref }}">
+<label>Action <select name="mapping_action"><option value="map">Map to selected party</option><option value="unmap">Unmap</option><option value="cannot_determine">Cannot determine</option></select></label>
+<label>Party from this view <select name="party_code"><option value="">Choose a party</option>{% for code, description in track.parties %}<option value="{{ code }}">{{ description }} ({{ code }})</option>{% endfor %}</select></label>
+<label>Reviewer <input name="reviewer" maxlength="200" required></label>
+<label>Reason <input name="reason" maxlength="4000" required></label>
+<button type="submit">Record association</button>
+{% if track.reconfirm %}<p>Prior association: {{ track.reconfirm.action }} {{ track.reconfirm.party_code or '' }}. Needs re-confirmation for this revision.</p><button type="submit" name="reconfirm_id" value="{{ track.reconfirm.mapping_id }}">Re-confirm prior association on this revision</button>{% endif %}
+</form>{% endfor %}</details>{% endif %}
+</div>{% endif %}

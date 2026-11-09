@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0",
+  "case_id": "mig02-001-06-normal-crossing",
+  "run_id": "week8-incident",
+  "tracking_run": "staged-tracks",
+  "track_revision": "automatic",
+  "calibration_revision": "revision-001",
+  "source_video_path": "mig02-001-06-normal-crossing/original/mig02-001-06-normal-crossing-staged-synthetic.avi",
+  "source_video_sha256": "e0cd565ca340e8fc7430b845ead8143e53ee8228268ff8abddb4aba4afdf5b10",
+  "source_tracks_path": "mig02-001-06-normal-crossing/analysis/tracks/staged-tracks/tracks.jsonl",
+  "source_tracks_sha256": "a7acc7975937c91af9231aba37b4c87e59cc6ecf11e04e74769f8539507a305b",
+  "source_calibration_path": "mig02-001-06-normal-crossing/analysis/calibration/revision-001/calibration.json",
+  "source_calibration_sha256": "3bfb47d1d036af58643c2b34355e04cfef551b1e71867ffda8682768ccff9de8",
+  "replay_fps": 30,
+  "proxy_width": 640,
+  "proxy_height": 480,
+  "source_width": 640,
+  "source_height": 480,
+  "source_frame_count": 400,
+  "replay_frame_count": 480,
+  "repeated_frames": 80,
+  "omitted_frames": 0,
+  "duration_seconds": 16.0,
+  "observation_count": 573,
+  "unavailable_observations": 0,
+  "created_at": "2026-10-30T05:47:34.822280+00:00",
+  "artifacts": [
+    {
+      "filename": "markers.json",
+      "sha256": "b49f764a7e6858802fc265a881b2ebc60c7b1ff1d25a291ff276540d1ca44b4c"
+    },
+    {
+      "filename": "observations.jsonl",
+      "sha256": "e39e0fab3ca9a6a360770cda8b9884c672c9838cad8716fa0148fc189fdfd4c0"
+    },
+    {
+      "filename": "replay.mp4",
+      "sha256": "f8dfe5f71a1aecf6df896af7a1f835328f7c1e71159d2f29f32708fb15ae8fb1"
+    },
+    {
+      "filename": "replay_frames.jsonl",
+      "sha256": "03ee42ad69af196af1c083a2ab956b248ea96bb2500249b24c78919e5d7dabbc"
+    },
+    {
+      "filename": "scene.json",
+      "sha256": "a0df2a70f7c1a91690c629f738c03138822ca04a1bf12f116ee8fa5e15db48ef"
+    },
+    {
+      "filename": "source_frames.jsonl",
+      "sha256": "1281a62298f588766b2bcf32e249a4c4d2a05c842377a469d1639d7bb5785591"
+    }
+  ]
+}

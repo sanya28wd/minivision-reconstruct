@@ -1,0 +1,874 @@
+{
+  "alarm_provenance": {
+    "evaluator_version": "rpt-24-v2",
+    "mapping_version": "owner-map-v1"
+  },
+  "corpus_name": "custom",
+  "timing_context": {
+    "mode": null,
+    "concurrency": null,
+    "endpoint": null,
+    "region": null,
+    "boundary": "seam-1 analysis wall time",
+    "warmup_policy": "cold until first completed analysis in this runner process"
+  },
+  "origin": "benchmark",
+  "complete": true,
+  "stop_reason": null,
+  "expected_attempts": 3,
+  "configuration": {
+    "prompt_version": "overview-1",
+    "repeats": 3,
+    "max_model_calls": null,
+    "max_total_tokens": null,
+    "analyses_per_run": 1,
+    "failed_call_policy": "stop_paid"
+  },
+  "corpus": [
+    {
+      "clip": "BM_001",
+      "sha256": [
+        "88f7cc85765ef110715ccfb73e125ade4c9175d94d06e5d6f6274e140729b3b1"
+      ],
+      "truth_sha256": "fa309beea2bc793271b7a1481279cf482d936cf59e8127731a63b8e4b5279b8d",
+      "truth_references": [
+        "dataset/truth/draft.json"
+      ],
+      "clip_type": "unknown",
+      "clip_type_source": "archived truth.collisions; absent/non-list is unknown",
+      "slices": {
+        "night": "no",
+        "rain": "yes",
+        "camera": "dashcam",
+        "views": "1",
+        "interior_present": "no"
+      },
+      "identity_evidence": {
+        "truth_fault": null,
+        "truth_participants": [],
+        "participants_not_scored": [],
+        "report": {
+          "at_fault": [],
+          "parties": []
+        }
+      },
+      "not_scored": {
+        "verdict.primary_at_fault": "not scored: field absent from truth contract",
+        "collision_participants": "not scored: field absent from truth contract"
+      }
+    }
+  ],
+  "attempts": [
+    {
+      "clip": "BM_001",
+      "repeat": 1,
+      "analyses_per_run": 1,
+      "not_scored": {
+        "verdict.primary_at_fault": "not scored: field absent from truth contract",
+        "collision_participants": "not scored: field absent from truth contract"
+      },
+      "report": {
+        "input_hash": "7795a6cbc87871b731a4cabf5bb3f026520b55079c9dda41d86435279de261e7",
+        "prompt_version": "overview-1",
+        "provenance": "synthetic-fixture",
+        "summary": "Collision observed between red Toyota sedan and blue Nissan Patrol SUV.",
+        "views": [
+          {
+            "filename": "clip_0001.mp4",
+            "role": "exterior",
+            "label": null,
+            "acquisition_method": null,
+            "sha256": "88f7cc85765ef110715ccfb73e125ade4c9175d94d06e5d6f6274e140729b3b1",
+            "uploaded_at": "2026-10-24T19:31:31.128557Z",
+            "session_id": "d187de2a-a94c-4dd6-a2fc-233d25e0bf3b",
+            "size_bytes": 2973,
+            "mime_type": "video/mp4",
+            "ffprobe_stdout": "{\r\n    \"streams\": [\r\n        {\r\n            \"index\": 0,\r\n            \"codec_name\": \"h264\",\r\n            \"codec_long_name\": \"H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10\",\r\n            \"profile\": \"High\",\r\n            \"codec_type\": \"video\",\r\n            \"codec_tag_string\": \"avc1\",\r\n            \"codec_tag\": \"0x31637661\",\r\n            \"mime_codec_string\": \"avc1.64000a\",\r\n            \"width\": 64,\r\n            \"height\": 64,\r\n            \"coded_width\": 64,\r\n            \"coded_height\": 64,\r\n            \"has_b_frames\": 2,\r\n            \"sample_aspect_ratio\": \"1:1\",\r\n            \"display_aspect_ratio\": \"1:1\",\r\n            \"pix_fmt\": \"yuv420p\",\r\n            \"level\": 10,\r\n            \"chroma_location\": \"left\",\r\n            \"field_order\": \"progressive\",\r\n            \"is_avc\": \"true\",\r\n            \"nal_length_size\": \"4\",\r\n            \"id\": \"0x1\",\r\n            \"r_frame_rate\": \"25/1\",\r\n            \"avg_frame_rate\": \"25/1\",\r\n            \"time_base\": \"1/12800\",\r\n            \"start_pts\": 0,\r\n            \"start_time\": \"0.000000\",\r\n            \"duration_ts\": 25600,\r\n            \"duration\": \"2.000000\",\r\n            \"bit_rate\": \"5996\",\r\n            \"bits_per_raw_sample\": \"8\",\r\n            \"nb_frames\": \"50\",\r\n            \"extradata_size\": 45,\r\n            \"disposition\": {\r\n                \"default\": 1,\r\n                \"dub\": 0,\r\n                \"original\": 0,\r\n                \"comment\": 0,\r\n                \"lyrics\": 0,\r\n                \"karaoke\": 0,\r\n                \"forced\": 0,\r\n                \"hearing_impaired\": 0,\r\n                \"visual_impaired\": 0,\r\n                \"clean_effects\": 0,\r\n                \"attached_pic\": 0,\r\n                \"timed_thumbnails\": 0,\r\n                \"non_diegetic\": 0,\r\n                \"captions\": 0,\r\n                \"descriptions\": 0,\r\n                \"metadata\": 0,\r\n                \"dependent\": 0,\r\n                \"still_image\": 0,\r\n                \"multilayer\": 0\r\n            },\r\n            \"tags\": {\r\n                \"language\": \"und\",\r\n                \"handler_name\": \"VideoHandler\",\r\n                \"encoder\": \"Lavc62.28.102 libx264\"\r\n            }\r\n        }\r\n    ],\r\n    \"format\": {\r\n        \"filename\": \"fd:\",\r\n        \"nb_streams\": 1,\r\n        \"nb_programs\": 0,\r\n        \"nb_stream_groups\": 0,\r\n        \"format_name\": \"mov,mp4,m4a,3gp,3g2,mj2\",\r\n        \"format_long_name\": \"QuickTime / MOV\",\r\n        \"start_time\": \"0.000000\",\r\n        \"duration\": \"2.000000\",\r\n        \"size\": \"2973\",\r\n        \"bit_rate\": \"11892\",\r\n        \"probe_score\": 100,\r\n        \"tags\": {\r\n            \"major_brand\": \"isom\",\r\n            \"minor_version\": \"512\",\r\n            \"compatible_brands\": \"isomiso2avc1mp41\",\r\n            \"encoder\": \"Lavf62.12.102\"\r\n        }\r\n    }\r\n}\r\n",
+            "ffprobe_stderr": "",
+            "ffprobe_stdout_object": {
+              "sha256": "41f5c1f7d285b7fdf3b6a431f19fc42442685dcdd5878e61e2b0cca97957748f",
+              "parent_sha256": "88f7cc85765ef110715ccfb73e125ade4c9175d94d06e5d6f6274e140729b3b1"
+            },
+            "ffprobe_stderr_object": {
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "parent_sha256": "88f7cc85765ef110715ccfb73e125ade4c9175d94d06e5d6f6274e140729b3b1"
+            },
+            "duration_seconds": 2.0,
+            "working_copy": {
+              "sha256": "88f7cc85765ef110715ccfb73e125ade4c9175d94d06e5d6f6274e140729b3b1",
+              "parent_sha256": "88f7cc85765ef110715ccfb73e125ade4c9175d94d06e5d6f6274e140729b3b1"
+            },
+            "validation_error": null
+          }
+        ],
+        "facts": {
+          "parties": [
+            {
+              "description": "red Toyota sedan",
+              "view_id": "88f7cc85765ef110715ccfb73e125ade4c9175d94d06e5d6f6274e140729b3b1",
+              "timestamp_seconds": 0.5,
+              "confidence": 0.95,
+              "color": "red",
+              "make_model": "Toyota",
+              "body_type": "sedan",
+              "party_code": null
+            },
+            {
+              "description": "blue Nissan Patrol SUV",
+              "view_id": "88f7cc85765ef110715ccfb73e125ade4c9175d94d06e5d6f6274e140729b3b1",
+              "timestamp_seconds": 0.5,
+              "confidence": 0.95,
+              "color": "blue",
+              "make_model": "Nissan Patrol",
+              "body_type": "SUV",
+              "party_code": null
+            }
+          ],
+          "unmatched_dense_parties": [],
+          "events": [
+            {
+              "description": "red Toyota sedan proceeds toward center",
+              "view_id": "88f7cc85765ef110715ccfb73e125ade4c9175d94d06e5d6f6274e140729b3b1",
+              "timestamp_seconds": 0.6,
+              "confidence": 0.9
+            },
+            {
+              "description": "blue Nissan Patrol SUV enters center",
+              "view_id": "88f7cc85765ef110715ccfb73e125ade4c9175d94d06e5d6f6274e140729b3b1",
+              "timestamp_seconds": 0.8,
+              "confidence": 0.9
+            },
+            {
+              "description": "contact between red Toyota sedan and blue Nissan Patrol SUV",
+              "view_id": "88f7cc85765ef110715ccfb73e125ade4c9175d94d06e5d6f6274e140729b3b1",
+              "timestamp_seconds": 1.0,
+              "confidence": 0.92
+            }
+          ],
+          "candidate_collisions": [
+            {
+              "description": "contact between red Toyota sedan and blue Nissan Patrol SUV",
+              "view_id": "88f7cc85765ef110715ccfb73e125ade4c9175d94d06e5d6f6274e140729b3b1",
+              "timestamp_seconds": 1.0,
+              "confidence": 0.92
+            }
+          ],
+          "behaviour_observations": [],
+          "location_conditions": [],
+          "structured_facts": [],
+          "text_readings": [],
+          "driver_observations": [],
+          "collision_observations": [],
+          "drowsiness_observations": [],
+          "party_checklist": [],
+          "observation_notes": [],
+          "incident_assessments": []
+        },
+        "parties": [
+          {
+            "party_description": "red Toyota sedan",
+            "status": "Cannot Determine",
+            "color": "grey",
+            "rule_id": null,
+            "legal_source": null,
+            "article": null,
+            "reason": "party_type of red Toyota sedan unknown or unresolved; party_type of blue Nissan Patrol SUV unknown or unresolved",
+            "cited_facts": [
+              {
+                "description": "contact between red Toyota sedan and blue Nissan Patrol SUV",
+                "view_id": "88f7cc85765ef110715ccfb73e125ade4c9175d94d06e5d6f6274e140729b3b1",
+                "timestamp_seconds": 1.0,
+                "confidence": 0.92
+              },
+              {
+                "description": "red Toyota sedan",
+                "view_id": "88f7cc85765ef110715ccfb73e125ade4c9175d94d06e5d6f6274e140729b3b1",
+                "timestamp_seconds": 0.5,
+                "confidence": 0.95
+              },
+              {
+                "description": "blue Nissan Patrol SUV",
+                "view_id": "88f7cc85765ef110715ccfb73e125ade4c9175d94d06e5d6f6274e140729b3b1",
+                "timestamp_seconds": 0.5,
+                "confidence": 0.95
+              }
+            ],
+            "agreement_status": "not_measured",
+            "agreement_detail": null,
+            "findings": [],
+            "pair_selection": null
+          },
+          {
+            "party_description": "blue Nissan Patrol SUV",
+            "status": "Cannot Determine",
+            "color": "grey",
+            "rule_id": null,
+            "legal_source": null,
+            "article": null,
+            "reason": "party_type of red Toyota sedan unknown or unresolved; party_type of blue Nissan Patrol SUV unknown or unresolved",
+            "cited_facts": [
+              {
+                "description": "contact between red Toyota sedan and blue Nissan Patrol SUV",
+                "view_id": "88f7cc85765ef110715ccfb73e125ade4c9175d94d06e5d6f6274e140729b3b1",
+                "timestamp_seconds": 1.0,
+                "confidence": 0.92
+              },
+              {
+                "description": "red Toyota sedan",
+                "view_id": "88f7cc85765ef110715ccfb73e125ade4c9175d94d06e5d6f6274e140729b3b1",
+                "timestamp_seconds": 0.5,
+                "confidence": 0.95
+              },
+              {
+                "description": "blue Nissan Patrol SUV",
+                "view_id": "88f7cc85765ef110715ccfb73e125ade4c9175d94d06e5d6f6274e140729b3b1",
+                "timestamp_seconds": 0.5,
+                "confidence": 0.95
+              }
+            ],
+            "agreement_status": "not_measured",
+            "agreement_detail": null,
+            "findings": [],
+            "pair_selection": null
+          }
+        ],
+        "violations": [],
+        "is_valid": true,
+        "validation_errors": [],
+        "guardrail_results": {
+          "raw_ids": [],
+          "citations": [],
+          "injury_citations": [],
+          "fine_requires_violation": [],
+          "referral_without_fine": [],
+          "legal_sources": []
+        },
+        "overview_collision_recall": null,
+        "dense_facts": [],
+        "consistency_issues": [],
+        "overview_consistency_issues": [
+          []
+        ],
+        "agreement": {
+          "n_runs": 1,
+          "status": "not_measured",
+          "fields": {},
+          "total_latency_ms": 0.06479999865405262,
+          "model_call_count": 0
+        },
+        "driver_assessments": []
+      },
+      "scores": {
+        "verdict.incident": {
+          "expected": true,
+          "actual": true,
+          "passed": true,
+          "reviewed": false
+        }
+      },
+      "identity_evidence": {
+        "truth_fault": null,
+        "truth_participants": [],
+        "participants_not_scored": [],
+        "report": {
+          "at_fault": [],
+          "parties": [
+            {
+              "text": "red Toyota sedan",
+              "key": {
+                "colours": [
+                  "red"
+                ],
+                "classes": [
+                  "car"
+                ]
+              }
+            },
+            {
+              "text": "blue Nissan Patrol SUV",
+              "key": {
+                "colours": [
+                  "blue"
+                ],
+                "classes": [
+                  "suv"
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "quota": {
+        "model_calls": 0,
+        "prompt_tokens": 0,
+        "candidates_tokens": 0,
+        "total_tokens": 0,
+        "known_tokens": {
+          "prompt_tokens": 0,
+          "candidates_tokens": 0,
+          "total_tokens": 0
+        },
+        "calls_without_usage": 0,
+        "failed_calls_without_usage": 0,
+        "failed_call_policy": "stop_paid"
+      },
+      "timing": {
+        "state": "cold",
+        "retry_429_intervals_ms": [],
+        "transport_attempt_range": null
+      }
+    },
+    {
+      "clip": "BM_001",
+      "repeat": 2,
+      "analyses_per_run": 1,
+      "not_scored": {
+        "verdict.primary_at_fault": "not scored: field absent from truth contract",
+        "collision_participants": "not scored: field absent from truth contract"
+      },
+      "report": {
+        "input_hash": "7795a6cbc87871b731a4cabf5bb3f026520b55079c9dda41d86435279de261e7",
+        "prompt_version": "overview-1",
+        "provenance": "synthetic-fixture",
+        "summary": "Collision observed between red Toyota sedan and blue Nissan Patrol SUV.",
+        "views": [
+          {
+            "filename": "clip_0001.mp4",
+            "role": "exterior",
+            "label": null,
+            "acquisition_method": null,
+            "sha256": "88f7cc85765ef110715ccfb73e125ade4c9175d94d06e5d6f6274e140729b3b1",
+            "uploaded_at": "2026-10-24T19:31:31.896660Z",
+            "session_id": "98d6c644-63bc-4be7-be32-a1abb9f93490",
+            "size_bytes": 2973,
+            "mime_type": "video/mp4",
+            "ffprobe_stdout": "{\r\n    \"streams\": [\r\n        {\r\n            \"index\": 0,\r\n            \"codec_name\": \"h264\",\r\n            \"codec_long_name\": \"H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10\",\r\n            \"profile\": \"High\",\r\n            \"codec_type\": \"video\",\r\n            \"codec_tag_string\": \"avc1\",\r\n            \"codec_tag\": \"0x31637661\",\r\n            \"mime_codec_string\": \"avc1.64000a\",\r\n            \"width\": 64,\r\n            \"height\": 64,\r\n            \"coded_width\": 64,\r\n            \"coded_height\": 64,\r\n            \"has_b_frames\": 2,\r\n            \"sample_aspect_ratio\": \"1:1\",\r\n            \"display_aspect_ratio\": \"1:1\",\r\n            \"pix_fmt\": \"yuv420p\",\r\n            \"level\": 10,\r\n            \"chroma_location\": \"left\",\r\n            \"field_order\": \"progressive\",\r\n            \"is_avc\": \"true\",\r\n            \"nal_length_size\": \"4\",\r\n            \"id\": \"0x1\",\r\n            \"r_frame_rate\": \"25/1\",\r\n            \"avg_frame_rate\": \"25/1\",\r\n            \"time_base\": \"1/12800\",\r\n            \"start_pts\": 0,\r\n            \"start_time\": \"0.000000\",\r\n            \"duration_ts\": 25600,\r\n            \"duration\": \"2.000000\",\r\n            \"bit_rate\": \"5996\",\r\n            \"bits_per_raw_sample\": \"8\",\r\n            \"nb_frames\": \"50\",\r\n            \"extradata_size\": 45,\r\n            \"disposition\": {\r\n                \"default\": 1,\r\n                \"dub\": 0,\r\n                \"original\": 0,\r\n                \"comment\": 0,\r\n                \"lyrics\": 0,\r\n                \"karaoke\": 0,\r\n                \"forced\": 0,\r\n                \"hearing_impaired\": 0,\r\n                \"visual_impaired\": 0,\r\n                \"clean_effects\": 0,\r\n                \"attached_pic\": 0,\r\n                \"timed_thumbnails\": 0,\r\n                \"non_diegetic\": 0,\r\n                \"captions\": 0,\r\n                \"descriptions\": 0,\r\n                \"metadata\": 0,\r\n                \"dependent\": 0,\r\n                \"still_image\": 0,\r\n                \"multilayer\": 0\r\n            },\r\n            \"tags\": {\r\n                \"language\": \"und\",\r\n                \"handler_name\": \"VideoHandler\",\r\n                \"encoder\": \"Lavc62.28.102 libx264\"\r\n            }\r\n        }\r\n    ],\r\n    \"format\": {\r\n        \"filename\": \"fd:\",\r\n        \"nb_streams\": 1,\r\n        \"nb_programs\": 0,\r\n        \"nb_stream_groups\": 0,\r\n        \"format_name\": \"mov,mp4,m4a,3gp,3g2,mj2\",\r\n        \"format_long_name\": \"QuickTime / MOV\",\r\n        \"start_time\": \"0.000000\",\r\n        \"duration\": \"2.000000\",\r\n        \"size\": \"2973\",\r\n        \"bit_rate\": \"11892\",\r\n        \"probe_score\": 100,\r\n        \"tags\": {\r\n            \"major_brand\": \"isom\",\r\n            \"minor_version\": \"512\",\r\n            \"compatible_brands\": \"isomiso2avc1mp41\",\r\n            \"encoder\": \"Lavf62.12.102\"\r\n        }\r\n    }\r\n}\r\n",
+            "ffprobe_stderr": "",
+            "ffprobe_stdout_object": {
+              "sha256": "41f5c1f7d285b7fdf3b6a431f19fc42442685dcdd5878e61e2b0cca97957748f",
+              "parent_sha256": "88f7cc85765ef110715ccfb73e125ade4c9175d94d06e5d6f6274e140729b3b1"
+            },
+            "ffprobe_stderr_object": {
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "parent_sha256": "88f7cc85765ef110715ccfb73e125ade4c9175d94d06e5d6f6274e140729b3b1"
+            },
+            "duration_seconds": 2.0,
+            "working_copy": {
+              "sha256": "88f7cc85765ef110715ccfb73e125ade4c9175d94d06e5d6f6274e140729b3b1",
+              "parent_sha256": "88f7cc85765ef110715ccfb73e125ade4c9175d94d06e5d6f6274e140729b3b1"
+            },
+            "validation_error": null
+          }
+        ],
+        "facts": {
+          "parties": [
+            {
+              "description": "red Toyota sedan",
+              "view_id": "88f7cc85765ef110715ccfb73e125ade4c9175d94d06e5d6f6274e140729b3b1",
+              "timestamp_seconds": 0.5,
+              "confidence": 0.95,
+              "color": "red",
+              "make_model": "Toyota",
+              "body_type": "sedan",
+              "party_code": null
+            },
+            {
+              "description": "blue Nissan Patrol SUV",
+              "view_id": "88f7cc85765ef110715ccfb73e125ade4c9175d94d06e5d6f6274e140729b3b1",
+              "timestamp_seconds": 0.5,
+              "confidence": 0.95,
+              "color": "blue",
+              "make_model": "Nissan Patrol",
+              "body_type": "SUV",
+              "party_code": null
+            }
+          ],
+          "unmatched_dense_parties": [],
+          "events": [
+            {
+              "description": "red Toyota sedan proceeds toward center",
+              "view_id": "88f7cc85765ef110715ccfb73e125ade4c9175d94d06e5d6f6274e140729b3b1",
+              "timestamp_seconds": 0.6,
+              "confidence": 0.9
+            },
+            {
+              "description": "blue Nissan Patrol SUV enters center",
+              "view_id": "88f7cc85765ef110715ccfb73e125ade4c9175d94d06e5d6f6274e140729b3b1",
+              "timestamp_seconds": 0.8,
+              "confidence": 0.9
+            },
+            {
+              "description": "contact between red Toyota sedan and blue Nissan Patrol SUV",
+              "view_id": "88f7cc85765ef110715ccfb73e125ade4c9175d94d06e5d6f6274e140729b3b1",
+              "timestamp_seconds": 1.0,
+              "confidence": 0.92
+            }
+          ],
+          "candidate_collisions": [
+            {
+              "description": "contact between red Toyota sedan and blue Nissan Patrol SUV",
+              "view_id": "88f7cc85765ef110715ccfb73e125ade4c9175d94d06e5d6f6274e140729b3b1",
+              "timestamp_seconds": 1.0,
+              "confidence": 0.92
+            }
+          ],
+          "behaviour_observations": [],
+          "location_conditions": [],
+          "structured_facts": [],
+          "text_readings": [],
+          "driver_observations": [],
+          "collision_observations": [],
+          "drowsiness_observations": [],
+          "party_checklist": [],
+          "observation_notes": [],
+          "incident_assessments": []
+        },
+        "parties": [
+          {
+            "party_description": "red Toyota sedan",
+            "status": "Cannot Determine",
+            "color": "grey",
+            "rule_id": null,
+            "legal_source": null,
+            "article": null,
+            "reason": "party_type of red Toyota sedan unknown or unresolved; party_type of blue Nissan Patrol SUV unknown or unresolved",
+            "cited_facts": [
+              {
+                "description": "contact between red Toyota sedan and blue Nissan Patrol SUV",
+                "view_id": "88f7cc85765ef110715ccfb73e125ade4c9175d94d06e5d6f6274e140729b3b1",
+                "timestamp_seconds": 1.0,
+                "confidence": 0.92
+              },
+              {
+                "description": "red Toyota sedan",
+                "view_id": "88f7cc85765ef110715ccfb73e125ade4c9175d94d06e5d6f6274e140729b3b1",
+                "timestamp_seconds": 0.5,
+                "confidence": 0.95
+              },
+              {
+                "description": "blue Nissan Patrol SUV",
+                "view_id": "88f7cc85765ef110715ccfb73e125ade4c9175d94d06e5d6f6274e140729b3b1",
+                "timestamp_seconds": 0.5,
+                "confidence": 0.95
+              }
+            ],
+            "agreement_status": "not_measured",
+            "agreement_detail": null,
+            "findings": [],
+            "pair_selection": null
+          },
+          {
+            "party_description": "blue Nissan Patrol SUV",
+            "status": "Cannot Determine",
+            "color": "grey",
+            "rule_id": null,
+            "legal_source": null,
+            "article": null,
+            "reason": "party_type of red Toyota sedan unknown or unresolved; party_type of blue Nissan Patrol SUV unknown or unresolved",
+            "cited_facts": [
+              {
+                "description": "contact between red Toyota sedan and blue Nissan Patrol SUV",
+                "view_id": "88f7cc85765ef110715ccfb73e125ade4c9175d94d06e5d6f6274e140729b3b1",
+                "timestamp_seconds": 1.0,
+                "confidence": 0.92
+              },
+              {
+                "description": "red Toyota sedan",
+                "view_id": "88f7cc85765ef110715ccfb73e125ade4c9175d94d06e5d6f6274e140729b3b1",
+                "timestamp_seconds": 0.5,
+                "confidence": 0.95
+              },
+              {
+                "description": "blue Nissan Patrol SUV",
+                "view_id": "88f7cc85765ef110715ccfb73e125ade4c9175d94d06e5d6f6274e140729b3b1",
+                "timestamp_seconds": 0.5,
+                "confidence": 0.95
+              }
+            ],
+            "agreement_status": "not_measured",
+            "agreement_detail": null,
+            "findings": [],
+            "pair_selection": null
+          }
+        ],
+        "violations": [],
+        "is_valid": true,
+        "validation_errors": [],
+        "guardrail_results": {
+          "raw_ids": [],
+          "citations": [],
+          "injury_citations": [],
+          "fine_requires_violation": [],
+          "referral_without_fine": [],
+          "legal_sources": []
+        },
+        "overview_collision_recall": null,
+        "dense_facts": [],
+        "consistency_issues": [],
+        "overview_consistency_issues": [
+          []
+        ],
+        "agreement": {
+          "n_runs": 1,
+          "status": "not_measured",
+          "fields": {},
+          "total_latency_ms": 0.04919999628327787,
+          "model_call_count": 0
+        },
+        "driver_assessments": []
+      },
+      "scores": {
+        "verdict.incident": {
+          "expected": true,
+          "actual": true,
+          "passed": true,
+          "reviewed": false
+        }
+      },
+      "identity_evidence": {
+        "truth_fault": null,
+        "truth_participants": [],
+        "participants_not_scored": [],
+        "report": {
+          "at_fault": [],
+          "parties": [
+            {
+              "text": "red Toyota sedan",
+              "key": {
+                "colours": [
+                  "red"
+                ],
+                "classes": [
+                  "car"
+                ]
+              }
+            },
+            {
+              "text": "blue Nissan Patrol SUV",
+              "key": {
+                "colours": [
+                  "blue"
+                ],
+                "classes": [
+                  "suv"
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "quota": {
+        "model_calls": 0,
+        "prompt_tokens": 0,
+        "candidates_tokens": 0,
+        "total_tokens": 0,
+        "known_tokens": {
+          "prompt_tokens": 0,
+          "candidates_tokens": 0,
+          "total_tokens": 0
+        },
+        "calls_without_usage": 0,
+        "failed_calls_without_usage": 0,
+        "failed_call_policy": "stop_paid"
+      },
+      "timing": {
+        "state": "warm",
+        "retry_429_intervals_ms": [],
+        "transport_attempt_range": null
+      }
+    },
+    {
+      "clip": "BM_001",
+      "repeat": 3,
+      "analyses_per_run": 1,
+      "not_scored": {
+        "verdict.primary_at_fault": "not scored: field absent from truth contract",
+        "collision_participants": "not scored: field absent from truth contract"
+      },
+      "report": {
+        "input_hash": "7795a6cbc87871b731a4cabf5bb3f026520b55079c9dda41d86435279de261e7",
+        "prompt_version": "overview-1",
+        "provenance": "synthetic-fixture",
+        "summary": "Collision observed between red Toyota sedan and blue Nissan Patrol SUV.",
+        "views": [
+          {
+            "filename": "clip_0001.mp4",
+            "role": "exterior",
+            "label": null,
+            "acquisition_method": null,
+            "sha256": "88f7cc85765ef110715ccfb73e125ade4c9175d94d06e5d6f6274e140729b3b1",
+            "uploaded_at": "2026-10-24T19:31:32.420572Z",
+            "session_id": "240d632f-3a52-4c49-ab12-e4d103d2d7da",
+            "size_bytes": 2973,
+            "mime_type": "video/mp4",
+            "ffprobe_stdout": "{\r\n    \"streams\": [\r\n        {\r\n            \"index\": 0,\r\n            \"codec_name\": \"h264\",\r\n            \"codec_long_name\": \"H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10\",\r\n            \"profile\": \"High\",\r\n            \"codec_type\": \"video\",\r\n            \"codec_tag_string\": \"avc1\",\r\n            \"codec_tag\": \"0x31637661\",\r\n            \"mime_codec_string\": \"avc1.64000a\",\r\n            \"width\": 64,\r\n            \"height\": 64,\r\n            \"coded_width\": 64,\r\n            \"coded_height\": 64,\r\n            \"has_b_frames\": 2,\r\n            \"sample_aspect_ratio\": \"1:1\",\r\n            \"display_aspect_ratio\": \"1:1\",\r\n            \"pix_fmt\": \"yuv420p\",\r\n            \"level\": 10,\r\n            \"chroma_location\": \"left\",\r\n            \"field_order\": \"progressive\",\r\n            \"is_avc\": \"true\",\r\n            \"nal_length_size\": \"4\",\r\n            \"id\": \"0x1\",\r\n            \"r_frame_rate\": \"25/1\",\r\n            \"avg_frame_rate\": \"25/1\",\r\n            \"time_base\": \"1/12800\",\r\n            \"start_pts\": 0,\r\n            \"start_time\": \"0.000000\",\r\n            \"duration_ts\": 25600,\r\n            \"duration\": \"2.000000\",\r\n            \"bit_rate\": \"5996\",\r\n            \"bits_per_raw_sample\": \"8\",\r\n            \"nb_frames\": \"50\",\r\n            \"extradata_size\": 45,\r\n            \"disposition\": {\r\n                \"default\": 1,\r\n                \"dub\": 0,\r\n                \"original\": 0,\r\n                \"comment\": 0,\r\n                \"lyrics\": 0,\r\n                \"karaoke\": 0,\r\n                \"forced\": 0,\r\n                \"hearing_impaired\": 0,\r\n                \"visual_impaired\": 0,\r\n                \"clean_effects\": 0,\r\n                \"attached_pic\": 0,\r\n                \"timed_thumbnails\": 0,\r\n                \"non_diegetic\": 0,\r\n                \"captions\": 0,\r\n                \"descriptions\": 0,\r\n                \"metadata\": 0,\r\n                \"dependent\": 0,\r\n                \"still_image\": 0,\r\n                \"multilayer\": 0\r\n            },\r\n            \"tags\": {\r\n                \"language\": \"und\",\r\n                \"handler_name\": \"VideoHandler\",\r\n                \"encoder\": \"Lavc62.28.102 libx264\"\r\n            }\r\n        }\r\n    ],\r\n    \"format\": {\r\n        \"filename\": \"fd:\",\r\n        \"nb_streams\": 1,\r\n        \"nb_programs\": 0,\r\n        \"nb_stream_groups\": 0,\r\n        \"format_name\": \"mov,mp4,m4a,3gp,3g2,mj2\",\r\n        \"format_long_name\": \"QuickTime / MOV\",\r\n        \"start_time\": \"0.000000\",\r\n        \"duration\": \"2.000000\",\r\n        \"size\": \"2973\",\r\n        \"bit_rate\": \"11892\",\r\n        \"probe_score\": 100,\r\n        \"tags\": {\r\n            \"major_brand\": \"isom\",\r\n            \"minor_version\": \"512\",\r\n            \"compatible_brands\": \"isomiso2avc1mp41\",\r\n            \"encoder\": \"Lavf62.12.102\"\r\n        }\r\n    }\r\n}\r\n",
+            "ffprobe_stderr": "",
+            "ffprobe_stdout_object": {
+              "sha256": "41f5c1f7d285b7fdf3b6a431f19fc42442685dcdd5878e61e2b0cca97957748f",
+              "parent_sha256": "88f7cc85765ef110715ccfb73e125ade4c9175d94d06e5d6f6274e140729b3b1"
+            },
+            "ffprobe_stderr_object": {
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "parent_sha256": "88f7cc85765ef110715ccfb73e125ade4c9175d94d06e5d6f6274e140729b3b1"
+            },
+            "duration_seconds": 2.0,
+            "working_copy": {
+              "sha256": "88f7cc85765ef110715ccfb73e125ade4c9175d94d06e5d6f6274e140729b3b1",
+              "parent_sha256": "88f7cc85765ef110715ccfb73e125ade4c9175d94d06e5d6f6274e140729b3b1"
+            },
+            "validation_error": null
+          }
+        ],
+        "facts": {
+          "parties": [
+            {
+              "description": "red Toyota sedan",
+              "view_id": "88f7cc85765ef110715ccfb73e125ade4c9175d94d06e5d6f6274e140729b3b1",
+              "timestamp_seconds": 0.5,
+              "confidence": 0.95,
+              "color": "red",
+              "make_model": "Toyota",
+              "body_type": "sedan",
+              "party_code": null
+            },
+            {
+              "description": "blue Nissan Patrol SUV",
+              "view_id": "88f7cc85765ef110715ccfb73e125ade4c9175d94d06e5d6f6274e140729b3b1",
+              "timestamp_seconds": 0.5,
+              "confidence": 0.95,
+              "color": "blue",
+              "make_model": "Nissan Patrol",
+              "body_type": "SUV",
+              "party_code": null
+            }
+          ],
+          "unmatched_dense_parties": [],
+          "events": [
+            {
+              "description": "red Toyota sedan proceeds toward center",
+              "view_id": "88f7cc85765ef110715ccfb73e125ade4c9175d94d06e5d6f6274e140729b3b1",
+              "timestamp_seconds": 0.6,
+              "confidence": 0.9
+            },
+            {
+              "description": "blue Nissan Patrol SUV enters center",
+              "view_id": "88f7cc85765ef110715ccfb73e125ade4c9175d94d06e5d6f6274e140729b3b1",
+              "timestamp_seconds": 0.8,
+              "confidence": 0.9
+            },
+            {
+              "description": "contact between red Toyota sedan and blue Nissan Patrol SUV",
+              "view_id": "88f7cc85765ef110715ccfb73e125ade4c9175d94d06e5d6f6274e140729b3b1",
+              "timestamp_seconds": 1.0,
+              "confidence": 0.92
+            }
+          ],
+          "candidate_collisions": [
+            {
+              "description": "contact between red Toyota sedan and blue Nissan Patrol SUV",
+              "view_id": "88f7cc85765ef110715ccfb73e125ade4c9175d94d06e5d6f6274e140729b3b1",
+              "timestamp_seconds": 1.0,
+              "confidence": 0.92
+            }
+          ],
+          "behaviour_observations": [],
+          "location_conditions": [],
+          "structured_facts": [],
+          "text_readings": [],
+          "driver_observations": [],
+          "collision_observations": [],
+          "drowsiness_observations": [],
+          "party_checklist": [],
+          "observation_notes": [],
+          "incident_assessments": []
+        },
+        "parties": [
+          {
+            "party_description": "red Toyota sedan",
+            "status": "Cannot Determine",
+            "color": "grey",
+            "rule_id": null,
+            "legal_source": null,
+            "article": null,
+            "reason": "party_type of red Toyota sedan unknown or unresolved; party_type of blue Nissan Patrol SUV unknown or unresolved",
+            "cited_facts": [
+              {
+                "description": "contact between red Toyota sedan and blue Nissan Patrol SUV",
+                "view_id": "88f7cc85765ef110715ccfb73e125ade4c9175d94d06e5d6f6274e140729b3b1",
+                "timestamp_seconds": 1.0,
+                "confidence": 0.92
+              },
+              {
+                "description": "red Toyota sedan",
+                "view_id": "88f7cc85765ef110715ccfb73e125ade4c9175d94d06e5d6f6274e140729b3b1",
+                "timestamp_seconds": 0.5,
+                "confidence": 0.95
+              },
+              {
+                "description": "blue Nissan Patrol SUV",
+                "view_id": "88f7cc85765ef110715ccfb73e125ade4c9175d94d06e5d6f6274e140729b3b1",
+                "timestamp_seconds": 0.5,
+                "confidence": 0.95
+              }
+            ],
+            "agreement_status": "not_measured",
+            "agreement_detail": null,
+            "findings": [],
+            "pair_selection": null
+          },
+          {
+            "party_description": "blue Nissan Patrol SUV",
+            "status": "Cannot Determine",
+            "color": "grey",
+            "rule_id": null,
+            "legal_source": null,
+            "article": null,
+            "reason": "party_type of red Toyota sedan unknown or unresolved; party_type of blue Nissan Patrol SUV unknown or unresolved",
+            "cited_facts": [
+              {
+                "description": "contact between red Toyota sedan and blue Nissan Patrol SUV",
+                "view_id": "88f7cc85765ef110715ccfb73e125ade4c9175d94d06e5d6f6274e140729b3b1",
+                "timestamp_seconds": 1.0,
+                "confidence": 0.92
+              },
+              {
+                "description": "red Toyota sedan",
+                "view_id": "88f7cc85765ef110715ccfb73e125ade4c9175d94d06e5d6f6274e140729b3b1",
+                "timestamp_seconds": 0.5,
+                "confidence": 0.95
+              },
+              {
+                "description": "blue Nissan Patrol SUV",
+                "view_id": "88f7cc85765ef110715ccfb73e125ade4c9175d94d06e5d6f6274e140729b3b1",
+                "timestamp_seconds": 0.5,
+                "confidence": 0.95
+              }
+            ],
+            "agreement_status": "not_measured",
+            "agreement_detail": null,
+            "findings": [],
+            "pair_selection": null
+          }
+        ],
+        "violations": [],
+        "is_valid": true,
+        "validation_errors": [],
+        "guardrail_results": {
+          "raw_ids": [],
+          "citations": [],
+          "injury_citations": [],
+          "fine_requires_violation": [],
+          "referral_without_fine": [],
+          "legal_sources": []
+        },
+        "overview_collision_recall": null,
+        "dense_facts": [],
+        "consistency_issues": [],
+        "overview_consistency_issues": [
+          []
+        ],
+        "agreement": {
+          "n_runs": 1,
+          "status": "not_measured",
+          "fields": {},
+          "total_latency_ms": 0.040000013541430235,
+          "model_call_count": 0
+        },
+        "driver_assessments": []
+      },
+      "scores": {
+        "verdict.incident": {
+          "expected": true,
+          "actual": true,
+          "passed": true,
+          "reviewed": false
+        }
+      },
+      "identity_evidence": {
+        "truth_fault": null,
+        "truth_participants": [],
+        "participants_not_scored": [],
+        "report": {
+          "at_fault": [],
+          "parties": [
+            {
+              "text": "red Toyota sedan",
+              "key": {
+                "colours": [
+                  "red"
+                ],
+                "classes": [
+                  "car"
+                ]
+              }
+            },
+            {
+              "text": "blue Nissan Patrol SUV",
+              "key": {
+                "colours": [
+                  "blue"
+                ],
+                "classes": [
+                  "suv"
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "quota": {
+        "model_calls": 0,
+        "prompt_tokens": 0,
+        "candidates_tokens": 0,
+        "total_tokens": 0,
+        "known_tokens": {
+          "prompt_tokens": 0,
+          "candidates_tokens": 0,
+          "total_tokens": 0
+        },
+        "calls_without_usage": 0,
+        "failed_calls_without_usage": 0,
+        "failed_call_policy": "stop_paid"
+      },
+      "timing": {
+        "state": "warm",
+        "retry_429_intervals_ms": [],
+        "transport_attempt_range": null
+      }
+    }
+  ],
+  "fields": {
+    "verdict.incident": {
+      "clips": 1,
+      "k": 3,
+      "scores": 3,
+      "passed": 3,
+      "pass_rate": 1.0,
+      "pass_k": 1.0,
+      "wilson_95": [
+        0.20654931437723745,
+        1
+      ],
+      "wilson_unit": "clip passed all k repeats",
+      "unreviewed_scores": 3
+    }
+  },
+  "unreviewed_scores": 3,
+  "total_scores": 3,
+  "quota": {
+    "model_calls": 0,
+    "prompt_tokens": 0,
+    "candidates_tokens": 0,
+    "total_tokens": 0,
+    "known_tokens": {
+      "prompt_tokens": 0,
+      "candidates_tokens": 0,
+      "total_tokens": 0
+    },
+    "calls_without_usage": 0,
+    "failed_calls_without_usage": 0,
+    "failed_call_policy": "stop_paid",
+    "attempts_without_run_log": 0
+  },
+  "sensitivity": "ADR 0005: about 16 clips detect only drops of roughly 20 percentage points; no power guarantee for this selection."
+}

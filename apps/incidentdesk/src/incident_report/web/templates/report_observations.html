@@ -1,0 +1,47 @@
+{#- overview-10 model observations (spec 003 ticket 3). Readings the model gave, cited to view and time. Never findings,
+    never in the fault section. Every value is escaped by the environment's autoescape. -#}
+{% from "review_citation.html" import citation with context %}
+{% set facts = report.facts %}
+{% if facts and (facts.incident_assessments or facts.party_checklist or facts.observation_notes) %}
+<div data-model-observations>
+<h3>What the model saw (observations, not findings)</h3>
+<p class="meta">These are the model's own readings of the footage, each cited to its view and time. They are not findings and they do not decide fault.</p>
+{% for a in facts.incident_assessments %}
+<p data-incident-assessment>Camera role: {{ a.camera_role | replace('_', ' ') }} · Contact: {{ a.contact_state | replace('_', ' ') }}
+{% if a.contact_interval_start_seconds is not none %}between {{ citation({'view_id': a.view_id, 'timestamp_seconds': a.contact_interval_start_seconds}) }} and {{ citation({'view_id': a.view_id, 'timestamp_seconds': a.contact_interval_end_seconds}) }}{% else %}(no interval) in view <bdi dir="ltr">{{ a.view_id }}</bdi>{% endif %}
+· <bdi dir="auto">{{ a.assessment_note }}</bdi>
+{% if a.recovery == 'agreed_no_contact' %}<span class="meta" data-recovery-note>· checked twice (whole clip at higher detail)</span>{% endif %}</p>
+{% endfor %}
+{% if facts.party_checklist %}
+<div class="table-scroll" role="region" aria-label="Party checklist" tabindex="0">
+<table data-party-checklist>
+<thead><tr><th>Road user</th><th>Code</th><th>Seen</th><th>Type</th><th>Marking</th><th>Colour</th><th>Manoeuvre</th><th>Turn</th><th>Roundabout exit</th><th>Road on approach</th></tr></thead>
+<tbody>
+{% for row in facts.party_checklist %}
+<tr>
+<td><strong><bdi dir="auto">{{ row.display_name }}</bdi></strong></td>
+<td>{{ row.party_code }}</td>
+<td>first {{ citation({'view_id': row.view_id, 'timestamp_seconds': row.first_seen_seconds}) }} · attributes {{ citation({'view_id': row.view_id, 'timestamp_seconds': row.attributes_seen_at_seconds}) }} · movement {{ citation({'view_id': row.view_id, 'timestamp_seconds': row.movement_seen_at_seconds}) }}</td>
+<td>{{ row.party_type | replace('_', ' ') }}{% if row.party_type_other %}: <bdi dir="auto">{{ row.party_type_other }}</bdi>{% endif %}</td>
+<td>{{ row.marking | replace('_', ' ') }}</td>
+<td>{{ row.colour_family | replace('_', ' ') }}{% if row.colour_other %}: <bdi dir="auto">{{ row.colour_other }}</bdi>{% endif %}</td>
+<td>{{ row.manoeuvre | replace('_', ' ') }}{% if row.manoeuvre_other %}: <bdi dir="auto">{{ row.manoeuvre_other }}</bdi>{% endif %}</td>
+<td>{{ row.turn_direction | replace('_', ' ') }}</td>
+<td>{{ row.roundabout_exit_position | replace('_', ' ') }}</td>
+<td>{{ row.road_class_on_approach | replace('_', ' ') }} ({{ row.road_class_basis | replace('_', ' ') }})</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+<p class="meta">Main road and roundabout boundary follow the owner's working definitions (spec 003 decisions 9-10), not legal text.</p>
+{% endif %}
+{% if facts.observation_notes %}
+<ul data-observation-notes>
+{% for note in facts.observation_notes %}
+<li><strong><bdi dir="auto">{{ note.subject }}</bdi></strong> ({{ note.party_code }}): <bdi dir="auto">{{ note.note }}</bdi> {{ citation(note) }}</li>
+{% endfor %}
+</ul>
+{% endif %}
+</div>
+{% endif %}

@@ -1,0 +1,29 @@
+<details{% if print_view %} open{% endif %}>
+<summary>Evidence and rule details</summary>
+<h3>Views</h3>
+<dl>{% for view in report.views %}
+<dt><bdi dir="auto">{{ view.filename }}</bdi></dt>
+<dd>Duration: {{ view.duration_seconds if view.duration_seconds is not none else 'Cannot Determine' }} seconds · Uploaded: {{ view.uploaded_at or 'Not recorded' }} · Size: {{ view.size_bytes if view.size_bytes is not none else 'Not recorded' }} bytes · Type: <bdi dir="auto">{{ view.mime_type or 'Not recorded' }}</bdi>
+{% if view.validation_error %}<p><bdi dir="auto">{{ view.validation_error }}</bdi></p>{% endif %}</dd>
+{% endfor %}</dl>
+{% for party in report.parties %}
+<h3><bdi dir="auto">{{ party.party_description }}</bdi></h3>
+{% if recorded_agreement and party.agreement_detail %}<p><bdi dir="auto">{{ party.agreement_detail }}</bdi></p>{% endif %}
+{% for finding in party.findings %}
+<p><strong>{{ finding.classification }}</strong>: <bdi dir="auto">{{ finding.party_description }}</bdi> — <bdi dir="auto">{{ finding.reason }}</bdi>
+{{ finding.article }} ({{ finding.legal_source }}) · <a href="{{ finding.source_url }}" target="_blank" rel="noopener noreferrer">Source</a>
+{% if recorded_agreement and finding.agreement_status == 'flagged' %}<span class="badge badge--check">Check</span>{% endif %}
+{% if recorded_agreement and finding.agreement_detail %}<bdi dir="auto">{{ finding.agreement_detail }}</bdi>{% endif %}
+{% for fact in finding.cited_facts %}{{ citation(fact, show_description=true) }}{% endfor %}</p>
+{% endfor %}
+{% endfor %}
+{% if recorded_agreement and report.agreement %}
+<h3>Agreement</h3>
+<p>{{ report.agreement.status.value | replace('_', ' ') | capitalize }} · {{ report.agreement.n_runs }} runs</p>
+<ul>{% for key, field in report.agreement.fields.items() %}
+<li><bdi dir="auto">{{ field.field_name }}</bdi>: {{ field.status.value | replace('_', ' ') }} · {{ field.runs_agreeing }}/{{ field.runs_total }} runs.
+{% if field.details %}<bdi dir="auto">{{ field.details }}</bdi>{% endif %}
+{% if field.status.value == 'flagged' %}<span class="badge badge--check">Check</span>{% endif %}
+</li>{% endfor %}</ul>
+{% endif %}
+</details>

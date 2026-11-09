@@ -1,0 +1,12 @@
+{% if panel.comparisons %}<details><summary>Reconstruction cross-check</summary>
+<p>Independent proposals compared on this view's native clock. These comparisons do not change Fault Status, fines or approval.</p>
+{% set labels = {'agree': 'Agrees', 'differs_no_interval': 'Times differ (no interval)', 'disagree_time': 'Disagrees (time)', 'disagree_parties': 'Disagrees (parties)', 'disagree_motion': 'Disagrees (motion)', 'tracker_miss': 'Reconstruction missed contact', 'model_miss': 'Video analysis did not report contact', 'cannot_compare': 'Cannot compare', 'reconstruction_unavailable': 'Reconstruction unavailable'} %}
+<ul>{% for row in panel.comparisons %}<li>
+<strong>{{ row.item }}: {{ labels.get(row.state, 'Cannot compare') }}</strong>. {{ row.reason }}
+<p>Reconstruction proposal — {{ row.review_status }}. View {{ view.label or view.filename }} <span class="meta">(SHA-256 {{ row.view_id }})</span>:
+{% if row.producer_time is not none %}{{ '%.3f' | format(row.producer_time) }} s{% else %}source time unavailable{% endif %};
+{% if row.producer_frame is not none %}Source frame {{ row.producer_frame }}{% else %}source frame unavailable{% endif %}.</p>
+<p>Video analysis — View {{ view.label or view.filename }} <span class="meta">(SHA-256 {{ row.view_id }})</span>: {% for time in row.video_times %}{{ '%.3f' | format(time) }} s{% if not loop.last %}, {% endif %}{% else %}contact time unavailable{% endfor %}.</p>
+{% if row.difference_seconds is not none %}<p>Difference from nearest stated contact boundary/time: {{ '%+.3f' | format(row.difference_seconds) }} s.</p>{% endif %}
+</li>{% endfor %}</ul>
+</details>{% endif %}

@@ -1,0 +1,388 @@
+{
+  "parties": [
+    {
+      "description": "camera vehicle (car)",
+      "view_id": "experiment",
+      "timestamp_seconds": 0.0,
+      "confidence": 0.95,
+      "color": null,
+      "body_type": "car",
+      "party_code": "CAM"
+    },
+    {
+      "description": "P1 orange SUV",
+      "view_id": "experiment",
+      "timestamp_seconds": 29.0,
+      "confidence": 0.95,
+      "color": "orange",
+      "body_type": "SUV",
+      "party_code": "P1"
+    },
+    {
+      "description": "P2 white SUV",
+      "view_id": "experiment",
+      "timestamp_seconds": 3.0,
+      "confidence": 0.9,
+      "color": "white",
+      "body_type": "SUV",
+      "party_code": "P2"
+    }
+  ],
+  "events": [
+    {
+      "description": "camera vehicle (car) comes to a halt at the red traffic signal.",
+      "timestamp_seconds": 29.5,
+      "confidence": 0.95
+    },
+    {
+      "description": "P1 orange SUV turns across the junction path in front of camera vehicle (car).",
+      "timestamp_seconds": 33.0,
+      "confidence": 0.95
+    }
+  ],
+  "candidate_collisions": [],
+  "behaviour_observations": [],
+  "location_conditions": [],
+  "structured_facts": [
+    {
+      "subject": "scene",
+      "field": "conflict_zone_type",
+      "value": "signalised_junction",
+      "other_party": "",
+      "timestamp_seconds": 31.0,
+      "confidence": 0.95
+    },
+    {
+      "subject": "scene",
+      "field": "officer_directing_traffic",
+      "value": "no",
+      "other_party": "",
+      "timestamp_seconds": 31.0,
+      "confidence": 0.95
+    },
+    {
+      "subject": "scene",
+      "field": "posted_speed_limit_kmh",
+      "value": "not_visible",
+      "other_party": "",
+      "timestamp_seconds": 31.0,
+      "confidence": 0.9
+    },
+    {
+      "subject": "scene",
+      "field": "visibility_conditions",
+      "value": "clear",
+      "other_party": "",
+      "timestamp_seconds": 31.0,
+      "confidence": 0.95
+    },
+    {
+      "subject": "camera vehicle (car)",
+      "field": "motion_state_before_contact",
+      "value": "stopped_in_lane",
+      "other_party": "",
+      "timestamp_seconds": 31.0,
+      "confidence": 0.95
+    },
+    {
+      "subject": "camera vehicle (car)",
+      "field": "approach_control_faced",
+      "value": "signal",
+      "other_party": "",
+      "timestamp_seconds": 31.0,
+      "confidence": 0.95
+    },
+    {
+      "subject": "camera vehicle (car)",
+      "field": "signal_state_when_crossing_stop_line",
+      "value": "not_applicable",
+      "other_party": "",
+      "timestamp_seconds": 31.0,
+      "confidence": 0.95
+    },
+    {
+      "subject": "P1 orange SUV",
+      "field": "motion_state_before_contact",
+      "value": "moving",
+      "other_party": "",
+      "timestamp_seconds": 31.0,
+      "confidence": 0.9
+    },
+    {
+      "subject": "P1 orange SUV",
+      "field": "approach_control_faced",
+      "value": "signal",
+      "other_party": "",
+      "timestamp_seconds": 31.0,
+      "confidence": 0.9
+    },
+    {
+      "subject": "P1 orange SUV",
+      "field": "signal_state_when_crossing_stop_line",
+      "value": "not_visible",
+      "other_party": "",
+      "timestamp_seconds": 31.0,
+      "confidence": 0.8
+    },
+    {
+      "subject": "P2 white SUV",
+      "field": "motion_state_before_contact",
+      "value": "stopped_in_lane",
+      "other_party": "",
+      "timestamp_seconds": 31.0,
+      "confidence": 0.85
+    },
+    {
+      "subject": "P2 white SUV",
+      "field": "approach_control_faced",
+      "value": "signal",
+      "other_party": "",
+      "timestamp_seconds": 31.0,
+      "confidence": 0.85
+    },
+    {
+      "subject": "P2 white SUV",
+      "field": "signal_state_when_crossing_stop_line",
+      "value": "not_visible",
+      "other_party": "",
+      "timestamp_seconds": 31.0,
+      "confidence": 0.8
+    },
+    {
+      "subject": "camera vehicle (car)",
+      "field": "party_type",
+      "value": "car",
+      "other_party": "",
+      "view_id": "experiment",
+      "timestamp_seconds": 20.0,
+      "confidence": 0.95
+    },
+    {
+      "subject": "camera vehicle (car)",
+      "field": "movement",
+      "value": "straight",
+      "other_party": "",
+      "view_id": "experiment",
+      "timestamp_seconds": 5.0,
+      "confidence": 0.95
+    },
+    {
+      "subject": "camera vehicle (car)",
+      "field": "roundabout_entry_state",
+      "value": "not_in_roundabout",
+      "other_party": "",
+      "view_id": "experiment",
+      "timestamp_seconds": 5.0,
+      "confidence": 0.95
+    },
+    {
+      "subject": "camera vehicle (car)",
+      "field": "entry_origin",
+      "value": "public_road_same_road",
+      "other_party": "",
+      "view_id": "experiment",
+      "timestamp_seconds": 5.0,
+      "confidence": 0.95
+    },
+    {
+      "subject": "P1 orange SUV",
+      "field": "party_type",
+      "value": "car",
+      "other_party": "",
+      "view_id": "experiment",
+      "timestamp_seconds": 34.0,
+      "confidence": 0.95
+    },
+    {
+      "subject": "P1 orange SUV",
+      "field": "movement",
+      "value": "left_turn",
+      "other_party": "",
+      "view_id": "experiment",
+      "timestamp_seconds": 31.0,
+      "confidence": 0.95
+    },
+    {
+      "subject": "P1 orange SUV",
+      "field": "roundabout_entry_state",
+      "value": "not_in_roundabout",
+      "other_party": "",
+      "view_id": "experiment",
+      "timestamp_seconds": 31.0,
+      "confidence": 0.95
+    },
+    {
+      "subject": "P1 orange SUV",
+      "field": "entry_origin",
+      "value": "public_road_same_road",
+      "other_party": "",
+      "view_id": "experiment",
+      "timestamp_seconds": 31.0,
+      "confidence": 0.95
+    },
+    {
+      "subject": "P2 white SUV",
+      "field": "party_type",
+      "value": "car",
+      "other_party": "",
+      "view_id": "experiment",
+      "timestamp_seconds": 25.0,
+      "confidence": 0.9
+    },
+    {
+      "subject": "P2 white SUV",
+      "field": "movement",
+      "value": "left_turn",
+      "other_party": "",
+      "view_id": "experiment",
+      "timestamp_seconds": 26.0,
+      "confidence": 0.9
+    },
+    {
+      "subject": "P2 white SUV",
+      "field": "roundabout_entry_state",
+      "value": "not_in_roundabout",
+      "other_party": "",
+      "view_id": "experiment",
+      "timestamp_seconds": 26.0,
+      "confidence": 0.9
+    },
+    {
+      "subject": "P2 white SUV",
+      "field": "entry_origin",
+      "value": "public_road_same_road",
+      "other_party": "",
+      "view_id": "experiment",
+      "timestamp_seconds": 26.0,
+      "confidence": 0.9
+    }
+  ],
+  "text_readings": [
+    {
+      "kind": "signboard",
+      "text": "MARATHON",
+      "language": "en",
+      "timestamp_seconds": 23.0,
+      "confidence": 0.9
+    },
+    {
+      "kind": "overlay_date",
+      "text": "10-06-2021",
+      "language": "en",
+      "timestamp_seconds": 0.0,
+      "confidence": 0.95
+    },
+    {
+      "kind": "overlay_time",
+      "text": "11:36:40",
+      "language": "en",
+      "timestamp_seconds": 0.0,
+      "confidence": 0.95
+    }
+  ],
+  "driver_observations": [],
+  "collision_observations": [],
+  "drowsiness_observations": [],
+  "party_checklist": [
+    {
+      "party_code": "CAM",
+      "first_seen_seconds": 0.0,
+      "attributes_seen_at_seconds": 20.0,
+      "movement_seen_at_seconds": 5.0,
+      "party_type": "car_body_unclear",
+      "party_type_other": "",
+      "marking": "none_seen",
+      "colour_family": "unknown",
+      "colour_other": "",
+      "manoeuvre": "continue_same_road",
+      "manoeuvre_other": "",
+      "turn_direction": "straight",
+      "roundabout_exit_position": "not_applicable",
+      "road_class_on_approach": "main_road",
+      "road_class_basis": "two_lanes_or_fewer",
+      "confidence": 0.95,
+      "view_id": "experiment",
+      "display_name": "camera vehicle (car)"
+    },
+    {
+      "party_code": "P1",
+      "first_seen_seconds": 29.0,
+      "attributes_seen_at_seconds": 34.0,
+      "movement_seen_at_seconds": 31.0,
+      "party_type": "suv",
+      "party_type_other": "",
+      "marking": "none_seen",
+      "colour_family": "orange",
+      "colour_other": "",
+      "manoeuvre": "into_side_road",
+      "manoeuvre_other": "",
+      "turn_direction": "left",
+      "roundabout_exit_position": "not_applicable",
+      "road_class_on_approach": "main_road",
+      "road_class_basis": "two_lanes_or_fewer",
+      "confidence": 0.95,
+      "view_id": "experiment",
+      "display_name": "P1 orange SUV"
+    },
+    {
+      "party_code": "P2",
+      "first_seen_seconds": 3.0,
+      "attributes_seen_at_seconds": 25.0,
+      "movement_seen_at_seconds": 26.0,
+      "party_type": "suv",
+      "party_type_other": "",
+      "marking": "none_seen",
+      "colour_family": "white",
+      "colour_other": "",
+      "manoeuvre": "into_side_road",
+      "manoeuvre_other": "",
+      "turn_direction": "left",
+      "roundabout_exit_position": "not_applicable",
+      "road_class_on_approach": "main_road",
+      "road_class_basis": "two_lanes_or_fewer",
+      "confidence": 0.9,
+      "view_id": "experiment",
+      "display_name": "P2 white SUV"
+    }
+  ],
+  "observation_notes": [
+    {
+      "party_code": "CAM",
+      "timestamp_seconds": 0.0,
+      "note": "camera vehicle (car) turns left onto the main road, approaches a signalised junction, and stops at the stop line facing red.",
+      "view_id": "experiment",
+      "subject": "camera vehicle (car)"
+    },
+    {
+      "party_code": "P1",
+      "timestamp_seconds": 29.0,
+      "note": "P1 orange SUV, an orange SUV, makes a left turn across the junction from the oncoming direction.",
+      "view_id": "experiment",
+      "subject": "P1 orange SUV"
+    },
+    {
+      "party_code": "P2",
+      "timestamp_seconds": 30.5,
+      "note": "P2 white SUV, a white SUV, makes a right turn or straight movement into the side intersection area and stops.",
+      "view_id": "experiment",
+      "subject": "P2 white SUV"
+    },
+    {
+      "party_code": "scene",
+      "timestamp_seconds": 31.5,
+      "note": "Vehicles P1 orange SUV and P2 white SUV pass near each other without making physical contact.",
+      "view_id": "experiment",
+      "subject": "scene"
+    }
+  ],
+  "incident_assessments": [
+    {
+      "assessment_note": "Vehicles pass through the intersection with no physical contact observed, while camera vehicle (car) remains stopped at the red light.",
+      "camera_role": "witness_vehicle_not_involved",
+      "contact_state": "no_contact_observed",
+      "contact_interval_start_seconds": null,
+      "contact_interval_end_seconds": null,
+      "view_id": "experiment"
+    }
+  ]
+}

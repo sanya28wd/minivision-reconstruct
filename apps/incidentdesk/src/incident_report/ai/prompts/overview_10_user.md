@@ -1,0 +1,1 @@
+Fill the checklist for this one view, following the system instruction. Write the observation notes first, then the incident assessment, then the party checklist, then the contacts and the remaining items.

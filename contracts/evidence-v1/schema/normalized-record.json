@@ -1,0 +1,1478 @@
+{
+  "$defs": {
+    "ActionEvidence": {
+      "additionalProperties": false,
+      "properties": {
+        "rule": {
+          "title": "Rule",
+          "type": "string"
+        },
+        "track_ref": {
+          "title": "Track Ref",
+          "type": "string"
+        },
+        "description": {
+          "title": "Description",
+          "type": "string"
+        },
+        "event_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Event Ids",
+          "type": "array"
+        },
+        "source_frames": {
+          "items": {
+            "minimum": 0,
+            "type": "integer"
+          },
+          "title": "Source Frames",
+          "type": "array"
+        },
+        "action_time": {
+          "minimum": 0,
+          "title": "Action Time",
+          "type": "number"
+        },
+        "seconds_before_peak": {
+          "minimum": 0,
+          "title": "Seconds Before Peak",
+          "type": "number"
+        }
+      },
+      "required": [
+        "rule",
+        "track_ref",
+        "description",
+        "event_ids",
+        "source_frames",
+        "action_time",
+        "seconds_before_peak"
+      ],
+      "title": "ActionEvidence",
+      "type": "object"
+    },
+    "AssessmentFields": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "assessment",
+          "default": "assessment",
+          "title": "Kind",
+          "type": "string"
+        },
+        "assessment_id": {
+          "title": "Assessment Id",
+          "type": "string"
+        },
+        "event_id": {
+          "title": "Event Id",
+          "type": "string"
+        },
+        "outcome": {
+          "enum": [
+            "ONE_CONTRIBUTOR",
+            "MULTIPLE_CONTRIBUTORS",
+            "NO_SUPPORTED_CONTRIBUTOR",
+            "UNDETERMINED"
+          ],
+          "title": "Outcome",
+          "type": "string"
+        },
+        "contributing_track_refs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Contributing Track Refs",
+          "type": "array"
+        },
+        "lookback_window": {
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Lookback Window",
+          "type": "array"
+        },
+        "supporting_evidence": {
+          "items": {
+            "$ref": "#/$defs/ActionEvidence"
+          },
+          "title": "Supporting Evidence",
+          "type": "array"
+        },
+        "contrary_evidence": {
+          "items": {
+            "$ref": "#/$defs/ActionEvidence"
+          },
+          "title": "Contrary Evidence",
+          "type": "array"
+        },
+        "unresolved_facts": {
+          "items": {
+            "$ref": "#/$defs/UnresolvedFact"
+          },
+          "title": "Unresolved Facts",
+          "type": "array"
+        },
+        "rule_source": {
+          "title": "Rule Source",
+          "type": "null"
+        }
+      },
+      "required": [
+        "assessment_id",
+        "event_id",
+        "outcome",
+        "contributing_track_refs",
+        "lookback_window",
+        "supporting_evidence",
+        "contrary_evidence",
+        "unresolved_facts",
+        "rule_source"
+      ],
+      "title": "AssessmentFields",
+      "type": "object"
+    },
+    "EventFields": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "event_proposal",
+          "default": "event_proposal",
+          "title": "Kind",
+          "type": "string"
+        },
+        "event_id": {
+          "title": "Event Id",
+          "type": "string"
+        },
+        "event_type": {
+          "title": "Event Type",
+          "type": "string"
+        },
+        "start_frame": {
+          "minimum": 0,
+          "title": "Start Frame",
+          "type": "integer"
+        },
+        "peak_frame": {
+          "minimum": 0,
+          "title": "Peak Frame",
+          "type": "integer"
+        },
+        "end_frame": {
+          "minimum": 0,
+          "title": "End Frame",
+          "type": "integer"
+        },
+        "start_time": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Start Time"
+        },
+        "peak_time": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Peak Time"
+        },
+        "end_time": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "End Time"
+        },
+        "time_window": {
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Time Window",
+          "type": "array"
+        },
+        "location": {
+          "anyOf": [
+            {
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Location"
+        },
+        "unit": {
+          "enum": [
+            "m",
+            "relative_units"
+          ],
+          "title": "Unit",
+          "type": "string"
+        },
+        "location_uncertainty": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Location Uncertainty"
+        },
+        "signals": {
+          "items": {
+            "$ref": "#/$defs/Signal"
+          },
+          "title": "Signals",
+          "type": "array"
+        },
+        "supporting_evidence": {
+          "anyOf": [
+            {
+              "items": {
+                "$ref": "#/$defs/ActionEvidence"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Supporting Evidence"
+        },
+        "contrary_evidence": {
+          "anyOf": [
+            {
+              "items": {
+                "$ref": "#/$defs/ActionEvidence"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Contrary Evidence"
+        },
+        "order_unresolved_with": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Order Unresolved With"
+        },
+        "confidence": {
+          "title": "Confidence",
+          "type": "string"
+        }
+      },
+      "required": [
+        "event_id",
+        "event_type",
+        "start_frame",
+        "peak_frame",
+        "end_frame",
+        "start_time",
+        "peak_time",
+        "end_time",
+        "time_window",
+        "location",
+        "unit",
+        "location_uncertainty",
+        "signals",
+        "supporting_evidence",
+        "contrary_evidence",
+        "order_unresolved_with",
+        "confidence"
+      ],
+      "title": "EventFields",
+      "type": "object"
+    },
+    "FrameRate": {
+      "additionalProperties": false,
+      "properties": {
+        "numerator": {
+          "exclusiveMinimum": 0,
+          "title": "Numerator",
+          "type": "integer"
+        },
+        "denominator": {
+          "exclusiveMinimum": 0,
+          "title": "Denominator",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "numerator",
+        "denominator"
+      ],
+      "title": "FrameRate",
+      "type": "object"
+    },
+    "GeometryFields": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "geometry",
+          "default": "geometry",
+          "title": "Kind",
+          "type": "string"
+        },
+        "coordinates": {
+          "anyOf": [
+            {
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Coordinates"
+        },
+        "raw_coordinates": {
+          "anyOf": [
+            {
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Raw Coordinates"
+        },
+        "unit": {
+          "enum": [
+            "m",
+            "relative_units"
+          ],
+          "title": "Unit",
+          "type": "string"
+        },
+        "calibration_mode": {
+          "anyOf": [
+            {
+              "enum": [
+                "metric",
+                "non_metric"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Calibration Mode"
+        },
+        "calibration_revision": {
+          "title": "Calibration Revision",
+          "type": "string"
+        },
+        "relative_uncertainty": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Relative Uncertainty"
+        },
+        "position_uncertainty": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Position Uncertainty"
+        },
+        "heading_degrees": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Heading Degrees"
+        },
+        "heading_uncertainty_degrees": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Heading Uncertainty Degrees"
+        },
+        "source_quality": {
+          "title": "Source Quality",
+          "type": "string"
+        }
+      },
+      "required": [
+        "coordinates",
+        "raw_coordinates",
+        "unit",
+        "calibration_mode",
+        "calibration_revision",
+        "relative_uncertainty",
+        "position_uncertainty",
+        "heading_degrees",
+        "heading_uncertainty_degrees",
+        "source_quality"
+      ],
+      "title": "GeometryFields",
+      "type": "object"
+    },
+    "ReviewFields": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "review_overlay",
+          "default": "review_overlay",
+          "title": "Kind",
+          "type": "string"
+        },
+        "target_id": {
+          "title": "Target Id",
+          "type": "string"
+        },
+        "target_kind": {
+          "enum": [
+            "event",
+            "assessment"
+          ],
+          "title": "Target Kind",
+          "type": "string"
+        },
+        "action": {
+          "enum": [
+            "confirm",
+            "reject",
+            "modify"
+          ],
+          "title": "Action",
+          "type": "string"
+        },
+        "reviewer": {
+          "title": "Reviewer",
+          "type": "string"
+        },
+        "reason": {
+          "title": "Reason",
+          "type": "string"
+        },
+        "reviewer_authenticated": {
+          "const": false,
+          "default": false,
+          "title": "Reviewer Authenticated",
+          "type": "boolean"
+        },
+        "revision": {
+          "title": "Revision",
+          "type": "string"
+        },
+        "revision_chain_hashes": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Revision Chain Hashes",
+          "type": "array"
+        },
+        "modified_peak_time": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Modified Peak Time"
+        },
+        "modified_location": {
+          "anyOf": [
+            {
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Modified Location"
+        },
+        "modified_outcome": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Modified Outcome"
+        },
+        "modified_contributing_track_refs": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Modified Contributing Track Refs"
+        }
+      },
+      "required": [
+        "target_id",
+        "target_kind",
+        "action",
+        "reviewer",
+        "reason",
+        "revision",
+        "revision_chain_hashes",
+        "modified_peak_time",
+        "modified_location",
+        "modified_outcome",
+        "modified_contributing_track_refs"
+      ],
+      "title": "ReviewFields",
+      "type": "object"
+    },
+    "SequenceFields": {
+      "additionalProperties": false,
+      "properties": {
+        "covering_frames": {
+          "anyOf": [
+            {
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "integer"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Covering Frames"
+        },
+        "kind": {
+          "const": "sequence",
+          "default": "sequence",
+          "title": "Kind",
+          "type": "string"
+        },
+        "event_id": {
+          "title": "Event Id",
+          "type": "string"
+        },
+        "event_type": {
+          "title": "Event Type",
+          "type": "string"
+        },
+        "rank": {
+          "minimum": 1,
+          "title": "Rank",
+          "type": "integer"
+        },
+        "peak_frame": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Peak Frame"
+        },
+        "peak_time": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Peak Time"
+        },
+        "time_window": {
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          ],
+          "title": "Time Window",
+          "type": "array"
+        },
+        "order_unresolved_with": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Order Unresolved With",
+          "type": "array"
+        }
+      },
+      "required": [
+        "event_id",
+        "event_type",
+        "rank",
+        "peak_time",
+        "time_window",
+        "order_unresolved_with"
+      ],
+      "title": "SequenceFields",
+      "type": "object"
+    },
+    "Signal": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "kind": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Kind"
+        },
+        "source_frames": {
+          "anyOf": [
+            {
+              "items": {
+                "minimum": 0,
+                "type": "integer"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Source Frames"
+        },
+        "track_refs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Track Refs",
+          "type": "array"
+        },
+        "description": {
+          "title": "Description",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "kind",
+        "source_frames",
+        "track_refs",
+        "description"
+      ],
+      "title": "Signal",
+      "type": "object"
+    },
+    "SourceFields": {
+      "additionalProperties": false,
+      "properties": {
+        "producer_case_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Producer Case Id"
+        },
+        "kind": {
+          "const": "source_binding",
+          "default": "source_binding",
+          "title": "Kind",
+          "type": "string"
+        },
+        "video_metadata": {
+          "$ref": "#/$defs/VideoMetadata"
+        },
+        "transformations": {
+          "items": {
+            "$ref": "#/$defs/Transformation"
+          },
+          "title": "Transformations",
+          "type": "array"
+        },
+        "frame_origin": {
+          "const": 0,
+          "title": "Frame Origin",
+          "type": "integer"
+        },
+        "calibration_revision": {
+          "title": "Calibration Revision",
+          "type": "string"
+        },
+        "reconstruction_manifest": {
+          "title": "Reconstruction Manifest",
+          "type": "string"
+        },
+        "movement_manifest": {
+          "title": "Movement Manifest",
+          "type": "string"
+        },
+        "incident_manifest": {
+          "title": "Incident Manifest",
+          "type": "string"
+        },
+        "reviewed_manifest": {
+          "title": "Reviewed Manifest",
+          "type": "string"
+        },
+        "original_video_sha256": {
+          "title": "Original Video Sha256",
+          "type": "string"
+        },
+        "tracking_run": {
+          "title": "Tracking Run",
+          "type": "string"
+        },
+        "track_revision": {
+          "title": "Track Revision",
+          "type": "string"
+        },
+        "reconstruction_run": {
+          "title": "Reconstruction Run",
+          "type": "string"
+        },
+        "movement_run": {
+          "title": "Movement Run",
+          "type": "string"
+        },
+        "incident_run": {
+          "title": "Incident Run",
+          "type": "string"
+        },
+        "review_revision": {
+          "title": "Review Revision",
+          "type": "string"
+        },
+        "source_frame": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Source Frame"
+        },
+        "source_time": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Source Time"
+        },
+        "replay_frame": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Replay Frame"
+        },
+        "replay_time": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Replay Time"
+        },
+        "timestamp_provenance": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Timestamp Provenance"
+        }
+      },
+      "required": [
+        "video_metadata",
+        "transformations",
+        "frame_origin",
+        "calibration_revision",
+        "reconstruction_manifest",
+        "movement_manifest",
+        "incident_manifest",
+        "reviewed_manifest",
+        "original_video_sha256",
+        "tracking_run",
+        "track_revision",
+        "reconstruction_run",
+        "movement_run",
+        "incident_run",
+        "review_revision",
+        "source_frame",
+        "source_time",
+        "replay_frame",
+        "replay_time",
+        "timestamp_provenance"
+      ],
+      "title": "SourceFields",
+      "type": "object"
+    },
+    "TrackFields": {
+      "additionalProperties": false,
+      "properties": {
+        "class_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Class Name"
+        },
+        "kind": {
+          "const": "track_reference",
+          "default": "track_reference",
+          "title": "Kind",
+          "type": "string"
+        },
+        "producer": {
+          "title": "Producer",
+          "type": "string"
+        },
+        "case_id": {
+          "title": "Case Id",
+          "type": "string"
+        },
+        "view_id": {
+          "title": "View Id",
+          "type": "string"
+        },
+        "tracking_run": {
+          "title": "Tracking Run",
+          "type": "string"
+        },
+        "revision": {
+          "title": "Revision",
+          "type": "string"
+        },
+        "track_id": {
+          "minimum": 1,
+          "title": "Track Id",
+          "type": "integer"
+        },
+        "state": {
+          "enum": [
+            "observed",
+            "lost",
+            "recovered",
+            "interpolated",
+            "manual",
+            "estimated",
+            "reviewer",
+            "unavailable",
+            "tentative",
+            "confirmed",
+            "deleted"
+          ],
+          "title": "State",
+          "type": "string"
+        },
+        "position": {
+          "anyOf": [
+            {
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Position"
+        },
+        "bbox": {
+          "anyOf": [
+            {
+              "maxItems": 4,
+              "minItems": 4,
+              "prefixItems": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Bbox"
+        },
+        "provenance": {
+          "title": "Provenance",
+          "type": "string"
+        }
+      },
+      "required": [
+        "producer",
+        "case_id",
+        "view_id",
+        "tracking_run",
+        "revision",
+        "track_id",
+        "state",
+        "position",
+        "bbox",
+        "provenance"
+      ],
+      "title": "TrackFields",
+      "type": "object"
+    },
+    "Transformation": {
+      "additionalProperties": false,
+      "properties": {
+        "operation": {
+          "const": "producer reconstruction replay",
+          "title": "Operation",
+          "type": "string"
+        },
+        "mapping": {
+          "title": "Mapping",
+          "type": "string"
+        }
+      },
+      "required": [
+        "operation",
+        "mapping"
+      ],
+      "title": "Transformation",
+      "type": "object"
+    },
+    "UnresolvedFact": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "title": "Kind",
+          "type": "string"
+        },
+        "track_refs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Track Refs",
+          "type": "array"
+        },
+        "time_window": {
+          "anyOf": [
+            {
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Time Window"
+        },
+        "description": {
+          "title": "Description",
+          "type": "string"
+        },
+        "decisive": {
+          "title": "Decisive",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "kind",
+        "track_refs",
+        "time_window",
+        "description",
+        "decisive"
+      ],
+      "title": "UnresolvedFact",
+      "type": "object"
+    },
+    "VideoMetadata": {
+      "additionalProperties": false,
+      "properties": {
+        "original_filename": {
+          "title": "Original Filename",
+          "type": "string"
+        },
+        "duration_seconds": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Duration Seconds"
+        },
+        "frame_rate": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/FrameRate"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "width": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Width"
+        },
+        "height": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Height"
+        },
+        "codec": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Codec"
+        },
+        "reported_frame_count": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Reported Frame Count"
+        },
+        "frame_count_source": {
+          "enum": [
+            "reported",
+            "derived",
+            "unavailable"
+          ],
+          "title": "Frame Count Source",
+          "type": "string"
+        },
+        "creation_time": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Creation Time"
+        },
+        "extraction_tool": {
+          "title": "Extraction Tool",
+          "type": "string"
+        }
+      },
+      "required": [
+        "original_filename",
+        "duration_seconds",
+        "frame_rate",
+        "width",
+        "height",
+        "codec",
+        "reported_frame_count",
+        "frame_count_source",
+        "creation_time",
+        "extraction_tool"
+      ],
+      "title": "VideoMetadata",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "record_id": {
+      "title": "Record Id",
+      "type": "string"
+    },
+    "kind": {
+      "enum": [
+        "source_binding",
+        "track_reference",
+        "event_proposal",
+        "geometry",
+        "review_overlay",
+        "assessment",
+        "sequence"
+      ],
+      "title": "Kind",
+      "type": "string"
+    },
+    "view_id": {
+      "title": "View Id",
+      "type": "string"
+    },
+    "artifact_path": {
+      "title": "Artifact Path",
+      "type": "string"
+    },
+    "data": {
+      "discriminator": {
+        "mapping": {
+          "assessment": "#/$defs/AssessmentFields",
+          "event_proposal": "#/$defs/EventFields",
+          "geometry": "#/$defs/GeometryFields",
+          "review_overlay": "#/$defs/ReviewFields",
+          "sequence": "#/$defs/SequenceFields",
+          "source_binding": "#/$defs/SourceFields",
+          "track_reference": "#/$defs/TrackFields"
+        },
+        "propertyName": "kind"
+      },
+      "oneOf": [
+        {
+          "$ref": "#/$defs/EventFields"
+        },
+        {
+          "$ref": "#/$defs/GeometryFields"
+        },
+        {
+          "$ref": "#/$defs/TrackFields"
+        },
+        {
+          "$ref": "#/$defs/ReviewFields"
+        },
+        {
+          "$ref": "#/$defs/AssessmentFields"
+        },
+        {
+          "$ref": "#/$defs/SequenceFields"
+        },
+        {
+          "$ref": "#/$defs/SourceFields"
+        }
+      ],
+      "title": "Data"
+    },
+    "original": {
+      "additionalProperties": true,
+      "title": "Original",
+      "type": "object"
+    },
+    "effective": {
+      "anyOf": [
+        {
+          "additionalProperties": true,
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Effective"
+    },
+    "source_frame": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Source Frame"
+    },
+    "source_time": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Source Time"
+    },
+    "timestamp_provenance": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Timestamp Provenance"
+    },
+    "track_refs": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Track Refs",
+      "type": "array"
+    },
+    "producer_status": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Producer Status"
+    },
+    "parent_status": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Parent Status"
+    },
+    "needs_review": {
+      "default": false,
+      "title": "Needs Review",
+      "type": "boolean"
+    },
+    "affirmative": {
+      "const": false,
+      "default": false,
+      "title": "Affirmative",
+      "type": "boolean"
+    },
+    "officer_approved": {
+      "const": false,
+      "default": false,
+      "title": "Officer Approved",
+      "type": "boolean"
+    },
+    "rule_source": {
+      "default": null,
+      "title": "Rule Source",
+      "type": "null"
+    }
+  },
+  "required": [
+    "record_id",
+    "kind",
+    "view_id",
+    "artifact_path",
+    "data",
+    "original"
+  ],
+  "title": "NormalizedRecord",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

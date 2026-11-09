@@ -1,0 +1,254 @@
+{
+  "observation_notes": [
+    {
+      "party_code": "P1",
+      "timestamp_seconds": 18.0,
+      "note": "White SUV travels straight ahead through the traffic lane towards the signalised intersection."
+    },
+    {
+      "party_code": "P1",
+      "timestamp_seconds": 29.5,
+      "note": "P1 initiates a left turn at the intersection."
+    },
+    {
+      "party_code": "P2",
+      "timestamp_seconds": 29.0,
+      "note": "Orange SUV approaches the intersection from the oncoming direction."
+    },
+    {
+      "party_code": "P1",
+      "timestamp_seconds": 31.0,
+      "note": "P1 and P2 collide in the intersection; P1 is struck on its right side by P2."
+    },
+    {
+      "party_code": "P2",
+      "timestamp_seconds": 31.0,
+      "note": "P2 strikes the right side of P1, then spins around towards the camera."
+    },
+    {
+      "party_code": "CAM",
+      "timestamp_seconds": 31.5,
+      "note": "CAM brakes and comes to a complete stop before the stop line, not touching any party."
+    }
+  ],
+  "incident_assessment": {
+    "assessment_note": "P1 turns left across the intersection and is struck by oncoming P2; CAM stops safely before the intersection.",
+    "camera_role": "witness_vehicle_not_involved",
+    "contact_state": "contact_observed",
+    "contact_interval_start_seconds": 30.8,
+    "contact_interval_end_seconds": 31.5
+  },
+  "party_checklist": [
+    {
+      "party_code": "P1",
+      "first_seen_seconds": 18.0,
+      "attributes_seen_at_seconds": 24.0,
+      "movement_seen_at_seconds": 28.0,
+      "party_type": "suv",
+      "party_type_other": "",
+      "marking": "none_seen",
+      "colour_family": "white",
+      "colour_other": "",
+      "manoeuvre": "into_side_road",
+      "manoeuvre_other": "",
+      "turn_direction": "left",
+      "roundabout_exit_position": "not_applicable",
+      "road_class_on_approach": "main_road",
+      "road_class_basis": "more_than_two_lanes_and_long",
+      "confidence": 0.95
+    },
+    {
+      "party_code": "P2",
+      "first_seen_seconds": 29.0,
+      "attributes_seen_at_seconds": 32.0,
+      "movement_seen_at_seconds": 30.5,
+      "party_type": "suv",
+      "party_type_other": "",
+      "marking": "none_seen",
+      "colour_family": "orange",
+      "colour_other": "",
+      "manoeuvre": "continue_same_road",
+      "manoeuvre_other": "",
+      "turn_direction": "straight",
+      "roundabout_exit_position": "not_applicable",
+      "road_class_on_approach": "main_road",
+      "road_class_basis": "more_than_two_lanes_and_long",
+      "confidence": 0.95
+    }
+  ],
+  "collision_observations": [
+    {
+      "kind": "vehicle_contact_vehicle",
+      "subject": "P2",
+      "other_party": "P1",
+      "injury_grade": "unknown",
+      "visibility": "visible",
+      "timestamp_seconds": 31.0,
+      "confidence": 0.95
+    },
+    {
+      "kind": "vehicle_stopped_at_scene",
+      "subject": "P2",
+      "other_party": "",
+      "injury_grade": "unknown",
+      "visibility": "visible",
+      "timestamp_seconds": 34.0,
+      "confidence": 0.9
+    },
+    {
+      "kind": "vehicle_stopped_at_scene",
+      "subject": "P1",
+      "other_party": "",
+      "injury_grade": "unknown",
+      "visibility": "visible",
+      "timestamp_seconds": 34.0,
+      "confidence": 0.9
+    }
+  ],
+  "structured_facts": [
+    {
+      "subject": "scene",
+      "field": "conflict_zone_type",
+      "value": "signalised_junction",
+      "other_party": "",
+      "timestamp_seconds": 31.0,
+      "confidence": 0.95
+    },
+    {
+      "subject": "scene",
+      "field": "officer_directing_traffic",
+      "value": "no",
+      "other_party": "",
+      "timestamp_seconds": 31.0,
+      "confidence": 0.95
+    },
+    {
+      "subject": "scene",
+      "field": "posted_speed_limit_kmh",
+      "value": "not_visible",
+      "other_party": "",
+      "timestamp_seconds": 31.0,
+      "confidence": 0.9
+    },
+    {
+      "subject": "scene",
+      "field": "visibility_conditions",
+      "value": "clear",
+      "other_party": "",
+      "timestamp_seconds": 31.0,
+      "confidence": 0.9
+    },
+    {
+      "subject": "P1",
+      "field": "motion_state_before_contact",
+      "value": "moving",
+      "other_party": "",
+      "timestamp_seconds": 30.5,
+      "confidence": 0.95
+    },
+    {
+      "subject": "P1",
+      "field": "approach_control_faced",
+      "value": "signal",
+      "other_party": "",
+      "timestamp_seconds": 30.5,
+      "confidence": 0.9
+    },
+    {
+      "subject": "P1",
+      "field": "signal_state_when_crossing_stop_line",
+      "value": "yellow",
+      "other_party": "",
+      "timestamp_seconds": 30.0,
+      "confidence": 0.8
+    },
+    {
+      "subject": "P2",
+      "field": "motion_state_before_contact",
+      "value": "moving",
+      "other_party": "",
+      "timestamp_seconds": 30.5,
+      "confidence": 0.95
+    },
+    {
+      "subject": "P2",
+      "field": "approach_control_faced",
+      "value": "signal",
+      "other_party": "",
+      "timestamp_seconds": 30.5,
+      "confidence": 0.9
+    },
+    {
+      "subject": "P2",
+      "field": "signal_state_when_crossing_stop_line",
+      "value": "yellow",
+      "other_party": "",
+      "timestamp_seconds": 30.5,
+      "confidence": 0.8
+    },
+    {
+      "subject": "P1",
+      "field": "relative_position_of_other",
+      "value": "B_ahead_oncoming",
+      "other_party": "P2",
+      "timestamp_seconds": 30.5,
+      "confidence": 0.9
+    },
+    {
+      "subject": "P2",
+      "field": "relative_position_of_other",
+      "value": "B_ahead_oncoming",
+      "other_party": "P1",
+      "timestamp_seconds": 30.5,
+      "confidence": 0.9
+    },
+    {
+      "subject": "P2",
+      "field": "impact_zone_on_party",
+      "value": "front",
+      "other_party": "",
+      "timestamp_seconds": 31.0,
+      "confidence": 0.9
+    },
+    {
+      "subject": "P1",
+      "field": "impact_zone_on_party",
+      "value": "right_side",
+      "other_party": "",
+      "timestamp_seconds": 31.0,
+      "confidence": 0.9
+    }
+  ],
+  "events": [
+    {
+      "description": "P1 executes an unprotected left turn at the intersection.",
+      "timestamp_seconds": 30.0,
+      "confidence": 0.95
+    },
+    {
+      "description": "P2 collides with P1 inside the intersection.",
+      "timestamp_seconds": 31.0,
+      "confidence": 0.95
+    }
+  ],
+  "behaviour_observations": [],
+  "location_conditions": [],
+  "text_readings": [
+    {
+      "kind": "overlay_date",
+      "text": "10-06-2021",
+      "language": "en",
+      "timestamp_seconds": 1.0,
+      "confidence": 0.95
+    },
+    {
+      "kind": "overlay_time",
+      "text": "11:36:40",
+      "language": "en",
+      "timestamp_seconds": 1.0,
+      "confidence": 0.95
+    }
+  ],
+  "driver_observations": [],
+  "drowsiness_observations": []
+}

@@ -1,0 +1,27 @@
+{% if reconstruction_unavailable and not print_view %}<div class="reconstruction-only"><p class="alert" role="status">{{ reconstruction_unavailable }}</p></div>{% endif %}<section aria-label="Cited timeline">
+  <h2>Cited timeline</h2>
+  <p class="meta">Jump list of the cited moments listed under What happened, each on its own view's clock. Candidate collisions remain observations for review.</p>
+  {% for view in report.views %}
+  <h3><bdi dir="auto">{{ view.label or view.filename }}</bdi></h3>
+  {% set moments = report.storyline | selectattr('view_id', 'equalto', view.sha256) | list %}
+  {% if reconstruction and not print_view %}{% set panel = reconstruction[view.sha256] %}{% include 'reconstruction_view.html' %}{% include 'reconstruction_print_timeline.html' %}{% else %}<ul class="review-moments">
+    {% for item in moments %}
+    <li>{{ citation(item) }} {{ {'event': 'Event', 'note': 'Observation', 'contact': 'Candidate collision'}.get(item.kind, 'After the contact') }}</li>
+    {% else %}
+    <li>No cited events available for this view.</li>
+    {% endfor %}
+  </ul>{% endif %}{% if driver_context and not print_view and view.sha256 in driver_context %}{% set driver_panel = driver_context[view.sha256] %}{% include 'reconstruction_driver_context.html' %}{% endif %}
+  {% endfor %}
+{% if reconstruction and not print_view %}
+  <div class="reconstruction-only">
+  <script src="/static/js/reconstruction.js" defer></script>
+  {% include 'reconstruction_alignment.html' %}
+  <form method="post" action="/reports/{{ report.run_id }}/reconstruction/attach">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+    <label>Local reconstruction export <select name="bundle" required>{% for bundle in reconstruction_bundles %}<option value="{{ bundle }}">{{ bundle }}</option>{% endfor %}</select></label>
+    <label>Attached by <input name="reviewer" required maxlength="200"></label>
+    <button type="submit"{% if not reconstruction_bundles %} disabled{% endif %}>Attach export</button>
+    {% if not reconstruction_bundles %}<p>No local export bundles available.</p>{% endif %}
+  </form>
+  </div>
+{% endif %}</section>
